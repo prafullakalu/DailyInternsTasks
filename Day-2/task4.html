@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task 4</title>
+  <style>
+    table, tr, td {
+      border: 1px solid black;
+      width: 600px;
+      margin: auto;
+    }
+    td {
+      padding: 10px;
+    }
+    h2 {
+      text-align: center;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <table>
+    <tr>
+      <td>
+        <h2>Allow Only if Image</h2>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <form onsubmit="return checkFile()">
+          <label>Select Image:</label>
+          <input type="file" id="myfile"><br><br>
+          <input type="submit" value="Upload">
+        </form>
+        <p id="result"></p>
+      </td>
+    </tr>
+  </table>
+  <script>
+    function checkFile() {
+      let fileInput = document.getElementById("myfile");
+      let result = document.getElementById("result");
+      let file = fileInput.files[0];
+      if (file.type.startsWith("image/")) {
+        let ftype = file.type.split("/")[1];
+        result.innerHTML = 
+          "File is Image<br>File type = " + ftype;
+      } else {
+        result.innerHTML = "File is Not Image";
+      }
+      return false; 
+    }
+  </script>
+
+</body>
+</html>
