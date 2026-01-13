@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Appointment Scheduler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="p-5">
+
+<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#appointmentModal">
+    Open Appointment Scheduler
+</button>
+<div class="modal fade" id="appointmentModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content" tabindex="-1">
+            <div class="modal-header">
+                <h5 class="modal-title fw-bold">Appointment Scheduler</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form class="needs-validation" novalidate>
+                    <div class="mb-2">
+                        <label class="form-label fw-semibold">First Name</label>
+                        <input type="text" class="form-control form-control-sm" placeholder="Enter Your First Name" required>
+                        <div class="invalid-feedback">First name is required</div>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label fw-semibold">Last Name</label>
+                        <input type="text" class="form-control form-control-sm" placeholder="Enter Your Last Name" required>
+                        <div class="invalid-feedback">Last name is required</div>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label fw-semibold">UNCC Email</label>
+                        <input type="email" class="form-control form-control-sm" placeholder="Enter Your UNCC Email" required>
+                        <div class="invalid-feedback">Please enter a valid email</div>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label fw-semibold">What Course Do You Need Help With?</label>
+                        <select class="form-select form-select-sm" required>
+                            <option value="">Select a Course</option>
+                            <option>HTML</option>
+                            <option>CSS</option>
+                            <option>JavaScript</option>
+                            <option>Bootstrap</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a course</div>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label fw-semibold">Name of Preferred Tutor</label>
+                        <select class="form-select form-select-sm" required>
+                            <option value="">Anyone Available</option>
+                            <option>Yash Parmar Sir</option>
+                            <option>Harsh sir</option>
+                            <option>Hemang Sir</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a tutor</div>
+                    </div>
+                    <div class="mb-2">
+                        <label class="form-label fw-semibold">Calendar Date</label>
+                        <input type="date" class="form-control form-control-sm" required>
+                        <div class="invalid-feedback">Please select a date</div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Preferred Time</label>
+                        <input type="time" class="form-control form-control-sm" id="timeInput" required>
+                        <div class="invalid-feedback">Please select time</div>
+                    </div>
+                    <div class="text-end">
+                        <button type="submit" class="btn btn-info btn-sm text-white">
+                            Schedule Appointment
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+(() => {
+    'use strict';
+    document.querySelectorAll('.needs-validation').forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            form.classList.add('was-validated');
+        });
+    });
+    const modal = document.getElementById('appointmentModal');
+    modal.addEventListener('shown.bs.modal', () => {
+        document.getElementById('timeInput').focus();
+    });
+})();
+</script>
+
+</body>
+</html>
