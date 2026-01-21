@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Registration Form</title>
+  <link rel="stylesheet" href="task1.css">
+</head>
+<body onload="document.getElementById('fname').focus()">
+  <main>
+    <u id="heding">Student Registration Form</u>
+    <form id="regForm">
+      <div class="form">
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter your first name " required />
+      </div>
+      <div class="form">
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname" placeholder="enter your last name" required />
+      </div>
+      <div class="form"> <label for="email">Email:</label> <input type="email" id="email" name="email" pattern="^[a-zA-Z0-9._%+-]+@gmail\.(com|in)$" placeholder="Enter your Gmail address" title="Only Gmail addresses ending with .com or .in are allowed" required /> </div>
+      <div class="form">
+        <label for="mobile">Mobile:</label>
+        <input type="tel" id="mobile" placeholder="only 10 digits allowed" name="mobile" 
+               pattern="\d{10}" maxlength="10" minlength="10" required />
+      </div>
+      <div class="form">
+        <label>Gender:</label>
+        <div>
+          <label><input type="radio" name="gender" value="Male" required /> Male</label>
+          <label><input type="radio" name="gender" value="Female" /> Female</label>
+        </div>
+      </div>
+      <div class="form">
+        <label for="dob">Date Of Birth:</label>
+        <input type="date" id="dob" name="dob" placeholder="dd-mm-yyyy" required />
+      </div>
+      <div class="form">
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="7" required></textarea>
+      </div>
+      <div class="form">
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required />
+      </div>
+      <div class="form">
+        <label for="pin">Area PIN:</label>
+        <input type="text" id="pin" name="pin" 
+               pattern="\d{6}" maxlength="6" minlength="6" required />
+      </div>
+      <div class="form">
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required />
+      </div>
+      <div class="form" >
+        <label for="qualification">Qualification:</label>
+        <select  id="qualification" name="qualification" required>
+          <option value="">Select Qualification</option>
+          <option value="B-Tech">B-Tech</option>
+          <option value="M-Tech">M-Tech</option>
+          <option value="PhD">PhD</option>
+        </select>
+      </div>
+      <div class="form">
+        <label>Specialization:</label>
+        <div>
+          <label><input type="checkbox" name="specialization" value="Computer Science" required /> Computer Science</label><br>
+          <label><input type="checkbox" name="specialization" value="Information Technology" /> Information Technology</label><br>
+          <label><input type="checkbox" name="specialization" value="Computer Architecture" /> Computer Architecture</label><br>
+          <label><input type="checkbox" name="specialization" value="Tele Communication" /> Tele Communication</label><br>
+        </div>
+      </div>
+      <div class="form"> <label for="password">Password:</label>
+         <input type="password" id="password" name="password" pattern="^(?=.*[@$!%*?&#^])[A-Za-z\d@$!%*?&#^]{6,}$" placeholder="Minimum 6 characters with a special character" title="Password must be at least 6 characters and include one special character" required /> </div>
+      <button type="submit" class="submit-btn">Registered</button>
+    </form>
+  </main>
+</body>
+</html>

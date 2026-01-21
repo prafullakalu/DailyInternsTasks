@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            background: #f4f4f4; 
+            height: 100vh;
+            overflow: hidden;
+        }
+        header { 
+            background: white; 
+            padding: 15px 20px; 
+            border-bottom: 1px solid #ddd; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .logo { font-weight: bold; font-size: 20px; }
+        .user { display: flex; align-items: center; gap: 10px; }
+        .user-circle { width: 40px; height: 40px; background: #ccc; border-radius: 50%; }
+
+        nav { 
+            width: 180px; 
+            background: white; 
+            position: fixed; 
+            top: 70px;
+            bottom: 0;
+            border-right: 1px solid #ddd; 
+            overflow-y: auto;
+            padding-top: 20px;
+        }
+        nav a { 
+            display: block; 
+            padding: 12px 20px; 
+            text-decoration: none; 
+            color: #333; 
+        }
+        nav a.active { background: #b3e5fc; font-weight: bold; }
+
+        .content-wrapper {
+            margin-left: 180px;
+            margin-top: 70px;
+            height: calc(100vh - 70px);
+            overflow-y: auto;
+            padding: 30px;
+        }
+
+        .report-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .blue-btn {
+            background: #2196f3;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            background: white; 
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        th, td { 
+            border: 1px solid #ddd; 
+            padding: 12px; 
+            text-align: left; 
+        }
+        th { 
+            background: #e3f2fd; 
+            text-align: center; 
+        }
+        strong { font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Logo</div>
+        <div class="user">
+            <span>Super Admin</span>
+            <div class="user-circle"></div>
+        </div>
+    </header>
+
+    <nav>
+        <a href="customer.html">Customer</a>
+        <a href="invoice.html">Invoice</a>
+        <a href="report.html" class="active">Report</a>
+    </nav>
+
+    <div class="content-wrapper">
+        <div class="report-header">
+            <h2>Report</h2>
+            <button class="blue-btn">AUD($) in thousand</button>
+        </div>
+
+        <p><strong>Financial Year: 2023-2024 | Currency: AUD</strong></p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Accounts</th>
+                    <th>S1 (Feb 2023 - Jul 2023)<br>Aggregated</th>
+                    <th>S2 (Aug 2023 - Jan 2024)<br>Consolidated</th>
+                    <th>FYT Consolidated</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Revenue</strong></td><td></td><td></td><td></td></tr>
+                <tr><td>200 - S A A S Recurring</td><td>$ 100.00</td><td></td><td></td></tr>
+                <tr><td>201 - Subscription Usage</td><td></td><td></td><td></td></tr>
+                <tr><td>202 - Transaction Usage</td><td></td><td></td><td></td></tr>
+                <tr><td><strong>Total 200 - S A A S Recurring</strong></td><td>$ 100.00</td><td></td><td></td></tr>
+                <tr><td>299 - Service Revenue</td><td></td><td></td><td></td></tr>
+                <tr><td>220 - Hardware</td><td></td><td></td><td></td></tr>
+                <tr><td>226 - Other</td><td></td><td></td><td></td></tr>
+                <tr><td><strong>Total Revenue</strong></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>Cost Of Goods Sold</strong></td><td></td><td></td><td></td></tr>
+                <tr><td>300 - S A A S Cost of Sales</td><td></td><td></td><td></td></tr>
+                <tr><td>301 - Tech Support</td><td></td><td></td><td></td></tr>
+                <tr><td>302 - Dev Ops</td><td></td><td></td><td></td></tr>
+                <tr><td><strong>Total S A A S Cost of Sales</strong></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>Gross Profit</strong></td><td></td><td></td><td></td></tr>
+                <tr><td><strong>Expense</strong></td><td></td><td></td><td></td></tr>
+                <tr><td>402 - Sales Expenses</td><td></td><td></td><td></td></tr>
+                <tr><td>403 - Marketing Expenses</td><td></td><td></td><td></td></tr>
+                <tr><td><strong>Total Expense</strong></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

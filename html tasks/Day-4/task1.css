@@ -1,0 +1,57 @@
+   body {
+      margin: 0;
+      padding: 20px;
+      background-color: rgb(255, 255, 255);
+    }
+    main {
+      max-width: 800px;
+      margin: auto;
+      background-color: #cccfd1f3;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    .form {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .form label {
+      width: 150px;
+    }
+    .form input,
+    .form select,
+    .form textarea {
+      flex: 1;
+      padding: 6px;
+    }
+    .error {
+      color: red;
+      font-size: 0.9em;
+      margin-left: 150px;
+      margin-bottom: 10px;
+    }
+
+    .submit-btn {
+      background-color: green;
+      color: white;
+      font-weight: bold;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+      width: 100px;
+    }
+#heding{
+    display: block;
+    margin-left: 625px;
+    padding-bottom: 10px;
+    color: #f30a0a;
+}
+
+.sb{
+   display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      width: 100px;
+      margin-left: 35px;
+}
