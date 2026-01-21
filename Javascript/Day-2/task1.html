@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-5 JS Task-4</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js"></script>
+    <style>
+        .autocomplete-suggestions {
+            position: absolute;
+            border: 1px solid #ddd;
+            background: white;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 1000;
+            width: 100%;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .autocomplete-suggestion {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .autocomplete-suggestion:hover {
+            background: #f5f5f5;
+        }
+
+        .form-group {
+            position: relative;
+        }
+    </style>
+</head>
+<body class="bg-light">
+    <div class="container mt-4">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h1 class="mb-4">Student Form</h1>
+                <form id="studentForm">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="mobile" class="form-label " >Mobile</label>
+                            <input type="number"  class="form-control " id="mobile" name="mobile" placeholder="Mobile">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="collegeName" class="form-label">Collage Name</label>
+                            <input type="text" class="form-control" id="collegeName" name="collegeName" placeholder="Collage Name">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="cgpa" class="form-label">CGPA</label>
+                            <input type="text" class="form-control" id="cgpa" name="cgpa" placeholder="CGPA">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="branch" class="form-label">Branch Name</label>
+                            <select class="form-select" id="branch" name="branch">
+                                <option value="">Choose Branch..</option>
+                                <option value="Computer Science">Computer Science</option>
+                                <option value="Information Technology">Information Technology</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Mechanical">Mechanical</option>
+                                <option value="Civil">Civil</option>
+                                <option value="Electrical">Electrical</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="state" class="form-label">State</label>
+                                <input type="text" class="form-control" id="state" name="state" placeholder="Choose State.." autocomplete="off">
+                                <div id="stateList" class="autocomplete-suggestions"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label for="city" class="form-label">City</label>
+                                <input type="text" class="form-control" id="city" name="city" placeholder="Choose City.." autocomplete="off">
+                                <div id="cityList" class="autocomplete-suggestions"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="zip" class="form-label">Zip</label>
+                            <input type="text" class="form-control" id="zip" name="zip" placeholder="Zip">
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-12">
+                            <label for="duration" class="form-label">From To When You Studied</label>
+                            <input type="text" class="form-control" id="duration" name="duration" placeholder="e.g., 2018-2022">
+                        </div>
+                    </div>
+
+                    <div class="alert alert-warning mb-3">
+                        <p class="mb-1"><strong>Summary:</strong> Add new – A new row will be stored in lorrage.</p>
+                        <p class="mb-1"><strong>Export</strong> – All the data will be visible in the table below.</p>
+                        <p class="mb-0"><strong>Clear Storage</strong> – Removes all data stored in local storage.</p>
+                    </div>
+
+                    <div class="d-flex gap-2 mb-4">
+                        <button type="submit" class="btn btn-primary">Add New</button>
+                        <button type="button" class="btn btn-success" onclick="exportData()">Export</button>
+                        <button type="button" class="btn btn-danger" onclick="clearStorage()">Clear Storage</button>
+                    </div>
+                </form>
+
+                <div class="table-responsive" id="tableContainer" style="display: none;">
+                    <table class="table table-bordered table-striped" id="dataTable">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Name</th>
+                                <th>Mobile</th>
+                                <th>Email</th>
+                                <th>Collage Name</th>
+                                <th>CGPA</th>
+                                <th>Branch Name</th>
+                                <th>State</th>
+                                <th>City</th>
+                                <th>Zip</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <script src="task1.js"></script>
+</body>
+</html>

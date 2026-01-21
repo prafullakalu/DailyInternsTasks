@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition Form</title>
+    <style>
+        body {
+            padding: 50px;
+            background-color: #f0f0f0;
+        }
+        .formContainer {
+            background-color: #d3d3d3;
+            padding: 60px;
+           
+        }
+        .inputRow {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .inputGroup {
+            flex: 1;
+            margin: 5px;
+        }
+        input {
+            width: 100%;
+            padding: 15px;
+        }
+        .calculateButton {
+            background-color: #2196F3;
+            color: white;
+            padding: 12px 35px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="formContainer">
+        <div class="inputRow">
+            <div class="inputGroup">
+                <label for="textBox1">T1</label>
+                <input type="text" id="textBox1" onkeypress="return isNumber(event)">
+            </div>
+            <div class="inputGroup">
+                <label for="textBox2">T2</label>
+                <input type="text" id="textBox2" onkeypress="return isNumber(event)">
+            </div>
+            <div class="inputGroup">
+                <label for="textBox3">T3</label>
+                <input type="text" id="textBox3" onkeypress="return isNumberOrComma(event)">
+            </div>
+        </div>
+        <div class="answerSection">
+            <label for="textBox4">ANS</label>
+            <input type="text" id="textBox4" readonly>
+        </div>
+
+        <button class="calculateButton" onclick="calculateResult()">CALCULATE</button>
+    </div>
+
+  <script src="task1.js"></script>
+</body>
+</html>
