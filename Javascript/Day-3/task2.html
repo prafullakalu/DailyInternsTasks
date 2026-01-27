@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Satva Healthcare</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        body { background: #f4f6f9; }
+
+        .formCard {
+            background: #fff;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+        }
+
+        .error { color: red; font-size: 14px; }
+
+        .hoverDropdown:hover > .dropdown-menu { display: block; }
+
+        .megaMenu {
+            left: 0;
+            right: 0;
+            padding: 20px;
+            border-top: 3px solid #0d6efd;
+        }
+
+        .megaMenu p { cursor: pointer; margin-bottom: 6px; }
+        .megaMenu p:hover { color: #0d6efd; }
+
+        
+        .noSpinner::-webkit-inner-spin-button,
+        .noSpinner::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        } 
+
+        .typeaheadList {
+            position: absolute;
+            width: 100%;
+            z-index: 1050;
+            max-height: 180px;
+            overflow-y: auto;
+        }
+    </style>
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+    <div class="container">
+
+        <a class="navbar-brand fw-bold">SATVA</a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-center" id="mainNavbar">
+            <ul class="navbar-nav gap-3">
+
+                <li class="nav-item dropdown hoverDropdown">
+                    <a class="nav-link dropdown-toggle">Work</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Portfolio</a></li>
+                        <li><a class="dropdown-item">Case Studies</a></li>
+                        <li><a class="dropdown-item">Testimonials</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown hoverDropdown position-static">
+                    <a class="nav-link dropdown-toggle">Services</a>
+                    <div class="dropdown-menu megaMenu w-100">
+                        <div class="row">
+                            <div class="col-md-2">
+                                <h6>Pharmaceutical</h6>
+                                <p>>Medicine Search</p>
+                                <p>>Buy Medicine</p>
+                                <p>>Locate Medical Store</p>
+                            </div>
+                            <div class="col-md-2">
+                                <h6>Disease</h6>
+                                <p>>Physical</p>
+                                <p>>Internal</p>
+                                <p>>Mental</p>
+                            </div>
+                            <div class="col-md-2">
+                                <h6>Medical</h6>
+                                <p>>Search Hospitals</p>
+                                <p>>Treatment Details</p>
+                            </div>
+                            <div class="col-md-2">
+                                <h6>Self Care</h6>
+                                <p>>Medicine Reminder</p>
+                                <p>>Health Tips</p>
+                            </div>
+                            <div class="col-md-2">
+                                <h6>Hire</h6>
+                                <p>>Book Nursing Staff</p>
+                                <p>>Book Ambulance</p>
+                                <p>>Book Doctor</p>
+                                <p>>Book Appointment</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="nav-item dropdown hoverDropdown">
+                    <a class="nav-link dropdown-toggle">Company</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item">Who We Are</a></li>
+                        <li><a class="dropdown-item">Motive & Motivation</a></li>
+                        <li><a class="dropdown-item">Donate Us</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown hoverDropdown" ><a class="nav-link dropdown-toggle">Sales Inquiry</a></li>
+
+            </ul>
+        </div>
+
+        <button class="btn btn-primary d-none d-lg-block">Contact Us</button>
+    </div>
+</nav>
+
+
+<div class="container my-5">
+    <h4 class="text-center mb-4">BOOK NURSING STAFF</h4>
+
+    <div class="formCard">
+        <form id="staffForm">
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label>Patient Name</label>
+                    <input type="text" name="patientName" class="form-control" placeholder="Enter patient name">
+                </div>
+
+                <div class="col-md-4">
+                    <label>Mobile Number</label>
+                    <input type="number" name="mobileNumber" class="form-control noSpinner"
+                           placeholder="Enter 10 digit mobile number"
+                           oninput="this.value=this.value.slice(0,10)">
+                </div>
+
+                <div class="col-md-4">
+                    <label>Diseases</label>
+                    <select name="diseases" class="form-control" multiple>
+                        <option>Diabetes</option>
+                        <option>BP</option>
+                        <option>Asthma</option>
+                        <option>Heart</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label>Service Date</label>
+                    <input type="date" name="serviceDate" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label>No of Staff</label>
+                    <input type="number" name="staffCount" class="form-control noSpinner"
+                           placeholder="Enter number of staff">
+                </div>
+
+                <div class="col-md-4 position-relative">
+                    <label>City</label>
+                    <input type="text" id="cityInput" name="city" class="form-control"
+                           placeholder="Start typing city name" autocomplete="off">
+                    <ul id="cityList" class="list-group typeaheadList"></ul>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label>Address</label>
+                <textarea name="address" class="form-control" placeholder="Enter complete address"></textarea>
+            </div>
+
+            <div class="text-end">
+                <button class="btn btn-primary">Book Staff</button>
+                <button type="button" id="clearBtn" class="btn btn-warning">Clear</button>
+            </div>
+
+        </form>
+    </div>
+    <div class="mt-5">
+        <h5>Booked Records</h5>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Patient Name</th>
+                    <th>Mobile</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody id="recordTable"></tbody>
+        </table>
+    </div>
+</div>
+
+<script src="task2.js"></script>
+
+</body>
+</html>
