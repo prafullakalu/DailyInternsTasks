@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Country State City - jQuery AJAX</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <style>
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .container {
+            background: #ffffff;
+            padding: 30px 35px;
+            border-radius: 12px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 14px;
+            outline: none;
+            transition: all 0.3s ease;
+            background-color: #fff;
+        }
+
+        select:focus {
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+        }
+
+        select:disabled {
+            background-color: #f1f1f1;
+            cursor: not-allowed;
+            color: #999;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-bottom: 6px;
+            font-size: 13px;
+            color: #555;
+        }
+
+        .footer-note {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Country → State → City</h2>
+
+    <div class="form-group">
+        <label for="countrySelect">Country</label>
+        <select id="countrySelect">
+            <option value="">Select Country</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="stateSelect">State</label>
+        <select id="stateSelect" disabled>
+            <option value="">Select State</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="citySelect">City</label>
+        <select id="citySelect" disabled>
+            <option value="">Select City</option>
+        </select>
+    </div>
+
+    <div class="footer-note">
+        Powered by jQuery AJAX
+    </div>
+</div>
+
+<script src="task1.js"></script>
+
+</body>
+</html>
