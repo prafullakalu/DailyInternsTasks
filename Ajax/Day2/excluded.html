@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluded Transactions</title>
+    <link rel="stylesheet" href="excluded.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1>Excluded Transactions</h1>
+            <div class="header-actions">
+                <button class="btn btn-back" onclick="goToDashboard()">← Back to Dashboard</button>
+                <button class="btn" style="background: rgba(255, 255, 255, 0.3); color: white;" onclick="window.location.href='reconciled.html'">View Reconciled</button>
+                <button class="btn btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>Excluded Transactions</h2>
+            <p>Manage transactions that are excluded from reconciliation. You can include them back when needed.</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-label">Total Excluded</div>
+                <div class="stat-value" id="totalExcluded">0</div>
+            </div>
+        </div>
+
+        <div class="control-bar-excluded">
+            <div class="company-labels-excluded">
+                <span>Company 1 (Excluded)</span>
+                <span>Available C2 (Excluded)</span>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 0 15px;">
+            <div></div>
+            <div style="display: flex; gap: 10px;">
+                <button class="btn-include" id="includeBtn" onclick="includeTransactions()" style="display: none;">
+                    Include
+                </button>
+            </div>
+        </div>
+
+        <div class="excluded-grid">
+            <div class="excluded-column" id="c1-excluded-column">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #10b981;">
+                    <h3 style="margin: 0; color: #047857; font-weight: 700;">Company 1 Excluded</h3>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="btn-action" id="c1IncludeBtn" onclick="includeFromCompany1()" style="display: none; background: #10b981; color: white; padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600;">
+                            Include
+                        </button>
+                    </div>
+                </div>
+                <div id="c1ExcludedList" class="excluded-list">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📪</div>
+                        <h3>No Excluded</h3>
+                        <p>Transactions from Company 1</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="excluded-column" id="c2-excluded-column">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 10px; border-bottom: 2px solid #3b82f6;">
+                    <h3 style="margin: 0; color: #1e40af; font-weight: 700;">Available C2 Excluded</h3>
+                    <div style="display: flex; gap: 8px;">
+                        <button class="btn-action" id="c2IncludeBtn" onclick="includeFromCompany2()" style="display: none; background: #3b82f6; color: white; padding: 6px 12px; border: none; border-radius: 4px; cursor: pointer; font-size: 12px; font-weight: 600;">
+                            Include
+                        </button>
+                    </div>
+                </div>
+                <div id="c2ExcludedList" class="excluded-list">
+                    <div class="empty-state">
+                        <div class="empty-state-icon">📪</div>
+                        <h3>No Excluded</h3>
+                        <p>Transactions from Available C2</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="excluded.js"></script>
+</body>
+</html>

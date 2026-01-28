@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Transaction Reconciliation</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Transaction Reconciliation</h1>
+        <div class="header-actions">
+            <span id="userInfo" style="color: white; margin-right: 15px;"></span>
+            <button class="btn" style="background: rgba(255, 255, 255, 0.3); color: white;" onclick="window.location.href='excluded.html'">Excluded Transactions</button>
+            <button class="btn" style="background: rgba(255, 255, 255, 0.3); color: white;" onclick="window.location.href='reconciled.html'">View Reconciled</button>
+            <button class="btn btn-logout" onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="page-header">Intercompany Transaction</div>
+
+        <div class="control-bar">
+            <div class="company-labels">
+                <span>Company 1</span>
+                <span>Matching</span>
+                <span>Stack</span>
+                <span>Company 2</span>
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 0 15px;">
+            <div class="totals">
+                <div class="total-item">Debit: <span id="totalDebit">1000</span></div>
+                <div class="total-item">Credit: <span id="totalCredit">0</span></div>
+            </div>
+            <div style="display: flex; gap: 10px;">
+                <button class="exclude-btn" id="excludeBtn" onclick="excludeTransactions()" style="display: none;">
+                    Exclude
+                </button>
+                <button class="reconcile-btn" id="reconcileBtn" onclick="reconcileAll()">
+                    Reconciliation
+                </button>
+            </div>
+        </div>
+
+        <div id="reconciliationGrid" class="reconciliation-grid">
+            <div class="loading">Loading transactions...</div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.0/Sortable.min.js"></script>
+    <script src="dashboard.js"></script>
+</body>
+</html>

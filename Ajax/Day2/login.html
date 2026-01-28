@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Transaction Reconciliation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .login-container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .login-header h1 {
+            color: #333;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .login-header p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 12px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .login-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .alert {
+            padding: 12px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .alert-error {
+            background: #fee;
+            color: #c33;
+            border: 1px solid #fcc;
+        }
+
+        .alert-success {
+            background: #efe;
+            color: #3c3;
+            border: 1px solid #cfc;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <h1>Transaction Reconciliation</h1>
+            <p>Please login to continue</p>
+        </div>
+
+        <div id="alert" class="alert"></div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <div class="error-message" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" >
+            </div>
+
+            <button type="submit" class="login-btn" id="loginBtn">Login</button>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // Email validation
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Show alert
+        function showAlert(message, type) {
+            const alert = $('#alert');
+            alert.removeClass('alert-error alert-success');
+            alert.addClass('alert-' + type);
+            alert.text(message);
+            alert.fadeIn();
+
+            setTimeout(function() {
+                alert.fadeOut();
+            }, 4000);
+        }
+
+        $(document).ready(function() {
+            // Don't auto-redirect - let user login again if they want
+            // This prevents the redirect loop issue
+
+            // Form validation
+            $('#email').on('blur', function() {
+                const email = $(this).val().trim();
+                if (email && !isValidEmail(email)) {
+                    $('#emailError').show();
+                    $(this).css('border-color', '#e74c3c');
+                } else {
+                    $('#emailError').hide();
+                    $(this).css('border-color', '#ddd');
+                }
+            });
+
+            // Form submission
+            $('#loginForm').on('submit', function(e) {
+                e.preventDefault();
+
+                const email = $('#email').val().trim();
+                const password = $('#password').val();
+
+                // Validate email
+                if (!email) {
+                    showAlert('Please enter your email address', 'error');
+                    return;
+                }
+
+                if (!isValidEmail(email)) {
+                    showAlert('Please enter a valid email address', 'error');
+                    $('#emailError').show();
+                    return;
+                }
+
+                // Disable button
+                const loginBtn = $('#loginBtn');
+                loginBtn.prop('disabled', true).text('Logging in...');
+
+                // API call
+                $.ajax({
+                    url: 'http://trainingsampleapi.satva.solutions/api/auth/login',
+                    type: 'POST',
+                    contentType: 'application/json',
+                    data: JSON.stringify({
+                        Email: email,
+                        Password: password
+                    }),
+                    success: function(response) {
+                        // Store token
+                        localStorage.setItem('authToken', response.token);
+                        localStorage.setItem('userEmail', email);
+
+                        showAlert('Login successful! Redirecting...', 'success');
+
+                        setTimeout(function() {
+                            window.location.href = 'dashboard.html';
+                        }, 1000);
+                    },
+                    error: function(xhr) {
+                        let errorMessage = 'Login failed. Please check your credentials.';
+                        
+                        if (xhr.responseJSON && xhr.responseJSON.message) {
+                            errorMessage = xhr.responseJSON.message;
+                        }
+
+                        showAlert(errorMessage, 'error');
+                        loginBtn.prop('disabled', false).text('Login');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

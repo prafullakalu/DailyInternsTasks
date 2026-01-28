@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reconciled Transactions</title>
+    <link rel="stylesheet" href="reconciled.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-content">
+            <h1>Reconciled Transactions</h1>
+            <div class="header-actions">
+                <button class="btn btn-back" onclick="goToDashboard()">← Back to Dashboard</button>
+                <button class="btn" style="background: rgba(255, 255, 255, 0.3); color: white;" onclick="goToExcluded()">View Excluded</button>
+                <button class="btn btn-logout" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="page-header">
+            <h2>Successfully Reconciled Transactions</h2>
+            <p>View and manage all reconciled transaction pairs</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-label">Total Reconciled</div>
+                <div class="stat-value" id="totalReconciled">0</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Amount</div>
+                <div class="stat-value" id="totalAmount">$0.00</div>
+            </div>
+        </div>
+
+        <div class="reconciled-section">
+            <div class="section-header">
+                <h3>Reconciled Pairs</h3>
+                <div class="bulk-actions">
+                    <button class="btn-unreconcile" id="unreconcileBtn" onclick="unreconcileSelected()">
+                        Unreconcile Selected
+                    </button>
+                </div>
+            </div>
+            <div id="reconciledList" class="reconciled-list">
+                <div class="empty-state">
+                    <div class="empty-state-icon">📊</div>
+                    <h3>Loading reconciled transactions...</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="reconciled.js"></script>
+</body>
+</html>
