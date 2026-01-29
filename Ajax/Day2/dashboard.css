@@ -231,12 +231,54 @@ body {
 }
 
 .match-row {
-    display: flex;
+    border: 3px solid #7ebad4;
+    border-radius: 8px;
     flex-direction: column;
     gap: 10px;
     min-height: 120px;
-    width: 100%;
+    width: 100%;    
     flex-shrink: 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Hover effect to highlight the entire row */
+.match-row:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.2);
+}
+
+/* Highlight all elements in the same row */
+.row-highlighted {
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3) !important;
+    z-index: 10;
+}
+
+#c1-container .row-highlighted {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8ecff 100%) !important;
+}
+
+/* Remove border from Company 1 column only */
+#c1-container .match-row {
+    border: none;
+    background: transparent;
+}
+
+#c1-container .match-row:hover {
+    background: linear-gradient(135deg, #f8f9ff 0%, #f0f4ff 100%);
+    border-radius: 8px;
+}
+
+/* Green state - Valid for reconciliation */
+.match-row.valid {
+    border-color: #10b981 !important;
+    background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+}
+
+/* Red state - Invalid (amounts don't match) */
+.match-row.invalid {
+    border-color: #ef4444 !important;
+    background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);
 }
 
 .column {

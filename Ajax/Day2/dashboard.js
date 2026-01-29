@@ -20,12 +20,14 @@ $(document).ready(function() {
 
 function checkAndRefreshAvailableC2() {
     const reconciledData = JSON.parse(localStorage.getItem('reconciledTransactions') || '[]');
+    const excludedCompany2 = JSON.parse(localStorage.getItem('excludedCompany2') || '[]');
     const reconciledIds = reconciledData.flatMap(r => 
         [String(r.company1Id), ...(r.company2Ids || []).map(String)]
     );
 
     const c2Available = toCompanyTransactions.filter((t, i) => 
-        !reconciledIds.includes(String(t.transactionId || i))
+        !reconciledIds.includes(String(t.transactionId || i)) &&
+        !excludedCompany2.includes(String(t.transactionId || i))
     );
 
     if (c2Available.length === 0) {
@@ -73,24 +75,25 @@ function loadTransactions() {
 function initializeMatchRows() {
     // Get reconciled and excluded data
     const reconciledData = JSON.parse(localStorage.getItem('reconciledTransactions') || '[]');
-    const excludedCompany1 = JSON.parse(localStorage.getItem('excludedCompany1') || '[]');
-    const excludedCompany2 = JSON.parse(localStorage.getItem('excludedCompany2') || '[]');
+    const excludedCompany1 = JSON.parse(localStorage.getItem('excludedCompany1') || '[]').map(String);
+    const excludedCompany2 = JSON.parse(localStorage.getItem('excludedCompany2') || '[]').map(String);
     
     const reconciledIds = reconciledData.flatMap(r => 
         [String(r.company1Id), ...(r.company2Ids || []).map(String)]
     );
 
     // Filter available transactions (exclude reconciled and excluded ones)
-    const c1Available = fromCompanyTransactions.filter((t, i) => 
-        !reconciledIds.includes(String(t.transactionId || i)) &&
-        !excludedCompany1.includes(String(t.transactionId || i))
+    const c1Available = fromCompanyTransactions.filter(t => 
+        !reconciledIds.includes(String(t.transactionId)) &&
+        !excludedCompany1.includes(String(t.transactionId))
     );
-    const c2Available = toCompanyTransactions.filter((t, i) => 
-        !reconciledIds.includes(String(t.transactionId || i)) &&
-        !excludedCompany2.includes(String(t.transactionId || i))
+    const c2Available = toCompanyTransactions.filter(t => 
+        !reconciledIds.includes(String(t.transactionId)) &&
+        !excludedCompany2.includes(String(t.transactionId))
     );
 
     console.log('Available C1:', c1Available.length, 'C2:', c2Available.length);
+    console.log('Excluded C1:', excludedCompany1.length, 'C2:', excludedCompany2.length);
 
     // Create rows - one for each C1 transaction
     matchRows = c1Available.map((c1Trans, index) => ({
@@ -134,8 +137,31 @@ function renderGrid() {
         const c2Total = row.c2Transactions.reduce((sum, t) => sum + Math.abs(Number(t.amount || 0)), 0);
         const isMatched = Math.abs(c1Total - c2Total) < 0.01 && c1Total > 0 && c2Total > 0;
         
+        // Determine border color based on status
+        let borderColor = '#7ebad4'; // Default blue
+        let borderStyle = 'border: 3px solid ' + borderColor;
+        let bgStyle = '';
+        let statusLabel = '';
+        
+        if (row.c2Transactions.length > 0) {
+            // Has C2 transactions dropped
+            if (isMatched) {
+                borderColor = '#10b981'; // Green - valid for reconciliation
+                bgStyle = 'background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);';
+                statusLabel = '<div style="background: #10b981; color: white; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; text-align: center; margin-bottom: 8px;">✓ READY TO RECONCILE</div>';
+            } else {
+                borderColor = '#ef4444'; // Red - invalid (amounts don't match)
+                bgStyle = 'background: linear-gradient(135deg, #fee2e2 0%, #fecaca 100%);';
+                statusLabel = '<div style="background: #ef4444; color: white; padding: 4px 8px; border-radius: 4px; font-size: 11px; font-weight: 700; text-align: center; margin-bottom: 8px;">⚠ AMOUNTS DON\'T MATCH</div>';
+            }
+            borderStyle = 'border: 3px solid ' + borderColor + '; ' + bgStyle;
+        }
+
+        // Row number badge
+        const rowBadge = `<div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 12px; border-radius: 8px; font-size: 13px; font-weight: 700; margin-bottom: 10px; text-align: center; box-shadow: 0 2px 6px rgba(102, 126, 234, 0.4);">Row ${index + 1}</div>`;
 
         c1Html += `<div class="match-row" data-row="${index}" id="c1-row-${index}">
+            ${rowBadge}
             ${row.c1Transactions.length === 0 
                 ? '<div class="drop-zone">Drop here</div>'
                 : row.c1Transactions.map(t => createTransactionCard(t, 'c1', index)).join('')
@@ -143,16 +169,31 @@ function renderGrid() {
         </div>`;
         
         
-        matchingHtml += `<div style="display: flex; align-items: center; justify-content: center; background: #e3f2fd; border-radius: 8px; padding: 10px; min-height: 120px;">
-            <div style="text-align: center; font-size: 36px; color: #2196f3;">${isMatched ? '✓' : '⇄'}</div>
+        matchingHtml += `<div style="display: flex; align-items: center; justify-content: center; background: ${isMatched ? 'linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%)' : 'linear-gradient(135deg, #e0f2fe 0%, #e0e7ff 100%)'}; border-radius: 10px; padding: 12px; min-height: 120px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: relative;">
+            <div style="position: absolute; top: 8px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.1); color: rgba(0,0,0,0.5); padding: 3px 8px; border-radius: 4px; font-size: 10px; font-weight: 700;">Row ${index + 1}</div>
+            <div style="text-align: center; font-size: 36px; color: ${isMatched ? '#10b981' : '#667eea'}; font-weight: 700;">${isMatched ? '✓' : '⇄'}</div>
         </div>`;
         
       
-        c2Html += `<div class="match-row" data-row="${index}" id="c2-row-${index}">
+        c2Html += `<div class="match-row" data-row="${index}" id="c2-row-${index}" style="${borderStyle}">
+            ${rowBadge}
+            ${statusLabel}
             ${row.c2Transactions.length === 0 
-                ? '<div class="drop-zone">Drop here</div>'
+                ? `<div class="drop-zone" style="min-height: 60px; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 5px;">
+                    <div style="font-size: 14px; color: #667eea; font-weight: 600;">Drop Row ${index + 1} matches here</div>
+                    <div style="font-size: 11px; color: #999;">Drag from Available C2 →</div>
+                   </div>`
                 : row.c2Transactions.map(t => createTransactionCard(t, 'c2', index)).join('')
             }
+            ${row.c2Transactions.length > 0 ? `<div style="margin-top: 8px; padding: 8px; background: rgba(0,0,0,0.05); border-radius: 6px; font-size: 12px; display: flex; justify-content: space-between;">
+                <span style="font-weight: 600;">C1 Total:</span> <span style="color: #667eea; font-weight: 700;">$${c1Total.toFixed(2)}</span>
+            </div>
+            <div style="padding: 8px; background: rgba(0,0,0,0.05); border-radius: 6px; font-size: 12px; display: flex; justify-content: space-between;">
+                <span style="font-weight: 600;">Stack Total:</span> <span style="color: ${isMatched ? '#10b981' : '#ef4444'}; font-weight: 700;">$${c2Total.toFixed(2)}</span>
+            </div>
+            <div style="padding: 8px; background: ${isMatched ? 'rgba(16, 185, 129, 0.1)' : 'rgba(239, 68, 68, 0.1)'}; border-radius: 6px; font-size: 12px; display: flex; justify-content: space-between; border: 1px solid ${isMatched ? '#10b981' : '#ef4444'};">
+                <span style="font-weight: 700;">Difference:</span> <span style="color: ${isMatched ? '#10b981' : '#ef4444'}; font-weight: 700;">$${Math.abs(c1Total - c2Total).toFixed(2)}</span>
+            </div>` : ''}
         </div>`;
     });
     
@@ -163,34 +204,6 @@ function renderGrid() {
     grid.html(c1Html + matchingHtml + c2Html + c2AvailableHtml);
 
     initializeDragDrop();
-}
-
-function createMatchRow(row, rowIndex) {
-    const c1Total = row.c1Transactions.reduce((sum, t) => sum + Math.abs(Number(t.amount || 0)), 0);
-    const c2Total = row.c2Transactions.reduce((sum, t) => sum + Math.abs(Number(t.amount || 0)), 0);
-    const isMatched = Math.abs(c1Total - c2Total) < 0.01 && c1Total > 0 && c2Total > 0;
-
-    return `
-        <div class="match-row" data-row="${rowIndex}">
-            <div class="column c1-column" id="c1-row-${rowIndex}">
-                ${row.c1Transactions.length === 0 
-                    ? '<div class="drop-zone">Drop here</div>'
-                    : row.c1Transactions.map(t => createTransactionCard(t, 'c1', rowIndex)).join('')
-                }
-            </div>
-            
-            <div class="middle-column">
-                <div class="match-indicator">${isMatched ? '✓' : '⇄'}</div>
-            </div>
-            
-            <div class="column c2-column" id="c2-row-${rowIndex}">
-                ${row.c2Transactions.length === 0 
-                    ? '<div class="drop-zone">Drop here</div>'
-                    : row.c2Transactions.map(t => createTransactionCard(t, 'c2', rowIndex)).join('')
-                }
-            </div>
-        </div>
-    `;
 }
 
 function createTransactionCard(t, company, rowIndex) {
@@ -212,12 +225,12 @@ function createTransactionCard(t, company, rowIndex) {
         t.lines.forEach(line => {
             const name = line.accountName || line.account || 'Account';
             const amt = Math.abs(Number(line.amount || 0));
-            const isDebit = company === 'c1';
+            const isDebit = Number(line.amount || 0) < 0;
             
             detailsHtml += `
                 <div class="details-cell">${name}</div>
-                <div class="details-cell debit-val">${isDebit ? amt.toFixed(0) : ''}</div>
-                <div class="details-cell credit-val">${!isDebit ? amt.toFixed(0) : ''}</div>
+                <div class="details-cell debit-val">${isDebit ? amt.toFixed(2) : ''}</div>
+                <div class="details-cell credit-val">${!isDebit ? amt.toFixed(2) : ''}</div>
             `;
         });
         
@@ -226,24 +239,24 @@ function createTransactionCard(t, company, rowIndex) {
 
     return `
         <div class="transaction-card" 
-             data-id="${id}" 
+             data-id="${id}"
              data-company="${company}"
-             data-row="${rowIndex}"
              data-amount="${amount}"
-             data-unique-id="${uniqueId}">
-            <div class="card-header">
-                <div style="display: flex; align-items: center; gap: 8px; flex: 1;">
-                    <input type="checkbox" class="transaction-checkbox" data-tx-id="${id}" onchange="toggleTransactionSelection(this, '${id}')">
-                    <div>
-                        <span class="card-type">${type}: ${date}</span>
-                    </div>
+             data-type="${type}">
+            <div class="card-header" style="display: flex; gap: 8px; align-items: center;">
+                <input type="checkbox" 
+                       class="transaction-checkbox" 
+                       data-tx-id="${id}" 
+                       data-company="${company}" 
+                       onchange="toggleTransactionSelection(this, '${id}')" 
+                       style="flex-shrink: 0;">
+                <div style="flex: 1;">
+                    <span class="card-type">${type}: ${date}</span>
                 </div>
                 <span class="card-amount">$${amount.toFixed(2)}</span>
             </div>
             ${detailsHtml ? `
-                <button class="expand-btn" onclick="toggleDetails(event, '${uniqueId}')">
-                    ▼ Details
-                </button>
+                <button class="expand-btn" onclick="toggleDetails(event, '${uniqueId}')">▼ Details</button>
                 <div id="details-${uniqueId}" class="card-details">
                     ${detailsHtml}
                 </div>
@@ -260,15 +273,15 @@ function toggleDetails(event, id) {
 function initializeDragDrop() {
    
     const reconciledData = JSON.parse(localStorage.getItem('reconciledTransactions') || '[]');
-    const excludedTransactions = JSON.parse(localStorage.getItem('excludedTransactions') || '[]');
+    const excludedCompany2 = JSON.parse(localStorage.getItem('excludedCompany2') || '[]').map(String);
     
     const reconciledIds = reconciledData.flatMap(r => 
         [String(r.company1Id), ...(r.company2Ids || []).map(String)]
     );
 
-    const c2Available = toCompanyTransactions.filter((t, i) => 
-        !reconciledIds.includes(String(t.transactionId || i)) &&
-        !excludedTransactions.includes(String(t.transactionId || i))
+    const c2Available = toCompanyTransactions.filter(t => 
+        !reconciledIds.includes(String(t.transactionId)) &&
+        !excludedCompany2.includes(String(t.transactionId))
     );
 
     // Populate the 4th column with available C2 transactions
@@ -295,6 +308,19 @@ function initializeDragDrop() {
             }
         });
     });
+    
+    // Add hover effect to highlight connected rows
+    addRowHighlighting();
+}
+
+function addRowHighlighting() {
+    // When hovering over any element in a row, highlight all connected elements
+    $('.match-row').on('mouseenter', function() {
+        const rowIndex = $(this).data('row');
+        $(`[data-row="${rowIndex}"]`).addClass('row-highlighted');
+    }).on('mouseleave', function() {
+        $('.match-row').removeClass('row-highlighted');
+    });
 }
 
 function createDraggableCard(t) {
@@ -306,11 +332,16 @@ function createDraggableCard(t) {
     return `
         <div class="transaction-card" 
              data-id="${id}"
-             data-company="c2"
+             data-company="c2-available"
              data-amount="${amount}"
              data-type="${type}">
             <div class="card-header" style="display: flex; gap: 8px; align-items: center;">
-                <input type="checkbox" class="transaction-checkbox" data-tx-id="${id}" data-company="c2" onchange="toggleTransactionSelection(this, '${id}')" style="flex-shrink: 0;">
+                <input type="checkbox" 
+                       class="transaction-checkbox" 
+                       data-tx-id="${id}" 
+                       data-company="c2-available" 
+                       onchange="toggleTransactionSelection(this, '${id}')" 
+                       style="flex-shrink: 0;">
                 <div style="flex: 1;">
                     <span class="card-type">${type}: ${date}</span>
                 </div>
@@ -341,6 +372,7 @@ function handleDrop(evt, rowIndex) {
         }
         
         renderGrid();
+        updateTotals(); // Update Credit total after dropping
     }
 }
 
@@ -379,18 +411,31 @@ function reconcileAll() {
         renderGrid();
         
        
-        alert(`✅ ${reconciledCount} transaction(s) reconciled!`);
+        alert(`✅ ${reconciledCount} transaction(s) reconciled successfully!`);
     } else {
-        alert('No balanced transactions to reconcile');
+        alert('⚠️ No balanced transactions to reconcile. Make sure amounts match.');
     }
 }
 
 function updateTotals() {
-    const c1Total = matchRows.reduce((sum, row) => 
-        sum + row.c1Transactions.reduce((s, t) => s + Math.abs(Number(t.amount || 0)), 0), 0
-    );
-    $('#totalDebit').text(c1Total.toFixed(0));
-    $('#totalCredit').text('0');
+    // Live tracker: Start at 0,0
+    // Only count rows where BOTH C1 and C2 have been matched (C2 dropped in Stack)
+    // This way it tracks what's actually being reconciled in real-time
+    let totalDebit = 0;
+    let totalCredit = 0;
+    
+    matchRows.forEach(row => {
+        // Only count if C2 has been dropped in this row's Stack column
+        if (row.c2Transactions.length > 0) {
+            // Count C1 amount for this row
+            totalDebit += row.c1Transactions.reduce((s, t) => s + Math.abs(Number(t.amount || 0)), 0);
+            // Count C2 amount for this row
+            totalCredit += row.c2Transactions.reduce((s, t) => s + Math.abs(Number(t.amount || 0)), 0);
+        }
+    });
+    
+    $('#totalDebit').text(totalDebit.toFixed(2));
+    $('#totalCredit').text(totalCredit.toFixed(2));
 }
 
 function logout() {
@@ -399,19 +444,16 @@ function logout() {
 }
 
 function toggleTransactionSelection(checkbox, transactionId) {
+    const companyAttr = $(checkbox).data('company');
+    
     if (checkbox.checked) {
         if (!selectedTransactions.includes(transactionId)) {
             selectedTransactions.push(transactionId);
-            
-          
-            const companyAttr = $(checkbox).data('company');
-            const card = $(checkbox).closest('.transaction-card');
-            const company = companyAttr || card.data('company');
-            selectedTransactionColumns[transactionId] = company; 
+            selectedTransactionColumns[transactionId] = companyAttr;
         }
     } else {
         selectedTransactions = selectedTransactions.filter(id => id !== transactionId);
-        delete selectedTransactionColumns[transactionId]; // Remove column info
+        delete selectedTransactionColumns[transactionId];
     }
     updateExcludeButton();
 }
@@ -421,7 +463,7 @@ function updateExcludeButton() {
     if (excludeBtn) {
         if (selectedTransactions.length > 0) {
             excludeBtn.style.display = 'inline-block';
-            excludeBtn.textContent = `Exclude `;
+            excludeBtn.textContent = `Exclude (${selectedTransactions.length})`;
         } else {
             excludeBtn.style.display = 'none';
         }
@@ -438,14 +480,15 @@ function excludeTransactions() {
     const excludedCompany2 = JSON.parse(localStorage.getItem('excludedCompany2') || '[]');
 
     selectedTransactions.forEach(txId => {
-        
         const selectedCompany = selectedTransactionColumns[txId];
 
-        if (selectedCompany === 'c2') {
+        // c1 = Company 1, should go to excludedCompany1
+        // c2 or c2-available = Company 2, should go to excludedCompany2
+        if (selectedCompany === 'c1') {
             if (!excludedCompany1.includes(String(txId))) {
                 excludedCompany1.push(String(txId));
             }
-        } else if (selectedCompany === 'c1') {
+        } else if (selectedCompany === 'c2' || selectedCompany === 'c2-available') {
             if (!excludedCompany2.includes(String(txId))) {
                 excludedCompany2.push(String(txId));
             }
@@ -456,7 +499,7 @@ function excludeTransactions() {
     localStorage.setItem('excludedCompany1', JSON.stringify(excludedCompany1));
     localStorage.setItem('excludedCompany2', JSON.stringify(excludedCompany2));
     
-    alert(`✅ ${selectedTransactions.length} transaction(s) excluded!`);
+    alert(`✅ ${selectedTransactions.length} transaction(s) excluded successfully!`);
     
   
     selectedTransactions = [];

@@ -168,11 +168,20 @@ function toggleExcludedSelection(cb) {
 
 
 function updateIncludeButtons() {
-    $('#c1IncludeBtn').toggle(selectedCompany1Transactions.length)
-        .text(`Include (${selectedCompany1Transactions.length})`);
-
-    $('#c2IncludeBtn').toggle(selectedCompany2Transactions.length)
-        .text(`Include (${selectedCompany2Transactions.length})`);
+    const c1Btn = $('#c1IncludeBtn');
+    const c2Btn = $('#c2IncludeBtn');
+    
+    if (selectedCompany1Transactions.length > 0) {
+        c1Btn.show().text(`Include (${selectedCompany1Transactions.length})`);
+    } else {
+        c1Btn.hide();
+    }
+    
+    if (selectedCompany2Transactions.length > 0) {
+        c2Btn.show().text(`Include (${selectedCompany2Transactions.length})`);
+    } else {
+        c2Btn.hide();
+    }
 }
 
 
