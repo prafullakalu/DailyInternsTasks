@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chart of Accounts Standardizer</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Login Container (Initially Visible) -->
+    <div id="loginContainer" class="login-wrapper">
+        <div class="login-card">
+            <div class="login-header">
+                <i class="fas fa-bolt text-danger"></i>
+                <h2>Standardizer</h2>
+                <p>Chart of Accounts System</p>
+            </div>
+            
+            <form id="loginForm" class="login-form">
+                <div class="form-group mb-3">
+                    <label for="emailInput" class="form-label">Gmail Address</label>
+                    <input type="email" class="form-control" id="emailInput" 
+                           placeholder="your.email@gmail.com" required>
+                    <small class="text-muted">Must be a valid Gmail address</small>
+                </div>
+                
+                <div class="form-group mb-3">
+                    <label for="passwordInput" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="passwordInput" 
+                           placeholder="Enter your password" required minlength="6">
+                    <small class="text-muted">Minimum 6 characters</small>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-100 mb-2">
+                    <i class="fas fa-sign-in-alt me-2"></i>Login
+                </button>
+                
+                <div class="form-text text-center">
+                    <p class="mb-0 small">Demo Credentials:</p>
+                    <p class="small text-muted">Email: demo@gmail.com | Password: demo123</p>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Main Application (Hidden Initially) -->
+    <div id="mainApp" style="display: none;">
+        <!-- Top Navigation Bar -->
+        <nav class="navbar navbar-light bg-white border-bottom sticky-top">
+            <div class="container-fluid px-4">
+                <div class="d-flex align-items-center">
+                    <div class="logo-container">
+                        <i class="fas fa-bolt text-danger"></i>
+                        <span class="logo-text">Standardizer</span>
+                    </div>
+                    
+                    <!-- Main Menu Tabs -->
+                    <div class="main-menu-tabs ms-5">
+                        <ul class="nav nav-pills" id="mainMenuTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="assets-tab" data-bs-toggle="pill" 
+                                        data-category="Assets" type="button" role="tab">
+                                    Assets
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="liability-tab" data-bs-toggle="pill" 
+                                        data-category="Liability" type="button" role="tab">
+                                    Liability
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="equity-tab" data-bs-toggle="pill" 
+                                        data-category="Equity/Capital" type="button" role="tab">
+                                    Equity/Capital
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="revenue-tab" data-bs-toggle="pill" 
+                                        data-category="Revenue" type="button" role="tab">
+                                    Revenue
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="cogs-tab" data-bs-toggle="pill" 
+                                        data-category="CoGS" type="button" role="tab">
+                                    CoGS
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="labor-tab" data-bs-toggle="pill" 
+                                        data-category="Labor Expense" type="button" role="tab">
+                                    Expense
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="other-tab" data-bs-toggle="pill" 
+                                        data-category="Other Revenue & Expense" type="button" role="tab">
+                                    Other Revenue & Expense
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="d-flex align-items-center">
+                    <span class="me-3 text-muted small" id="userDisplay">User</span>
+                    <i class="fas fa-bell me-3 text-muted"></i>
+                    <div class="user-avatar">
+                        <i class="fas fa-user-circle fa-2x text-muted"></i>
+                    </div>
+                    <button class="btn btn-sm btn-outline-danger ms-3" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt me-1"></i>Logout
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+    <!-- Buttons Above Tables - Professional Header -->
+    <div class="container-fluid" style="background-color: #FFFFFF; border-bottom: 1px solid #E5E7EB; padding: 1rem; position: relative; z-index: 100; margin: 0;">
+        <div class="row align-items-center" style="margin: 0;">
+            <div class="col">
+                <div class="text-muted small" style="font-size: 0.9rem; margin: 0;">
+                    Last Updated on <span id="lastUpdatedDate">--</span>
+                </div>
+            </div>
+            <div class="col text-end">
+                <button class="btn btn-outline-danger px-5 me-3" id="clearAllBtn" title="Clear all mappings and reset" style="padding: 0.5rem 1.5rem; font-size: 0.95rem; font-weight: 600; border-width: 1.5px;">
+                    <i class="fas fa-trash me-2"></i>Clear All
+                </button>
+                <button class="btn btn-success px-5" id="submitBtn" style="padding: 0.5rem 1.5rem; font-size: 0.95rem; font-weight: 600;">
+                    <i class="fas fa-check me-2"></i>Submit
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content Area - Tables with proper spacing -->
+    <div class="container-fluid" style="height: calc(100vh - 140px); display: flex; flex-direction: column; padding: 1rem; background-color: #F9FAFB; margin: 0;">
+        <div class="row gx-3 h-100" style="margin: 0;">
+            <!-- LEFT + MIDDLE COLUMNS: Combined Source & Mapping (Row-Based) -->
+            <div class="col-lg-8 d-flex flex-column">
+                <div class="card shadow-sm d-flex flex-column h-100">
+                    <div class="card-body p-0 flex-grow-1">
+                        <div id="mappingTableContainer" class="mapping-table-container overflow-auto h-100">
+                            <div class="loading-spinner text-center py-5">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT COLUMN: Destination Account Structure -->
+            <div class="col-lg-4 d-flex flex-column">
+                <div class="card shadow-sm d-flex flex-column h-100">
+                    <div class="card-header bg-white">
+                        <h6 class="mb-0 fw-bold" id="destHeaderDisplay">Destination Account Structure</h6>
+                    </div>
+                    <div class="card-body p-0 flex-grow-1" style="display: flex; flex-direction: column;">
+                        <!-- Search Box - FIXED (doesn't scroll) -->
+                        <div class="p-2 border-bottom" style="flex-shrink: 0;">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text bg-white border-end-0" style="font-size: 0.75rem;">
+                                    <i class="fas fa-search text-muted"></i>
+                                </span>
+                                <input type="text" class="form-control border-start-0" 
+                                       id="destinationSearch" 
+                                       placeholder="Search..." style="font-size: 0.8rem; padding: 0.25rem 0.5rem;">
+                            </div>
+                        </div>
+                        
+                        <!-- Destination Category Navigation - FIXED (doesn't scroll) -->
+                        <div class="destination-nav-wrapper px-2 py-1 border-bottom bg-light" style="flex-shrink: 0;">
+                            <div class="d-flex align-items-center justify-content-center gap-1">
+                                <button class="btn btn-xs btn-outline-secondary dest-nav-arrow" id="destCategoryPrev" type="button" disabled style="min-width: 32px; padding: 0.25rem;">
+                                    <i class="fas fa-chevron-left" style="font-size: 0.75rem;"></i>
+                                </button>
+                                <ul class="nav nav-pills flex-grow-1 justify-content-center" id="destinationTabs" role="tablist" style="gap: 0.25rem;">
+                                    <!-- Dynamic tabs - 2-3 visible at a time -->
+                                </ul>
+                                <button class="btn btn-xs btn-outline-secondary dest-nav-arrow" id="destCategoryNext" type="button" style="min-width: 32px; padding: 0.25rem;">
+                                    <i class="fas fa-chevron-right" style="font-size: 0.75rem;"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Destination Accounts List - SCROLLABLE -->
+                        <div id="destinationAccountsList" class="destination-list overflow-auto flex-grow-1">
+                            <div class="loading-spinner text-center py-5">
+                                <div class="spinner-border text-success" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Excel File Inputs (Hidden) -->
+    <input type="file" id="masterFileInput" accept=".xlsx,.xls" style="display:none">
+    <input type="file" id="destFileInput" accept=".xlsx,.xls" style="display:none">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    
+    <!-- jQuery UI -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+    
+    <!-- Bootstrap 5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- ExcelJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
+    
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Application Modules -->
+    <script src="modules/config.js"></script>
+    <script src="modules/auth.js"></script>
+    <script src="modules/ajax.js"></script>
+    <script src="modules/excel.js"></script>
+    <script src="modules/data.js"></script>
+    <script src="modules/ui.js"></script>
+    <script src="modules/events.js"></script>
+    <script src="modules/app.js"></script>
+</body>
+</html> 
