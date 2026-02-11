@@ -50,12 +50,18 @@ go
 
 
 --1 insert procedure 
-create or alter procedure spInsertCustomer
-    @FirstName varchar(50),
+--create or alter procedure spInsertCustomer
+--    @FirstName varchar(50),
+--    @LastName varchar(50),
+--    @Email varchar(100),
+--    @Phone varchar(20)
+--as
+
+declare
+@FirstName varchar(50) = ,
     @LastName varchar(50),
     @Email varchar(100),
     @Phone varchar(20)
-as
 begin
     insert into dbo.Customer (FirstName, LastName, Email, Phone)
     values (@FirstName, @LastName, @Email, @Phone);
@@ -780,6 +786,7 @@ begin
 end
 go
 
+select * from dbo.[Order]
 -- Execute
 exec spRevenueLastNMonths 6;
 go

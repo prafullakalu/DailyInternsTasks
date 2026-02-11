@@ -1,0 +1,1196 @@
+/* ========================================
+   GLOBAL STYLES
+======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #F9FAFB;
+    font-size: 0.9rem;
+    color: #1F2937;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========================================
+   LOGIN PAGE STYLES
+======================================== */
+.login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #F9FAFB;
+    padding: 1rem;
+}
+
+.login-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+    animation: slideUp 0.5s ease-out;
+    border: 1px solid #E5E7EB;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-header i {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.login-header h2 {
+    margin: 0.5rem 0 0 0;
+    color: #312E81;
+    font-weight: 600;
+    font-size: 1.875rem;
+}
+
+.login-header p {
+    margin: 0.25rem 0 0 0;
+    color: #6B7280;
+    font-size: 0.875rem;
+}
+
+.login-form .form-group {
+    position: relative;
+}
+
+.login-form .form-label {
+    font-weight: 600;
+    color: #312E81;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.login-form .form-control {
+    border: 1px solid #E6EAF0;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    background-color: #FFFFFF;
+    color: #1F2937;
+}
+
+.login-form .form-control:focus {
+    border-color: #4F46E5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.08);
+    outline: none;
+}
+
+.login-form .form-text {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.login-form .btn {
+    padding: 0.75rem 1rem;
+    font-weight: 600;
+    border: none;
+    background-color: #4F46E5;
+    color: white;
+    border-radius: 999px;
+    transition: all 0.2s ease;
+}
+
+.login-form .btn:hover {
+    background-color: #4338CA;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.15);
+}
+
+.login-form .btn:active {
+    transform: scale(0.98);
+}
+
+/* ========================================
+   NAVBAR & LOGO
+======================================== */
+.navbar {
+    box-shadow: 0 1px 3px rgba(31, 41, 55, 0.06);
+    padding: 0.75rem 0;
+    background: #FFFFFF;
+    border-bottom: 1px solid #E6EAF0;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+}
+
+.logo-container .fa-bolt {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+    color: #4F46E5;
+}
+
+.logo-text {
+    color: #1F2937;
+}
+
+/* ========================================
+   MAIN MENU TABS
+======================================== */
+.main-menu-tabs .nav-pills {
+    border: 1px solid #E6EAF0;
+    border-radius: 999px;
+    padding: 0.375rem;
+    background-color: transparent;
+}
+
+.main-menu-tabs .nav-link {
+    color: #6B7280;
+    font-weight: 500;
+    padding: 0.5rem 1.25rem;
+    border-radius: 999px;
+    transition: all 0.2s ease;
+    border: none;
+    background-color: transparent;
+}
+
+.main-menu-tabs .nav-link:hover {
+    background-color: rgba(79, 70, 229, 0.06);
+    color: #4F46E5;
+}
+
+.main-menu-tabs .nav-link.active {
+    background-color: #4F46E5;
+    color: white !important;
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.15);
+}
+
+/* ========================================
+   BUTTONS STYLING
+======================================== */
+#submitBtn {
+    background-color: #10B981;
+    border: none;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(16, 185, 129, 0.15);
+    transition: all 0.2s ease;
+    color: white;
+    font-size: 0.95rem;
+}
+
+#submitBtn:hover {
+    background-color: #059669;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+    transform: translateY(-1px);
+}
+
+#clearAllBtn {
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    border: 1.5px solid #EF4444;
+    color: #EF4444;
+    background-color: transparent;
+}
+
+#clearAllBtn:hover {
+    background-color: #FEE2E2;
+    color: #DC2626;
+    border-color: #DC2626;
+    transform: translateY(-1px);
+}
+
+/* ========================================
+   CARD STYLES
+======================================== */
+.card {
+    border: 1px solid #E6EAF0;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px rgba(31, 41, 55, 0.06);
+    font-size: 0.85rem;
+}
+
+.card-header {
+    border-bottom: 1px solid #E6EAF0;
+    padding: 0.5rem 0.75rem;
+    flex-shrink: 0;
+    background-color: white;
+    position: relative;
+    z-index: 5;
+}
+
+.card-header h6 {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0;
+    min-height: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.card-header small {
+    display: block !important;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+    min-height: 1rem;
+    color: #6c757d;
+}
+
+.card-body {
+    /* Let inner list containers handle scrolling so sticky headers
+       operate relative to their own scroll containers. */
+    overflow: visible;
+    max-height: calc(100vh - 180px);
+    flex: 1;
+    position: relative;
+}
+
+/* Ensure the inner lists are the scrollable containers used by sticky headers */
+.card-body > #sourceAccountsList,
+.card-body > #mappingArea,
+.card-body > #destinationAccountsList,
+.card-body > .account-list,
+.card-body > .mapping-area,
+.card-body > .destination-list {
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+}
+
+/* ========================================
+   SOURCE ACCOUNTS LIST (LEFT)
+======================================== */
+#sourceAccountsList {
+    padding: 0;
+}
+
+.account-list-item {
+    padding: 0.4rem 0.7rem;
+    border-bottom: 1px solid rgba(31, 41, 55, 0.06);
+    background-color: white;
+    transition: background-color 0.2s ease;
+    font-size: 0.8rem;
+}
+
+.account-list-item:hover {
+    background-color: rgba(79, 70, 229, 0.02);
+}
+
+.account-category-header {
+    background-color: #DBEAFE;
+    color: #1F2937;
+    padding: 0.4rem 0.7rem;
+    font-weight: 700;
+    font-size: 0.75rem;
+    border-bottom: 1px solid #BAE6FD;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-left: 2px solid #4F46E5;
+}
+
+.account-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem 1rem;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+    background-color: white;
+    cursor: default;
+}
+
+.account-item:hover {
+    background-color: rgba(37, 99, 235, 0.02);
+}
+
+.account-code {
+    color: #4F46E5;
+    font-weight: 700;
+    margin-right: 0.75rem;
+    min-width: 3.125rem;
+}
+
+.account-name {
+    flex: 1;
+    color: #1F2937;
+}
+
+/* ========================================
+   MAPPING AREA (MIDDLE)
+======================================== */
+#mappingArea {
+    padding: 0;
+}
+
+.mapping-table-header {
+    display: flex;
+    background-color: #DBEAFE;
+    color: #1F2937;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    border-bottom: 1px solid #BAE6FD;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    border-left: 2px solid #4F46E5;
+}
+
+.header-cell {
+    flex: 1;
+    padding: 0.625rem 0.5rem;
+    text-align: center;
+}
+
+.mapping-table-row {
+    display: flex;
+    border-bottom: 1px solid #E6EAF0;
+    background-color: white;
+    transition: background-color 0.2s ease;
+    min-height: 2.75rem;
+    align-items: stretch;
+}
+
+.mapping-table-row:hover {
+    background-color: rgba(79, 70, 229, 0.01);
+}
+
+.mapping-cell {
+    flex: 1;
+    padding: 0.5rem;
+    border-radius: 0.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.75rem;
+    overflow: visible;
+}
+
+.most-likely-cell {
+    background-color: #ECFDF5;
+}
+
+.likely-cell {
+    background-color: #EFF6FF;
+}
+
+.possible-cell {
+    background-color: #FFFBEB;
+}
+
+/* Drop Zone */
+.drop-zone {
+    width: 100%;
+    height: 100%;
+    min-height: 2.75rem;
+    border: 1px dashed transparent;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    padding: 0.5rem;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.drop-zone.drag-over {
+    border-color: #4F46E5;
+    background-color: rgba(79, 70, 229, 0.04);
+}
+
+.drop-placeholder-text {
+    color: #9CA3AF;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Mapped Account Card */
+.mapped-account-card {
+    background: #FFFFFF;
+    border: 1px solid #E6EAF0;
+    border-radius: 8px;
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 98%;
+    box-shadow: 0 1px 2px rgba(31, 41, 55, 0.05);
+    cursor: grab;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+}
+
+.mapped-account-card:hover {
+    box-shadow: 0 4px 8px rgba(31, 41, 55, 0.08);
+    transform: translateY(-1px);
+    border-color: #4F46E5;
+}
+
+.mapped-account-card:active {
+    cursor: grabbing;
+}
+
+.mapped-account-card.dragging {
+    opacity: 0.6;
+}
+
+/* Header row in card */
+.mapped-account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.mapped-account-code {
+    color: #4F46E5;
+    font-weight: 700;
+    font-size: 0.8125rem;
+}
+
+.mapped-account-name {
+    color: #1F2937;
+    font-size: 0.6875rem;
+    line-height: 1.2;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Probability Badge */
+.probability-badge {
+    background-color: #E5E7EB;
+    color: #6B7280;
+    border-radius: 50%;
+    width: 1.75rem;
+    height: 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.625rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    box-shadow: 0 1px 3px rgba(31, 41, 55, 0.08);
+}
+
+.probability-badge.high {
+    background-color: #10B981;
+    color: white;
+}
+
+.probability-badge.medium {
+    background-color: #F59E0B;
+    color: white;
+}
+
+.probability-badge.low {
+    background-color: #9CA3AF;
+    color: white;
+}
+
+/* ========================================
+   DESTINATION NAVIGATION - 2-3 TABS
+======================================== */
+.destination-nav-wrapper {
+    background-color: #FFFFFF;
+    border-bottom: 1px solid #E6EAF0 !important;
+    padding: 0.5rem 0.5rem !important;
+}
+
+/* Arrow buttons - compact size */
+.dest-nav-arrow {
+    font-size: 0.75rem;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    background: white;
+    border: 1px solid #E6EAF0;
+    border-radius: 999px;
+    color: #6B7280;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.dest-nav-arrow:hover:not(:disabled) {
+    background-color: rgba(79, 70, 229, 0.06);
+    border-color: #4F46E5;
+    color: #4F46E5;
+}
+
+.dest-nav-arrow:disabled {
+    opacity: 0.25;
+    cursor: not-allowed;
+    background: #F9FAFB;
+}
+
+/* Tab container - 2-3 tabs visible - NO WRAPPING */
+#destinationTabs {
+    display: flex !important;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    flex-wrap: nowrap !important;
+    width: 100%;
+}
+
+#destinationTabs .nav-item {
+    flex: 1 1 auto;
+    margin: 0;
+    min-width: 0;
+}
+
+/* Tab buttons - responsive sizing, stays in one row */
+#destinationTabs .nav-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.6rem;
+    font-weight: 500;
+    padding: 0.3rem 0.6rem;
+    white-space: nowrap;
+    color: #6B7280;
+    border: 1px solid #E6EAF0;
+    background-color: #FFFFFF;
+    border-radius: 999px;
+    transition: all 0.2s ease;
+    width: 100%;
+    min-height: 1.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#destinationTabs .nav-link:hover:not(.active) {
+    border-color: #4F46E5;
+    background-color: rgba(79, 70, 229, 0.04);
+    color: #4F46E5;
+}
+
+#destinationTabs .nav-link.active {
+    background-color: #4F46E5;
+    color: white;
+    border-color: #4F46E5;
+    box-shadow: 0 2px 8px rgba(79, 70, 229, 0.15);
+}
+
+
+/* ========================================
+   DESTINATION ACCOUNTS LIST (RIGHT)
+======================================== */
+.destination-list {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.destination-list .account-list-item {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(49, 46, 129, 0.04);
+    background-color: white;
+    transition: background-color 0.2s ease;
+}
+
+.destination-list .account-list-item:hover {
+    background-color: rgba(99, 102, 241, 0.02);
+}
+
+.destination-category-header {
+    background-color: #DBEAFE;
+    color: #1F2937;
+    padding: 0.625rem 1rem;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    border-bottom: 1px solid #BAE6FD;
+    border-left: 2px solid #4F46E5;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.destination-account-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.625rem 1rem;
+    border-bottom: 1px solid rgba(31, 41, 55, 0.06);
+    background-color: white;
+    cursor: grab;
+    transition: background-color 0.2s ease;
+}
+
+.destination-account-item:hover {
+    background-color: rgba(79, 70, 229, 0.02);
+}
+
+.destination-account-code {
+    color: #4F46E5;
+    font-weight: 700;
+    margin-right: 0.75rem;
+    min-width: 3.125rem;
+}
+
+.destination-account-name {
+    flex: 1;
+    color: #0F172A;
+}
+
+.destination-account-item.mapped {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ========================================
+   SCROLLBAR STYLING
+======================================== */
+.card-body::-webkit-scrollbar,
+.account-list::-webkit-scrollbar,
+.mapping-area::-webkit-scrollbar,
+.destination-list::-webkit-scrollbar,
+.mapping-table-container::-webkit-scrollbar {
+    width: 0.375rem;
+}
+
+.card-body::-webkit-scrollbar-track,
+.account-list::-webkit-scrollbar-track,
+.mapping-area::-webkit-scrollbar-track,
+.destination-list::-webkit-scrollbar-track,
+.mapping-table-container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.card-body::-webkit-scrollbar-thumb,
+.account-list::-webkit-scrollbar-thumb,
+.mapping-area::-webkit-scrollbar-thumb,
+.destination-list::-webkit-scrollbar-thumb,
+.mapping-table-container::-webkit-scrollbar-thumb {
+    background: rgba(15, 23, 42, 0.15);
+    border-radius: 0.25rem;
+    border: 2px solid transparent;
+    background-clip: content-box;
+}
+
+.card-body::-webkit-scrollbar-thumb:hover,
+.account-list::-webkit-scrollbar-thumb:hover,
+.mapping-area::-webkit-scrollbar-thumb:hover,
+.destination-list::-webkit-scrollbar-thumb:hover,
+.mapping-table-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(15, 23, 42, 0.25);
+    background-clip: content-box;
+}
+
+/* ========================================
+   LOADING SPINNER
+======================================== */
+.loading-spinner {
+    min-height: 18.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+.empty-state {
+    text-align: center;
+    padding: 3.125rem 1.5625rem;
+    color: #9CA3AF;
+    font-size: 1rem;
+}
+
+.empty-state i {
+    font-size: 3.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.empty-state p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* ========================================
+   ANIMATIONS
+======================================== */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-0.625rem);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.3s ease;
+}
+
+.slide-in {
+    animation: slideIn 0.3s ease;
+}
+
+/* ========================================
+   SWAL CUSTOMIZATION
+======================================== */
+.swal2-popup {
+    font-size: 1rem;
+}
+
+.swal2-title {
+    font-size: 1.375rem;
+}
+
+.swal2-confirm {
+    padding: 0.75rem 2.25rem !important;
+}
+
+/* ========================================
+   RESPONSIVE ADJUSTMENTS
+======================================== */
+@media (max-width: 87.5rem) {
+    .main-menu-tabs .nav-link {
+        padding: 0.625rem 1.125rem;
+        font-size: 0.875rem;
+    }
+}
+
+@media (max-width: 75rem) {
+    .main-menu-tabs .nav-link {
+        padding: 0.625rem 0.875rem;
+        font-size: 0.8125rem;
+    }
+}
+
+@media (max-width: 62rem) {
+    .main-menu-tabs {
+        margin-left: 1.25rem !important;
+    }
+    
+    .card-body {
+        max-height: 31.25rem;
+    }
+}
+
+/* ========================================
+   MINIMAL UI IMPROVEMENTS
+   - Better mapping area visual clarity
+   - Fixed destination navigation alignment
+======================================== */
+
+/* MAPPING AREA - Enhanced Visual Clarity */
+.mapping-cell {
+    border-radius: 0 !important;
+}
+
+.most-likely-cell {
+    background-color: #ECFDF5 !important;
+    border-left: 1px solid rgba(15, 23, 42, 0.06) !important;
+}
+
+.likely-cell {
+    background-color: #EFF6FF !important;
+    border-left: 1px solid rgba(15, 23, 42, 0.06) !important;
+}
+
+.possible-cell {
+    background-color: #FFFBEB !important;
+    border-left: 1px solid rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Enhanced drop zone visibility */
+.drop-zone.drag-over {
+    border-color: #2563EB !important;
+    background-color: rgba(37, 99, 235, 0.04) !important;
+}
+
+/* Better mapped card visibility */
+.mapped-account-card {
+    border-left: 1px solid #E5E7EB !important;
+}
+
+.mapped-account-card:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 8px rgba(15, 23, 42, 0.08) !important;
+}
+
+/* DESTINATION NAVIGATION - Perfect Alignment */
+.destination-nav-wrapper {
+    padding: 0.75rem 1rem !important;
+}
+
+.destination-nav-wrapper .d-flex {
+    gap: 0.75rem !important;
+}
+
+.dest-nav-arrow {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+    min-width: 2.5rem !important;
+}
+
+/* Better destination account visibility */
+.destination-account-item.mapped {
+    opacity: 0.5 !important;
+    background: #F6F7FB !important;
+}
+
+/* ========================================
+   ROW-BASED MAPPING TABLE (Combined Source + Mapping)
+======================================== */
+.mapping-table-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Main category header (sticky) - Assets, Liability, etc. */
+.mapping-main-header {
+    display: flex;
+    width: 100%;
+    background-color: #DBEAFE;
+    color: #1F2937;
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-bottom: 1px solid #BAE6FD;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    margin: 0;
+    border-left: 2px solid #4F46E5;
+}
+
+.mapping-main-header-left {
+    width: 25%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #BAE6FD;
+    border-bottom: none;
+}
+
+.mapping-main-header-right {
+    width: 75%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: none;
+}
+
+/* Mapping zones header (sticky) - MOST LIKELY, LIKELY, POSSIBLE */
+.mapping-zones-header {
+    display: flex;
+    width: 100%;
+    background-color: #DBEAFE;
+    color: #1F2937;
+    font-weight: 600;
+    font-size: 0.8rem;
+    border-bottom: 1px solid #BAE6FD;
+    position: sticky;
+    top: 2.375rem;
+    z-index: 19;
+    border-left: 2px solid #4F46E5;
+}
+
+.mapping-zones-header-left {
+    width: 25%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid #BAE6FD;
+}
+
+.mapping-zones-header-right {
+    width: 75%;
+    display: flex;
+    gap: 0;
+    padding: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.mapping-zone-header-cell {
+    flex: 1;
+    padding: 0.5rem 0.5rem;
+    text-align: center;
+    border-left: 1px solid #BAE6FD;
+    font-weight: 600;
+    color: #1F2937;
+    background: transparent;
+    font-size: 0.8rem;
+}
+
+.mapping-zone-header-cell:first-child {
+    border-left: none;
+}
+
+/* Sub-group header */
+.mapping-subgroup-header {
+    display: flex;
+    width: 100%;
+    border-bottom: 1px solid #BAE6FD;
+    background-color: #E0F4FE;
+    color: #1F2937;
+    font-weight: 600;
+    font-size: 0.8rem;
+    position: sticky;
+    top: 4.5rem;
+    z-index: 18;
+    border-left: 2px solid #4F46E5;
+}
+
+.mapping-subgroup-header-left {
+    width: 25%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    border-right: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.mapping-subgroup-header-right {
+    width: 75%;
+    padding: 0.5rem 1rem;
+    display: flex;
+    gap: 0;
+    border-bottom: none;
+}
+
+/* Main mapping row wrapper */
+.mapping-table-row-wrapper {
+    display: flex;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.04);
+    background-color: #FFFFFF;
+    min-height: 6rem;
+    align-items: stretch;
+}
+
+.mapping-table-row-wrapper:hover {
+    background-color: rgba(15, 23, 42, 0.01);
+}
+
+/* Group header in row-based layout */
+.mapping-group-header {
+    display: none;
+}
+
+.mapping-group-header-source {
+    display: none;
+}
+
+.mapping-group-header-mapping {
+    display: none;
+}
+
+/* Source account cell in row */
+.mapping-row-source {
+    width: 25%;
+    padding: 1.25rem 1rem;
+    border-right: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    position: relative;
+}
+
+.mapping-row-source-code {
+    color: #4F46E5;
+    font-weight: 700;
+    font-size: 0.875rem;
+    display: block;
+}
+
+.mapping-row-source-name {
+    color: #1F2937;
+    font-size: 0.8125rem;
+    margin-top: 0.25rem;
+    word-break: break-word;
+    padding-right: 1.5rem;
+}
+
+.mapping-row-source-icon {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #22C55E;
+    font-size: 0.75rem;
+}
+
+/* Mapping zones in row */
+.mapping-row-zones {
+    width: 75%;
+    display: flex;
+    padding: 0;
+    gap: 0;
+}
+
+.mapping-zone-cell {
+    flex: 1;
+    border-left: 1px solid rgba(31, 41, 55, 0.06);
+    min-height: 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    padding: 1rem;
+    align-content: flex-start;
+}
+
+.mapping-zone-cell:first-child {
+    border-left: none;
+}
+
+.mapping-zone-most-likely {
+    background-color: #ECFDF5 !important;
+    border-top: none !important;
+}
+
+.mapping-zone-likely {
+    background-color: #EFF6FF !important;
+    border-top: none !important;
+}
+
+.mapping-zone-possible {
+    background-color: #FFFBEB !important;
+    border-top: none !important;
+}
+
+/* Drop zone within row cell */
+.mapping-drop-zone {
+    width: 100%;
+    height: 100%;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+    position: relative;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.mapping-drop-zone.drag-over {
+    border-color: #4F46E5;
+    background-color: rgba(79, 70, 229, 0.04);
+    box-shadow: 0 0 0 1px rgba(79, 70, 229, 0.1);
+}
+
+/* Mapped account card in row (flexible sizing) */
+.mapping-row-card {
+    background: #FFFFFF;
+    border: 1px solid #E6EAF0;
+    border-radius: 8px;
+    padding: 0.3rem 0.5rem;
+    width: 95%;
+    max-width: 95%;
+    box-shadow: 0 1px 2px rgba(31, 41, 55, 0.05);
+    cursor: grab;
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    word-break: break-word;
+    position: relative;
+}
+
+.mapping-row-card:hover {
+    box-shadow: 0 4px 8px rgba(31, 41, 55, 0.08);
+    transform: translateY(-1px);
+}
+
+.mapping-row-card-code {
+    color: #4F46E5;
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.mapping-row-card-name {
+    color: #1F2937;
+    font-size: 0.65rem;
+    line-height: 1.1;
+}
+
+.mapping-row-probability {
+    background-color: #E5E7EB;
+    color: #6B7280;
+    border-radius: 50%;
+    width: 1.25rem;
+    height: 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.55rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    position: absolute;
+    top: -0.3rem;
+    right: -0.3rem;
+    box-shadow: 0 1px 3px rgba(31, 41, 55, 0.08);
+}
+
+.mapping-row-probability.high {
+    background-color: #10B981;
+    color: white;
+}
+
+.mapping-row-probability.medium {
+    background-color: #F59E0B;
+    color: white;
+}
+
+.mapping-row-probability.low {
+    background-color: #9CA3AF;
+    color: white;
+}
+
+.mapping-row-card.dragging {
+    opacity: 0.5;
+}
+
