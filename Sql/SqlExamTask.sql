@@ -78,7 +78,7 @@ c.customerId,
 c.Name,
 sum(o.totalAmount) as TotalAmountSpent
 from customers c
-join orders o on c.customerId = o.customerId
+left join orders o on c.customerId = o.customerId
 group by c.customerId ,c.name
 
 --3
