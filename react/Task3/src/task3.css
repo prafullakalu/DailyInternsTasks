@@ -1,0 +1,240 @@
+/* ============================================
+   TASK 3: Status Dashboard Styling
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Main Container */
+.task3-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+/* Navbar Styling */
+.task3-navbar {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: white;
+  padding: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid #3b82f6;
+}
+
+.task3-navbar-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  max-width: 100%;
+}
+
+.task3-navbar h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.task3-navbar-items {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.task3-navbar-item {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.task3-navbar-item:hover {
+  opacity: 1;
+}
+
+/* Dashboard Styling */
+.task3-dashboard {
+  padding: 40px 30px;
+  flex: 1;
+}
+
+/* Header */
+.task3-header {
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 3px solid #3b82f6;
+}
+
+.task3-header h2 {
+  margin: 0 0 10px 0;
+  font-size: 32px;
+  color: #0f172a;
+  font-weight: bold;
+}
+
+.task3-header p {
+  margin: 0;
+  font-size: 16px;
+  color: #64748b;
+}
+
+/* Status List */
+.task3-list {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Status Item */
+.task3-item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 8px;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.task3-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateX(4px);
+}
+
+/* Item Content */
+.task3-item-content {
+  flex: 1;
+}
+
+.task3-item-name {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  color: #0f172a;
+  font-weight: bold;
+}
+
+/* Status Display */
+.task3-status-display {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+
+/* Status Dot */
+.task3-status-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  animation: pulse-status 2s infinite;
+}
+
+.task3-status-dot.online {
+  background-color: #10b981;
+  box-shadow: 0 0 8px rgba(16, 185, 129, 0.5);
+}
+
+.task3-status-dot.maintenance {
+  background-color: #f97316;
+  box-shadow: 0 0 8px rgba(249, 115, 22, 0.5);
+}
+
+.task3-status-dot.offline {
+  background-color: #ef4444;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.5);
+}
+
+/* Status Text */
+.task3-status-text {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Online Status */
+.task3-item.online {
+  background-color: #d1fae5;
+}
+
+.task3-item.online .task3-status-text {
+  color: #065f46;
+}
+
+/* Maintenance Status */
+.task3-item.maintenance {
+  background-color: #fed7aa;
+}
+
+.task3-item.maintenance .task3-status-text {
+  color: #92400e;
+}
+
+/* Offline Status */
+.task3-item.offline {
+  background-color: #fee2e2;
+}
+
+.task3-item.offline .task3-status-text {
+  color: #7f1d1d;
+}
+
+/* Pulse Animation */
+@keyframes pulse-status {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .task3-dashboard {
+    padding: 20px 15px;
+  }
+
+  .task3-navbar-content {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 20px;
+  }
+
+  .task3-navbar h1 {
+    font-size: 22px;
+  }
+
+  .task3-header h2 {
+    font-size: 24px;
+  }
+
+  .task3-list {
+    gap: 12px;
+  }
+
+  .task3-item {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .task3-item-content {
+    margin-bottom: 12px;
+    width: 100%;
+  }
+}
