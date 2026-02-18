@@ -1,0 +1,51 @@
+.dashboardContainer {
+  width: 500px;
+  margin: 60px auto;
+  padding: 40px;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  border-radius: 15px;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.timeDisplay {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+.listContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.listItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #334155;
+  padding: 12px 15px;
+  border-radius: 8px;
+}
+
+.listItem button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #ef4444;
+  color: white;
+  transition: 0.3s;
+}
+
+.listItem button:hover {
+  background-color: #dc2626;
+}

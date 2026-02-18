@@ -1,0 +1,61 @@
+.counterContainer {
+  width: 350px;
+  margin: 100px auto;
+  padding: 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border-radius: 15px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  margin-bottom: 30px;
+  font-size: 28px;
+  letter-spacing: 1px;
+}
+
+.countDisplay {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  background: #334155;
+  padding: 20px;
+  border-radius: 12px;
+}
+
+.buttonGroup {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.startButton,
+.resetButton {
+  flex: 1;
+  padding: 12px 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.startButton {
+  background-color: #22c55e;
+  color: white;
+}
+
+.startButton:hover {
+  background-color: #16a34a;
+}
+
+.resetButton {
+  background-color: #ef4444;
+  color: white;
+}
+
+.resetButton:hover {
+  background-color: #dc2626;
+}
