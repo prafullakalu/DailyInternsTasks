@@ -1,0 +1,40 @@
+:root{
+	--bg: #f5f7fb;
+	--card: #ffffff;
+	--muted: #6b7280;
+	--accent: #2563eb;
+	--radius: 12px;
+	--shadow: 0 8px 24px rgba(16,24,40,0.08);
+	--max-width: 1100px;
+}
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+	margin:0;
+	font-family: 'Segoe UI', Roboto, system-ui, -apple-system, 'Helvetica Neue', Arial;
+	background: linear-gradient(180deg,var(--bg), #eef2ff);
+	color:#0f172a;
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+	padding:28px;
+	display:flex;
+	justify-content:center;
+}
+.app{
+	width:100%;
+	max-width:var(--max-width);
+}
+.card{
+	background:var(--card);
+	border-radius:var(--radius);
+	padding:18px;
+	box-shadow:var(--shadow);
+	border:1px solid rgba(15,23,42,0.04);
+}
+.center{display:flex;align-items:center;justify-content:center}
+.controls{display:flex;gap:8px}
+button{background:var(--accent);color:white;border:none;padding:8px 12px;border-radius:8px;cursor:pointer}
+@media (max-width:520px){
+	body{padding:14px}
+	.card{padding:12px}
+}

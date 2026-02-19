@@ -1,0 +1,32 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: linear-gradient(90deg, #4e73df, #1cc88a);
+  color: white;
+}
+
+.logo {
+  font-size: 22px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 20px;
+}
+
+.navItem {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navItem:hover {
+  opacity: 0.8;
+}
+
+.navItem.active {
+  border-bottom: 2px solid white;
+}

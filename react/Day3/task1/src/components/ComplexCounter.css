@@ -1,0 +1,29 @@
+.counterContainer {
+  padding: 30px;
+  border-radius: 10px;
+  background: #f4f4f4;
+  width: 400px;
+  margin: auto;
+  text-align: center;
+}
+
+.countDisplay {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.buttonGroup button,
+.inputSection button {
+  margin: 5px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.inputSection {
+  margin-top: 15px;
+}
+
+.historySection {
+  margin-top: 20px;
+  text-align: left;
+}

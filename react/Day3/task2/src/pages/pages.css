@@ -1,0 +1,66 @@
+.pageContainer {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.content {
+  width: 100%;
+  max-width: 860px;
+  padding: 28px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero h1 {
+  font-size: 34px;
+  margin: 0;
+  color: #111827;
+  line-height: 1.05;
+}
+
+.hero p {
+  margin: 0;
+  color: #4b5563;
+  font-size: 16px;
+}
+
+.centered {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.userCard {
+  margin-top: 8px;
+  padding: 18px;
+  width: 100%;
+  max-width: 420px;
+  margin-left: 0;
+  margin-right: 0;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(16,24,40,0.06);
+  border: 1px solid rgba(15,23,42,0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.userCard .label { color: #6b7280; font-size: 0.95rem; margin:0 }
+.userCard .value { font-size: 1.25rem; margin:0; color:#111827 }
+
+@media (max-width: 720px) {
+  .content { padding: 18px }
+  .hero h1 { font-size: 26px }
+}

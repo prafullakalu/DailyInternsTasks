@@ -1,0 +1,106 @@
+/* Main Container */
+.newsContainer {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 30px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Header Section */
+.headerSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.headerSection h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #1f2937;
+  letter-spacing: 0.5px;
+}
+
+/* Refresh Button */
+.headerSection button {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: none;
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.headerSection button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(79, 70, 229, 0.3);
+}
+
+.headerSection button:active {
+  transform: scale(0.96);
+}
+
+/* Loading State */
+.loadingText {
+  text-align: center;
+  font-size: 18px;
+  color: #6b7280;
+  margin-top: 50px;
+}
+
+/* Grid Layout */
+.postGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+/* Post Card */
+.postCard {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.postCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+}
+
+/* Post Title */
+.postCard h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111827;
+  line-height: 1.4;
+}
+
+/* Post Body */
+.postCard p {
+  font-size: 14px;
+  color: #4b5563;
+  line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .headerSection {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .headerSection h1 {
+    font-size: 26px;
+  }
+}

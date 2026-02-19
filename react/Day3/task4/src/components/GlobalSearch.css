@@ -1,0 +1,51 @@
+.searchContainer {
+  max-width: 700px;
+  margin: 60px auto;
+  padding: 30px;
+  font-family: sans-serif;
+}
+
+.searchContainer h1 {
+  margin-bottom: 20px;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+}
+
+.searchInput:focus {
+  outline: none;
+  border-color: #4f46e5;
+}
+
+.loadingText {
+  color: gray;
+}
+
+.errorText {
+  color: red;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.resultList {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.resultCard {
+  padding: 15px;
+  border-radius: 6px;
+  background: #f3f4f6;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.resultCard:hover {
+  background: #e0e7ff;
+}
