@@ -1,0 +1,46 @@
+/* Light Theme Colors - Modern SaaS Style (Blue + Gray) */
+[data-theme="light"] {
+  --primary-color: #0066ff;
+  --primary-hover: #0052cc;
+  --primary-active: #003d99;
+  
+  /* Text Colors */
+  --text-primary: #1f2937;
+  --text-secondary: #6b7280;
+  --text-disabled: #9ca3af;
+  
+  /* Background Colors */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f9fafb;
+  --bg-tertiary: #f3f4f6;
+  --bg-hover: #f0f1f3;
+  
+  /* Border Colors */
+  --border-color: #e5e7eb;
+  --border-light: #f0f1f3;
+  
+  /* Component Colors */
+  --header-bg: #ffffff;
+  --header-text: #1f2937;
+  --sider-bg: #ffffff;
+  --sider-text: #1f2937;
+  --sider-menu-hover: #f3f4f6;
+  --sider-menu-selected: #eff6ff;
+  --sider-menu-selected-text: #0066ff;
+  --sider-logo-text: #1f2937;
+  
+  /* Card Colors */
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0, 0, 0, 0.05);
+  
+  /* Table Colors */
+  --table-header-bg: #f9fafb;
+  --table-row-hover: #f9fafb;
+  --table-border: #e5e7eb;
+  
+  /* Success, Warning, Error Colors */
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --error-color: #ef4444;
+  --info-color: #3b82f6;
+}

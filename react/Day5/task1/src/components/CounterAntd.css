@@ -1,0 +1,33 @@
+:root{
+  --bg:#f8fafc;
+  --card:#ffffff;
+  --accent:#0ea5e9;
+  --muted:#6b7280;
+  --radius:12px;
+  --shadow: 0 10px 30px rgba(2,6,23,0.06);
+}
+
+.counter-card{
+  background: linear-gradient(180deg, var(--card), #fbfdff);
+  border-radius: var(--radius) !important;
+  box-shadow: var(--shadow);
+  padding: 28px !important;
+}
+
+.counter-card .ant-statistic{
+  margin-bottom: 18px;
+}
+
+.counter-card .ant-space > .ant-btn{
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-weight:600;
+}
+
+.counter-card .ant-switch{
+  transform: scale(1.05);
+}
+
+@media (max-width:520px){
+  .counter-card{ width: calc(100% - 32px) !important; margin: 20px auto !important; }
+}

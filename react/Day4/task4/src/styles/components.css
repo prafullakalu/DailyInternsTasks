@@ -1,0 +1,286 @@
+/* Global Theme Support */
+:root {
+  --transition-duration: 0.3s;
+  --transition-timing: ease-in-out;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing);
+}
+
+/* Layout Styling */
+.ant-layout {
+  background-color: var(--bg-primary);
+  transition: background-color var(--transition-duration) var(--transition-timing);
+}
+
+.ant-layout-sider {
+  background-color: var(--sider-bg) !important;
+  transition: background-color var(--transition-duration) var(--transition-timing);
+}
+
+.ant-layout-header {
+  background-color: var(--header-bg) !important;
+  border-bottom: 1px solid var(--border-color);
+  transition: background-color var(--transition-duration) var(--transition-timing);
+  box-shadow: 0 1px 3px var(--card-shadow);
+}
+
+/* Sidebar Logo Styling */
+.sider-logo {
+  color: var(--sider-logo-text);
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  transition: color var(--transition-duration) var(--transition-timing);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+}
+
+/* Menu Styling */
+.ant-menu {
+  background-color: var(--sider-bg) !important;
+  border-right: 1px solid var(--border-color) !important;
+  transition: background-color var(--transition-duration) var(--transition-timing);
+}
+
+.ant-menu-item {
+  color: var(--text-secondary) !important;
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.ant-menu-item:hover {
+  background-color: var(--sider-menu-hover) !important;
+  color: var(--primary-color) !important;
+}
+
+.ant-menu-item-selected {
+  background-color: var(--sider-menu-selected) !important;
+  color: var(--sider-menu-selected-text) !important;
+}
+
+.ant-menu-item-selected::after {
+  border-right-color: var(--primary-color) !important;
+}
+
+/* Content Area Styling */
+.ant-layout-content {
+  background-color: var(--bg-secondary);
+  transition: background-color var(--transition-duration) var(--transition-timing);
+}
+
+/* Card Styling */
+.ant-card {
+  background-color: var(--card-bg) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary);
+  box-shadow: 0 1px 3px var(--card-shadow);
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.ant-card:hover {
+  box-shadow: 0 4px 12px var(--card-shadow);
+  transform: translateY(-2px);
+}
+
+.ant-card-head {
+  background-color: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary);
+}
+
+/* Button Styling */
+.ant-btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.ant-btn-primary:hover {
+  background-color: var(--primary-hover) !important;
+  border-color: var(--primary-hover) !important;
+  transform: translateY(-1px);
+}
+
+/* Table Styling */
+.ant-table {
+  background-color: var(--card-bg) !important;
+  color: var(--text-primary);
+}
+
+.ant-table-thead > tr > th {
+  background-color: var(--table-header-bg) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--border-color) !important;
+  font-weight: 600;
+}
+
+.ant-table-tbody > tr {
+  transition: background-color var(--transition-duration) var(--transition-timing);
+}
+
+.ant-table-tbody > tr:hover > td {
+  background-color: var(--table-row-hover) !important;
+}
+
+.ant-table-tbody > tr > td {
+  border-color: var(--table-border) !important;
+  color: var(--text-primary);
+}
+
+/* Form Styling */
+.ant-form-item-label > label {
+  color: var(--text-primary);
+}
+
+.ant-input,
+.ant-input-number,
+.ant-select-selector,
+.ant-picker {
+  background-color: var(--bg-tertiary) !important;
+  border-color: var(--border-color) !important;
+  color: var(--text-primary) !important;
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.ant-input:hover,
+.ant-input-number:hover,
+.ant-select-selector:hover,
+.ant-picker:hover {
+  border-color: var(--primary-color) !important;
+}
+
+.ant-input:focus,
+.ant-input-number:focus-within,
+.ant-select-selector:focus,
+.ant-picker:focus {
+  border-color: var(--primary-color) !important;
+  box-shadow: 0 0 0 2px rgba(0, 102, 255, 0.1);
+}
+
+/* Select Dropdown */
+.ant-select-dropdown {
+  background-color: var(--card-bg) !important;
+}
+
+.ant-select-item {
+  color: var(--text-primary) !important;
+}
+
+.ant-select-item:hover {
+  background-color: var(--bg-hover) !important;
+}
+
+.ant-select-item-option-selected {
+  background-color: var(--sider-menu-selected) !important;
+}
+
+/* Switch Styling */
+.ant-switch {
+  background-color: var(--text-disabled) !important;
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.ant-switch-checked {
+  background-color: var(--primary-color) !important;
+}
+
+/* Stat Box Styling */
+.stat-box {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 1px 3px var(--card-shadow);
+  transition: all var(--transition-duration) var(--transition-timing);
+}
+
+.stat-box:hover {
+  box-shadow: 0 4px 12px var(--card-shadow);
+  transform: translateY(-2px);
+}
+
+.stat-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+.stat-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+.stat-icon {
+  font-size: 32px;
+  color: var(--primary-color);
+  opacity: 0.1;
+}
+
+/* Text Colors */
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-primary-color {
+  color: var(--primary-color);
+}
+
+/* Background Colors */
+.bg-primary {
+  background-color: var(--bg-primary);
+}
+
+.bg-secondary {
+  background-color: var(--bg-secondary);
+}
+
+/* Border Colors */
+.border {
+  border: 1px solid var(--border-color);
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--border-light);
+}
+
+/* Smooth Transitions for All Interactive Elements */
+button,
+a,
+.ant-btn,
+.ant-menu-item,
+.ant-card {
+  transition: all var(--transition-duration) var(--transition-timing);
+}
