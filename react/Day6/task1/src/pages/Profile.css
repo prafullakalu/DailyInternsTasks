@@ -1,0 +1,55 @@
+.profile-container {
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-summary-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  position: sticky;
+  top: 20px;
+}
+
+.profile-summary-card .ant-card-body {
+  padding: 24px;
+}
+
+.edit-profile-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+}
+
+.edit-profile-card .ant-card-head {
+  border-bottom: 2px solid #1890ff;
+}
+
+.security-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  border-left: 4px solid #faad14;
+}
+
+.security-card .ant-card-head {
+  border-bottom: 2px solid #faad14;
+}
+
+.ant-form-item-label > label {
+  font-weight: 600;
+}
+
+@media (max-width: 992px) {
+  .profile-summary-card {
+    position: relative;
+    top: 0;
+  }
+}
