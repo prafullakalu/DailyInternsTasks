@@ -2,7 +2,8 @@ import axios from "axios"
 import { store } from "../app/store"
 
 const axiosInstance = axios.create({
-    baseURL: "http://localhost:5000"
+    // json-server backend listens on port 3001
+    baseURL: "http://localhost:3001"
 })
 
 axiosInstance.interceptors.request.use((config) => {

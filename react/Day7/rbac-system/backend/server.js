@@ -14,6 +14,20 @@ const EXPIRES_IN = "1h";
  
 server.use(middlewares);
 server.use(jsonServer.bodyParser);
+
+// hash passwords when creating or updating users so that plain text isn't stored
+server.use((req, res, next) => {
+  // only intercept POST/PUT/PATCH to /users
+  if (req.path.startsWith("/users") && ["POST", "PUT", "PATCH"].includes(req.method)) {
+    if (req.body && req.body.password) {
+      // if the password is already hashed (starts with $2a$ etc) skip
+      if (!req.body.password.startsWith("$2a$")) {
+        req.body.password = bcrypt.hashSync(req.body.password, 10);
+      }
+    }
+  }
+  next();
+});
  
 server.post("/login", (req, res) => {
   const { email, password } = req.body;

@@ -7,13 +7,15 @@ import usersReducer from "../features/users/usersSlice"
 import rolesReducer from "../features/roles/rolesSlice"
 import employeesReducer from "../features/employees/employeesSlice"
 import projectsReducer from "../features/projects/projectsSlice"
+import permissionsReducer from "../features/permissions/permissionsSlice"
 
 const rootReducer = combineReducers({
     auth: authReducer,
     users: usersReducer,
     roles: rolesReducer,
     employees: employeesReducer,
-    projects: projectsReducer
+    projects: projectsReducer,
+    permissions: permissionsReducer
 })
 
 const persistConfig = {
