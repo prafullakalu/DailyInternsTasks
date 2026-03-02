@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom Config -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#2563eb",
+              secondary: "#1f2937",
+              accent: "#f43f5e",
+              muted: "#6b7280",
+              background: "#f1f5f9",
+              violet: "#8b5cf6",
+              indigo: "#6366f1",
+              purple: "#7e22ce",
+            },
+            boxShadow: {
+              soft: "0 4px 20px rgba(0,0,0,0.05)",
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            screens: {
+              'xs': '320px',
+              'sm': '480px',
+              'md': '768px',
+              'lg': '1024px',
+              'xl': '1440px',
+            },
+          },
+        },
+      }
+    </script>
+
+    <title>Employee App</title>
+  </head>
+  <body class="bg-gray-100 dark:bg-gray-900">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Admin",
+      "email": "admin@mail.com",
+      "password": "$2b$10$6ThypaaYBa.IncbRwZWWPuSG2DKCTfZMOWbowgmtDB88dzqc5O9jO",
+      "role": "admin"
+    },
+    {
+      "id": 1772175407975,
+      "name": "Test User",
+      "email": "test@mail.com",
+      "password": "$2b$10$U8HnOekgEUf.2vJ3/LO1XuCRYgM.tMSTt9QIaT1prVofT67ox90Xy",
+      "role": "user"
+    },
+    {
+      "id": 1772177057533,
+      "name": "prafulla",
+      "email": "p@gmail.com",
+      "password": "$2b$10$egwLbJAuw9zuxbXzO4ZOBO14/eTu3iqEjMdBCx9Up4pP0dhIauAeK",
+      "role": "user"
+    }
+  ],
+  "tracking": []
+}

@@ -1,0 +1,14 @@
+{
+  "name": "rbac-backend",
+  "version": "1.0.0",
+  "private": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "json-server": "^0.17.4",
+    "jsonwebtoken": "^9.0.0"
+  }
+}
