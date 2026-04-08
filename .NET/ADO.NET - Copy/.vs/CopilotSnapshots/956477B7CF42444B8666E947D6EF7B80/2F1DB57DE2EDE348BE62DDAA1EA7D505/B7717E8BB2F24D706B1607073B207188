@@ -1,0 +1,109 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using CleanApiProject.DTOs;
+using CleanApiProject.Interfaces;
+
+namespace CleanApiProject.Controllers;
+
+/// <summary>
+/// Admin-only endpoints for user management.
+/// ALL routes require Role = "Admin".
+///
+/// GET    /api/admin/users          → List all users
+/// GET    /api/admin/users/{id}     → Get user by ID
+/// PUT    /api/admin/users/{id}/role → Change user role
+/// DELETE /api/admin/users/{id}     → Delete a user
+/// </summary>
+[ApiController]
+[Route("api/[controller]")]
+[Authorize(Roles = "Admin")]  // Entire controller is Admin-only
+public class UserController : ControllerBase
+{
+    private readonly IUserService _userService;
+
+    public UserController(IUserService userService)
+    {
+        _userService = userService;
+    }
+
+    /// <summary>
+    /// Returns a list of all registered users (no passwords).
+    /// </summary>
+    [HttpGet("getUsers")]
+    public async Task<IActionResult> GetAllUsers()
+    {
+        var users = await _userService.GetAllAsync();
+        return Ok(new { success = true, data = users });
+    }
+
+    /// <summary>
+    /// Returns a single user by their ID.
+    /// </summary>
+    [HttpGet("getUser/{id:int}")]
+    public async Task<IActionResult> GetUserById(int id)
+    {
+        var user = await _userService.GetByIdAsync(id);
+        if (user == null)
+            return NotFound(new { success = false, message = $"User with id={id} not found." });
+
+        return Ok(new { success = true, data = user });
+    }
+
+    /// <summary>
+    /// Updates the role of a user (Admin ↔ User).
+    ///
+    /// IMPORTANT: After role update, the user's LastRoleUpdate changes in DB.
+    /// Their existing JWT becomes invalid (checked by RoleValidationFilter).
+    /// They must log in again to get a new token with the updated role.
+    ///
+    /// Body: { "role": "Admin" }  or  { "role": "User" }
+    /// </summary>
+    [HttpPut("getUser/{id:int}/role")]
+    public async Task<IActionResult> UpdateRole(int id, [FromBody] UpdateRoleDto dto)
+    {
+        if (dto.Role != "Admin" && dto.Role != "User")
+            return BadRequest(new { success = false, message = "Role must be 'Admin' or 'User'." });
+
+        var updated = await _userService.UpdateRoleAsync(id, dto.Role);
+        if (!updated)
+            return NotFound(new { success = false, message = $"User with id={id} not found." });
+
+        return Ok(new
+        {
+            success = true,
+            message = $"Role updated to '{dto.Role}'. The user must log in again for the change to take effect."
+        });
+    }
+
+    /// <summary>
+    /// Permanently deletes a user account.
+    /// </summary>
+    [HttpDelete("deleteUser/{id:int}")]
+    public async Task<IActionResult> DeleteUser(int id)
+    {
+        var deleted = await _userService.DeleteAsync(id);
+        if (!deleted)
+            return NotFound(new { success = false, message = $"User with id={id} not found." });
+
+        return Ok(new { success = true, message = "User deleted successfully." });
+    }
+
+    /// <summary>
+    /// A simple health-check endpoint to verify Admin access is working.
+    /// </summary>
+    //[HttpGet("dashboard")]
+    //public IActionResult Dashboard()
+    //{
+    //    var adminEmail = User.FindFirst(System.Security.Claims.ClaimTypes.Email)?.Value
+    //                  ?? User.FindFirst("email")?.Value
+    //                  ?? "Unknown";
+
+    //    return Ok(new
+    //    {
+    //        success = true,
+    //        message = "Welcome to the Admin Dashboard!",
+    //        loggedInAs = adminEmail,
+    //        serverTime = DateTime.UtcNow
+    //    });
+    //}
+}

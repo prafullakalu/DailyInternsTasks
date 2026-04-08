@@ -1,0 +1,496 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\QbAppBackend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\QbAppBackend.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\QbAppBackend1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:1:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\QbAppBackend1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Models\\Mongo\\QbConnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Models\\Mongo\\QbConnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Controllers\\InvoiceController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Controllers\\InvoiceController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Controllers\\QbController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Controllers\\QbController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Models\\Mongo\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Models\\Mongo\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Data\\SqlDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Data\\SqlDbContext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\QbService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Services\\QbService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Repositories\\InvoiceRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Repositories\\InvoiceRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Repositories\\IInvoiceRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Repositories\\IInvoiceRepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\InvoiceService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Services\\InvoiceService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\AuthService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Services\\AuthService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\Interfaces\\IInvoiceService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Services\\Interfaces\\IInvoiceService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\Interfaces\\IQbService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Services\\Interfaces\\IQbService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\Interfaces\\IAuthService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Services\\Interfaces\\IAuthService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Models\\Sql\\Invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Models\\Sql\\Invoice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Models\\Sql\\InvoiceLineItem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Models\\Sql\\InvoiceLineItem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\UpdateInvoiceDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\DTOs\\Qb\\UpdateInvoiceDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\ItemDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\DTOs\\Qb\\ItemDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\CustomerDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\DTOs\\Qb\\CustomerDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\CreateInvoiceDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\DTOs\\Qb\\CreateInvoiceDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\AccountDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\DTOs\\Qb\\AccountDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Auth\\SignupDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\DTOs\\Auth\\SignupDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Auth\\SigninDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\DTOs\\Auth\\SigninDto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Validators\\CreateInvoiceValidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\Validators\\CreateInvoiceValidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\QbAppBackend1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:2:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:QbAppBackend\\QbAppBackend1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "QbAppBackend.http",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\QbAppBackend.http",
+              "RelativeDocumentMoniker": "QbAppBackend\\QbAppBackend.http",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\QbAppBackend.http",
+              "RelativeToolTip": "QbAppBackend\\QbAppBackend.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-03-25T13:37:55.543Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "QbController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Controllers\\QbController.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Controllers\\QbController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Controllers\\QbController.cs",
+              "RelativeToolTip": "QbAppBackend\\Controllers\\QbController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAmwCgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:11:57.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Models\\Mongo\\User.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Models\\Mongo\\User.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Models\\Mongo\\User.cs",
+              "RelativeToolTip": "QbAppBackend\\Models\\Mongo\\User.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAuwA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:16:35.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "QbConnection.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Models\\Mongo\\QbConnection.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Models\\Mongo\\QbConnection.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Models\\Mongo\\QbConnection.cs",
+              "RelativeToolTip": "QbAppBackend\\Models\\Mongo\\QbConnection.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:16:54.424Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SqlDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Data\\SqlDbContext.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Data\\SqlDbContext.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Data\\SqlDbContext.cs",
+              "RelativeToolTip": "QbAppBackend\\Data\\SqlDbContext.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAmwCIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:29:40.03Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Program.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Program.cs",
+              "RelativeToolTip": "QbAppBackend\\Program.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAQwDUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:30:50.615Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "QbAppBackend1.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\QbAppBackend1.csproj",
+              "RelativeDocumentMoniker": "QbAppBackend\\QbAppBackend1.csproj",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\QbAppBackend1.csproj",
+              "RelativeToolTip": "QbAppBackend\\QbAppBackend1.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-24T06:18:08.916Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\appsettings.json",
+              "RelativeDocumentMoniker": "QbAppBackend\\appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\appsettings.json",
+              "RelativeToolTip": "QbAppBackend\\appsettings.json",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-24T06:30:31.957Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "InvoiceController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Controllers\\InvoiceController.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Controllers\\InvoiceController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Controllers\\InvoiceController.cs",
+              "RelativeToolTip": "QbAppBackend\\Controllers\\InvoiceController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:12:08.535Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "QbAppBackend\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:11:27.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "QbService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\QbService.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Services\\QbService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\QbService.cs",
+              "RelativeToolTip": "QbAppBackend\\Services\\QbService.cs",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAuwG4AAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:28:12.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "InvoiceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Repositories\\InvoiceRepository.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Repositories\\InvoiceRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Repositories\\InvoiceRepository.cs",
+              "RelativeToolTip": "QbAppBackend\\Repositories\\InvoiceRepository.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAlwBkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:18:34.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "IInvoiceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Repositories\\IInvoiceRepository.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Repositories\\IInvoiceRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Repositories\\IInvoiceRepository.cs",
+              "RelativeToolTip": "QbAppBackend\\Repositories\\IInvoiceRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:18:24.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "InvoiceService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\InvoiceService.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Services\\InvoiceService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\InvoiceService.cs",
+              "RelativeToolTip": "QbAppBackend\\Services\\InvoiceService.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAD4vy4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:28:23.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\AuthService.cs",
+              "RelativeToolTip": "QbAppBackend\\Services\\AuthService.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAD4vysAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:27:41.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "IInvoiceService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\Interfaces\\IInvoiceService.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Services\\Interfaces\\IInvoiceService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\Interfaces\\IInvoiceService.cs",
+              "RelativeToolTip": "QbAppBackend\\Services\\Interfaces\\IInvoiceService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:25:16.5Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "IQbService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\Interfaces\\IQbService.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Services\\Interfaces\\IQbService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\Interfaces\\IQbService.cs",
+              "RelativeToolTip": "QbAppBackend\\Services\\Interfaces\\IQbService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:24:52.113Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Services\\Interfaces\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Services\\Interfaces\\IAuthService.cs",
+              "RelativeToolTip": "QbAppBackend\\Services\\Interfaces\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:24:41.58Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Invoice.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Models\\Sql\\Invoice.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Models\\Sql\\Invoice.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Models\\Sql\\Invoice.cs",
+              "RelativeToolTip": "QbAppBackend\\Models\\Sql\\Invoice.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAUwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:17:17.686Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "InvoiceLineItem.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Models\\Sql\\InvoiceLineItem.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Models\\Sql\\InvoiceLineItem.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Models\\Sql\\InvoiceLineItem.cs",
+              "RelativeToolTip": "QbAppBackend\\Models\\Sql\\InvoiceLineItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:17:30.117Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "UpdateInvoiceDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\UpdateInvoiceDto.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\DTOs\\Qb\\UpdateInvoiceDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\UpdateInvoiceDto.cs",
+              "RelativeToolTip": "QbAppBackend\\DTOs\\Qb\\UpdateInvoiceDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:15:33.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ItemDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\ItemDto.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\DTOs\\Qb\\ItemDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\ItemDto.cs",
+              "RelativeToolTip": "QbAppBackend\\DTOs\\Qb\\ItemDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:15:08.22Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "CustomerDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\CustomerDto.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\DTOs\\Qb\\CustomerDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\CustomerDto.cs",
+              "RelativeToolTip": "QbAppBackend\\DTOs\\Qb\\CustomerDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:14:08.868Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "CreateInvoiceDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\CreateInvoiceDto.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\DTOs\\Qb\\CreateInvoiceDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\CreateInvoiceDto.cs",
+              "RelativeToolTip": "QbAppBackend\\DTOs\\Qb\\CreateInvoiceDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAgAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:15:24.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AccountDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\AccountDto.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\DTOs\\Qb\\AccountDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Qb\\AccountDto.cs",
+              "RelativeToolTip": "QbAppBackend\\DTOs\\Qb\\AccountDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:13:57.365Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "SignupDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Auth\\SignupDto.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\DTOs\\Auth\\SignupDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Auth\\SignupDto.cs",
+              "RelativeToolTip": "QbAppBackend\\DTOs\\Auth\\SignupDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:13:23.577Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "SigninDto.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Auth\\SigninDto.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\DTOs\\Auth\\SigninDto.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\DTOs\\Auth\\SigninDto.cs",
+              "RelativeToolTip": "QbAppBackend\\DTOs\\Auth\\SigninDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:13:33.524Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "CreateInvoiceValidator.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Validators\\CreateInvoiceValidator.cs",
+              "RelativeDocumentMoniker": "QbAppBackend\\Validators\\CreateInvoiceValidator.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\Validators\\CreateInvoiceValidator.cs",
+              "RelativeToolTip": "QbAppBackend\\Validators\\CreateInvoiceValidator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-24T06:30:06.877Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "QbAppBackend1.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\QbAppBackend1.csproj",
+              "RelativeDocumentMoniker": "QbAppBackend\\QbAppBackend1.csproj",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\QbAppBackend\\QbAppBackend\\QbAppBackend1.csproj",
+              "RelativeToolTip": "QbAppBackend\\QbAppBackend1.csproj",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAQwBQAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-24T06:18:08.916Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

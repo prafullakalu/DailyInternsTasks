@@ -1,0 +1,85 @@
+﻿
+using CleanApiProject.Interfaces;
+using CleanApiProject.Models;
+using Microsoft.IdentityModel.Tokens;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
+
+namespace CleanApiProject.Helpers;
+
+/// <summary>
+/// Responsible for generating and validating JWT tokens.
+///
+/// Token Structure:
+///   Header.Payload.Signature
+///
+/// Claims stored in token:
+///   - sub       → User ID
+///   - email     → User Email
+///   - role      → User Role (Admin / User)
+///   - iat       → Issued At (used to detect role changes)
+///
+/// Role Invalidation:
+///   When a user's role changes, LastRoleUpdate is updated in DB.
+///   Any token issued BEFORE that timestamp is considered invalid.
+/// </summary>
+public class TokenService : ITokenService
+{
+    private readonly IConfiguration _config;
+    private readonly IUserRepository _userRepository;
+
+    public TokenService(IConfiguration config, IUserRepository userRepository)
+    {
+        _config = config;
+        _userRepository = userRepository;
+    }
+
+    public string GenerateToken(User user)
+    {
+        var jwtSettings = _config.GetSection("JwtSettings");
+        var secretKey = jwtSettings["SecretKey"]!;
+        var issuer = jwtSettings["Issuer"]!;
+        var audience = jwtSettings["Audience"]!;
+        var expiryMins = int.Parse(jwtSettings["ExpiryMinutes"]!);
+
+        // Build the signing key from the secret in appsettings.json
+        var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
+        var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+
+        // Define what gets embedded in the token
+        var claims = new[]
+        {
+            new Claim(JwtRegisteredClaimNames.Sub,   user.Id.ToString()),
+            new Claim(JwtRegisteredClaimNames.Email, user.Email),
+            new Claim(ClaimTypes.Role,               user.Role),
+            new Claim(JwtRegisteredClaimNames.Jti,   Guid.NewGuid().ToString()),
+            // Store LastRoleUpdate so we can compare on each request
+            new Claim("lastRoleUpdate", user.LastRoleUpdate.ToString("O"))
+        };
+
+        var token = new JwtSecurityToken(
+            issuer: issuer,
+            audience: audience,
+            claims: claims,
+            expires: DateTime.UtcNow.AddMinutes(expiryMins),
+            signingCredentials: creds
+        );
+
+        return new JwtSecurityTokenHandler().WriteToken(token);
+    }
+
+    /// <summary>
+    /// Checks if the role in the token is still valid by comparing the
+    /// token's lastRoleUpdate claim with the DB value.
+    /// Returns false if the role was changed after the token was issued.
+    /// </summary>
+    public async Task<bool> IsTokenRoleValidAsync(int userId, DateTime tokenRoleUpdateTime)
+    {
+        var user = await _userRepository.GetByIdAsync(userId);
+        if (user == null) return false;
+
+        // Allow a 1-second tolerance for clock skew
+        return user.LastRoleUpdate <= tokenRoleUpdateTime.AddSeconds(1);
+    }
+}

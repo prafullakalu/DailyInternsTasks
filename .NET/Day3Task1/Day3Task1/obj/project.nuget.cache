@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Op0x1Xw9d1c=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Admin\\source\\repos\\Day3Task1\\Day3Task1\\Day3Task1.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.23.0\\microsoft.visualstudio.azure.containers.tools.targets.1.23.0.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.configuration.configurationmanager\\10.0.4\\system.configuration.configurationmanager.10.0.4.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.diagnostics.eventlog\\10.0.4\\system.diagnostics.eventlog.10.0.4.nupkg.sha512",
+    "C:\\Users\\Admin\\.nuget\\packages\\system.security.cryptography.protecteddata\\10.0.4\\system.security.cryptography.protecteddata.10.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}

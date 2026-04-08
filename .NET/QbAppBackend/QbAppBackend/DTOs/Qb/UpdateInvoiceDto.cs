@@ -1,0 +1,12 @@
+namespace QbAppBackend.DTOs.Qb
+{
+    public class UpdateInvoiceDto
+    {
+        public string CustomerId { get; set; } = string.Empty;
+        public string CustomerName { get; set; } = string.Empty;
+        public DateTime TxnDate { get; set; }
+        public DateTime DueDate { get; set; }
+        public decimal TaxAmount { get; set; }
+        public List<InvoiceLineDto> Lines { get; set; } = new();
+    }
+}

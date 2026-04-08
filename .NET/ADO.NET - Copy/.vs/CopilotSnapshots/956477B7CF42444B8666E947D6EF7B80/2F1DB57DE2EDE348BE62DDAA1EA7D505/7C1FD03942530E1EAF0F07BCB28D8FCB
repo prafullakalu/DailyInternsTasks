@@ -1,0 +1,99 @@
+﻿using Microsoft.EntityFrameworkCore;
+using CleanApiProject.Models;
+
+namespace CleanApiProject.Data;
+
+/// <summary>
+/// EF Core DbContext — the single entry point to the database.
+///
+/// What this replaces:
+///   OLD (ADO.NET): DatabaseHelper created raw SqlConnection objects.
+///   NEW (EF Core): AppDbContext manages the connection + tracks entity changes.
+///
+/// How EF Core works (no SQL needed):
+///   - DbSet<User>  maps to the "Users"  table automatically
+///   - DbSet<Item>  maps to the "Items"  table automatically
+///   - LINQ queries on DbSet are translated to SQL by EF Core internally
+///   - SaveChangesAsync() generates and runs INSERT / UPDATE / DELETE SQL
+///
+/// Schema is configured in OnModelCreating() using Fluent API.
+/// No raw CREATE TABLE SQL anywhere — EF Core generates it from the model.
+/// </summary>
+public class AppDbContext : DbContext
+{
+    // Constructor receives options (connection string, provider) from DI
+    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
+
+    // ── DbSets ─────────────────────────────────────────────────────────
+    // Each DbSet<T> represents one table.
+    // You query them with LINQ — EF Core converts it to SQL behind the scenes.
+    public DbSet<User> Users { get; set; }
+    public DbSet<Item> Items { get; set; }
+
+    /// <summary>
+    /// Fluent API — defines the exact database schema.
+    /// Runs once when EF Core builds its internal model.
+    ///
+    /// This replaces all CREATE TABLE SQL from the old DatabaseInitializer.
+    /// </summary>
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        // ── Users Table ───────────────────────────────────────────────
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.ToTable("Users");                        // exact table name in DB
+
+            entity.HasKey(u => u.Id);                       // PRIMARY KEY
+
+            entity.Property(u => u.Id)
+                  .UseIdentityColumn();                     // IDENTITY(1,1) auto-increment
+
+            entity.Property(u => u.Name)
+                  .IsRequired()
+                  .HasMaxLength(100);
+
+            entity.Property(u => u.Email)
+                  .IsRequired()
+                  .HasMaxLength(200);
+
+            // UNIQUE constraint on Email — prevents duplicate registrations at DB level
+            entity.HasIndex(u => u.Email)
+                  .IsUnique();
+
+            entity.Property(u => u.Password)
+                  .IsRequired()
+                  .HasMaxLength(500);                       // BCrypt hash fits in 500 chars
+
+            entity.Property(u => u.Role)
+                  .IsRequired()
+                  .HasMaxLength(50)
+                  .HasDefaultValue("User");                 // DEFAULT 'User'
+
+            entity.Property(u => u.LastRoleUpdate)
+                  .IsRequired()
+                  .HasColumnType("datetime2")
+                  .HasDefaultValueSql("GETUTCDATE()");      // DEFAULT GETUTCDATE()
+        });
+
+        // ── Items Table ───────────────────────────────────────────────
+        modelBuilder.Entity<Item>(entity =>
+        {
+            entity.ToTable("Items");
+
+            entity.HasKey(i => i.Id);
+
+            entity.Property(i => i.Id)
+                  .UseIdentityColumn();
+
+            entity.Property(i => i.Name)
+                  .IsRequired()
+                  .HasMaxLength(200);
+
+            entity.Property(i => i.Price)
+                  .IsRequired()
+                  .HasColumnType("decimal(18,2)");
+        });
+    }
+}

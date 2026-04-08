@@ -1,0 +1,32 @@
+﻿using System.Data.SqlClient;
+using QuickBooksIntegration.Models;
+
+namespace QuickBooksIntegration.Data;
+
+public class dbHelper
+{
+    private readonly string connectionString;
+
+    public dbHelper(IConfiguration config)
+    {
+        connectionString = config.GetConnectionString("DefaultConnection");
+    }
+
+    public void saveToken(tokenModel token)
+    {
+        using var conn = new SqlConnection(connectionString);
+        conn.Open();
+
+        var cmd = new SqlCommand(@"
+        INSERT INTO Tokens (RealmId, AccessToken, RefreshToken, IdToken, Expiry)
+        VALUES (@realmId, @access, @refresh, @id, @expiry)", conn);
+
+        cmd.Parameters.AddWithValue("@realmId", token.realmId);
+        cmd.Parameters.AddWithValue("@access", token.accessToken);
+        cmd.Parameters.AddWithValue("@refresh", token.refreshToken);
+        cmd.Parameters.AddWithValue("@id", token.idToken);
+        cmd.Parameters.AddWithValue("@expiry", token.expiry);
+
+        cmd.ExecuteNonQuery();
+    }
+}

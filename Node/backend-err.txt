@@ -1,0 +1,56 @@
+SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+    at JSON.parse (<anonymous>)
+    at parse (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\body-parser\lib\types\json.js:72:19)
+    at C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\body-parser\lib\read.js:162:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)
+    at invokeCallback (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\raw-body\index.js:238:16)
+    at done (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:508:28)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+    at JSON.parse (<anonymous>)
+    at parse (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\body-parser\lib\types\json.js:72:19)
+    at C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\body-parser\lib\read.js:162:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:214:14)
+    at invokeCallback (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\raw-body\index.js:238:16)
+    at done (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\raw-body\index.js:227:7)
+    at IncomingMessage.onEnd (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\raw-body\index.js:287:7)
+    at IncomingMessage.emit (node:events:508:28)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1701:12)
+PrismaClientKnownRequestError: 
+Invalid `prisma.user.findUnique()` invocation in
+C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\src\routes\auth.ts:20:44
+
+  17   return res.status(400).json({ error: 'Password must be at least 6 characters' });
+  18 }
+  19 
+→ 20 const existingUser = await prisma.user.findUnique(
+The table `public.users` does not exist in the current database.
+    at Gr.handleRequestError (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:237:13)
+    at Gr.handleAndLogRequestError (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:183:12)
+    at Gr.request (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\@prisma\client\src\runtime\RequestHandler.ts:152:12)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async a (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\@prisma\client\src\runtime\getPrismaClient.ts:938:24)
+    at async C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\src\routes\auth.ts:20:26 {
+  code: 'P2021',
+  meta: {
+    modelName: 'User',
+    driverAdapterError: DriverAdapterError: TableDoesNotExist
+        at PrismaPgAdapter.onError (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\@prisma\adapter-pg\dist\index.js:678:11)
+        at PrismaPgAdapter.performIO (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\@prisma\adapter-pg\dist\index.js:673:12)
+        at processTicksAndRejections (node:internal/process/task_queues:103:5)
+        at async PrismaPgAdapter.queryRaw (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\@prisma\adapter-pg\dist\index.js:604:30)
+        at async e.interpretNode (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:186:26)
+        at async e.interpretNode (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:213:41)
+        at async e.interpretNode (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:272:41)
+        at async e.run (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\@prisma\client-engine-runtime\src\interpreter\query-interpreter.ts:94:23)
+        at async execute (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\@prisma\client\src\runtime\core\engines\client\LocalExecutor.ts:81:12)
+        at async jt.request (C:\prafulla\DailyInternsTasks\Node\Task Manager API Task\backend\node_modules\@prisma\client\src\runtime\core\engines\client\ClientEngine.ts:498:22) {
+      cause: [Object]
+    }
+  },
+  clientVersion: '7.6.0'
+}

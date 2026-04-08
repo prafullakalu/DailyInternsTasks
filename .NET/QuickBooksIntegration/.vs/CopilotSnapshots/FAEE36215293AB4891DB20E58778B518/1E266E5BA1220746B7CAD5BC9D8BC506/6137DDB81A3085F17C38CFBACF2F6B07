@@ -1,0 +1,80 @@
+﻿using System.Data.SqlClient;
+using QuickBooksIntegration.Models;
+
+namespace QuickBooksIntegration.Data;
+
+public interface ITokenRepository
+{
+    Task SaveTokenAsync(tokenModel token);
+    Task<tokenModel?> GetLatestTokenAsync();
+    Task<tokenModel?> GetTokenByRealmIdAsync(string realmId);
+}
+
+public class dbHelper : ITokenRepository
+{
+    private readonly string connectionString;
+
+    public dbHelper(IConfiguration config)
+    {
+        connectionString = config.GetConnectionString("DefaultConnection");
+    }
+
+    public async Task SaveTokenAsync(tokenModel token)
+    {
+        await using var conn = new SqlConnection(connectionString);
+        await conn.OpenAsync();
+
+        var cmd = new SqlCommand(@"
+        INSERT INTO Tokens (RealmId, AccessToken, RefreshToken, IdToken, Expiry)
+        VALUES (@realmId, @access, @refresh, @id, @expiry)", conn);
+
+        cmd.Parameters.AddWithValue("@realmId", token.realmId ?? (object)DBNull.Value);
+        cmd.Parameters.AddWithValue("@access", token.accessToken ?? (object)DBNull.Value);
+        cmd.Parameters.AddWithValue("@refresh", token.refreshToken ?? (object)DBNull.Value);
+        cmd.Parameters.AddWithValue("@id", token.idToken ?? (object)DBNull.Value);
+        cmd.Parameters.AddWithValue("@expiry", token.expiry);
+
+        await cmd.ExecuteNonQueryAsync();
+    }
+
+    public async Task<tokenModel?> GetLatestTokenAsync()
+    {
+        await using var conn = new SqlConnection(connectionString);
+        await conn.OpenAsync();
+
+        var cmd = new SqlCommand(@"SELECT TOP 1 RealmId, AccessToken, RefreshToken, IdToken, Expiry FROM Tokens ORDER BY Expiry DESC", conn);
+
+        await using var reader = await cmd.ExecuteReaderAsync();
+        if (!await reader.ReadAsync()) return null;
+
+        return new tokenModel
+        {
+            realmId = reader["RealmId"]?.ToString(),
+            accessToken = reader["AccessToken"]?.ToString(),
+            refreshToken = reader["RefreshToken"]?.ToString(),
+            idToken = reader["IdToken"]?.ToString(),
+            expiry = reader["Expiry"] != DBNull.Value ? (DateTime)reader["Expiry"] : DateTime.MinValue
+        };
+    }
+
+    public async Task<tokenModel?> GetTokenByRealmIdAsync(string realmId)
+    {
+        await using var conn = new SqlConnection(connectionString);
+        await conn.OpenAsync();
+
+        var cmd = new SqlCommand(@"SELECT TOP 1 RealmId, AccessToken, RefreshToken, IdToken, Expiry FROM Tokens WHERE RealmId = @realmId ORDER BY Expiry DESC", conn);
+        cmd.Parameters.AddWithValue("@realmId", realmId);
+
+        await using var reader = await cmd.ExecuteReaderAsync();
+        if (!await reader.ReadAsync()) return null;
+
+        return new tokenModel
+        {
+            realmId = reader["RealmId"]?.ToString(),
+            accessToken = reader["AccessToken"]?.ToString(),
+            refreshToken = reader["RefreshToken"]?.ToString(),
+            idToken = reader["IdToken"]?.ToString(),
+            expiry = reader["Expiry"] != DBNull.Value ? (DateTime)reader["Expiry"] : DateTime.MinValue
+        };
+    }
+}

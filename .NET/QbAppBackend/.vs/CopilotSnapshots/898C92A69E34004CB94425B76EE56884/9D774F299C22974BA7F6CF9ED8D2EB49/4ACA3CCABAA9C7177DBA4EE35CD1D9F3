@@ -1,0 +1,92 @@
+﻿using QbAppBackend.DTOs.Qb;
+using QbAppBackend.Services.Interfaces;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Text.Json;
+
+public class QbService : IQbService
+{
+    private readonly IMongoCollection<QbConnection> _connections;
+    private readonly IConfiguration _config;
+    private readonly IHttpClientFactory _httpClientFactory;
+
+    public QbService(IMongoDatabase db, IConfiguration config, IHttpClientFactory factory)
+    {
+        _connections = db.GetCollection<QbConnection>("QbConnections");
+        _config = config;
+        _httpClientFactory = factory;
+    }
+
+    public string GetAuthUrl(string state = "random123") =>
+        $"{_config["Intuit:AuthUrl"]}?client_id={_config["Intuit:ClientId"]}&response_type=code&scope={_config["Intuit:Scopes"]}&redirect_uri={_config["Intuit:RedirectUri"]}&state={state}";
+
+    public async Task ExchangeCodeAsync(string code, string realmId)
+    {
+        // POST to TokenUrl with client_id, client_secret, code → get tokens
+        // Store in Mongo (encrypted tokens recommended)
+    }
+
+    // Generic call with auto-refresh
+    private async Task<string> CallQbAsync(string realmId, string endpoint, HttpMethod method, object? body = null)
+    {
+        var conn = await GetUserConnection();
+        if (conn.ExpiresAt < DateTime.UtcNow) await RefreshToken(conn);
+
+        var client = _httpClientFactory.CreateClient();
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", conn.AccessToken);
+
+        var request = new HttpRequestMessage(method, $"https://quickbooks.api.intuit.com/v3/company/{realmId}/{endpoint}");
+        if (body != null)
+            request.Content = new StringContent(JsonSerializer.Serialize(body), Encoding.UTF8, "application/json");
+
+        var response = await client.SendAsync(request);
+        return await response.Content.ReadAsStringAsync();
+    }
+
+    // EXACT payloads from Intuit docs
+    public async Task<object> CreateAccountAsync(AccountDto dto) =>
+        await CallQbAsync("account", HttpMethod.Post, new { Name = dto.Name, AccountType = dto.AccountType });
+
+    public async Task<object> CreateCustomerAsync(CustomerDto dto) =>
+        await CallQbAsync("customer", HttpMethod.Post, new
+        {
+            DisplayName = dto.DisplayName,
+            PrimaryEmailAddr = new { Address = dto.Email },
+            PrimaryPhone = new { FreeFormNumber = dto.Phone }
+        });
+
+    public async Task<object> CreateItemAsync(ItemDto dto) =>
+        await CallQbAsync("item", HttpMethod.Post, new
+        {
+            Name = dto.Name,
+            Type = dto.Type,
+            IncomeAccountRef = new { value = "79" } // change as per company
+        });
+
+    public async Task<object> CreateInvoiceAsync(CreateInvoiceDto dto, string realmId)
+    {
+        var payload = new
+        {
+            CustomerRef = new { value = dto.CustomerId },
+            TxnDate = dto.TxnDate.ToString("yyyy-MM-dd"),
+            DueDate = dto.DueDate.ToString("yyyy-MM-dd"),
+            Line = dto.Lines.Select(l => new
+            {
+                Amount = l.Quantity * l.UnitPrice,
+                DetailType = "SalesItemLineDetail",
+                SalesItemLineDetail = new
+                {
+                    ItemRef = new { value = l.ItemId },
+                    Qty = l.Quantity
+                }
+            }).ToArray()
+        };
+
+        return await CallQbAsync(realmId, "invoice", HttpMethod.Post, payload);
+    }
+
+    // Update, Delete (with SyncToken), GetCustomers, GetItems, GetAccounts using /query endpoint
+    public async Task<string> GetCustomersAsync(string realmId) =>
+        await CallQbAsync(realmId, "query", HttpMethod.Get, null, query: "SELECT * FROM Customer MAXRESULTS 500");
+    // same for Item, Account
+}

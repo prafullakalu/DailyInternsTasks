@@ -20,28 +20,68 @@ function Login() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-secondary">
-      <div className="bg-black/90 dark:bg-indigo-900 p-8 rounded-xl shadow-soft w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center text-white ">
+    <div className="min-h-screen flex items-center justify-center
+      bg-gradient-to-br from-slate-900 via-indigo-900 to-purple-900
+      px-4"
+    >
+      <div
+        className="
+          w-full max-w-md p-8
+          backdrop-blur-xl
+          bg-white/10
+          border border-white/20
+          rounded-2xl
+          shadow-2xl
+          text-white
+        "
+      >
+        <h2 className="text-3xl font-bold mb-8 text-center tracking-wide">
           Employee Admin Login
         </h2>
 
-        <form onSubmit={handleLogin} className="space-y-4">
+        <form onSubmit={handleLogin} className="space-y-5">
           <input
             type="email"
             placeholder="Email"
-            className="w-full p-3 border rounded-lg dark:bg-gray-700 text-gray-900 text-white"
+            className="
+              w-full p-3 rounded-xl
+              bg-white/20
+              border border-white/30
+              placeholder-white/70
+              focus:outline-none
+              focus:ring-2
+              focus:ring-indigo-400
+              transition
+            "
             onChange={e => setEmail(e.target.value)}
           />
+
           <input
             type="password"
             placeholder="Password"
-            className="w-full p-3 border rounded-lg dark:bg-gray-700 text-gray-900 text-white"
+            className="
+              w-full p-3 rounded-xl
+              bg-white/20
+              border border-white/30
+              placeholder-white/70
+              focus:outline-none
+              focus:ring-2
+              focus:ring-indigo-400
+              transition
+            "
             onChange={e => setPassword(e.target.value)}
           />
+
           <button
             type="submit"
-            className="w-full bg-primary text-white py-3 rounded-lg"
+            className="
+              w-full py-3 rounded-xl
+              bg-indigo-500
+              hover:bg-indigo-600
+              transition
+              font-semibold
+              shadow-lg text-black
+            "
           >
             Login
           </button>

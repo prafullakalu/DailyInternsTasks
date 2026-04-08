@@ -1,0 +1,27 @@
+﻿using Microsoft.AspNetCore.Mvc;
+
+[ApiController]
+[Route("api/auth")]
+public class AuthController : ControllerBase
+{
+    private readonly IAuthService _authService;
+
+    public AuthController(IAuthService authService) => _authService = authService;
+
+    [HttpPost("signup")]
+    public async Task<IActionResult> Signup([FromBody] SignupDto dto)
+    {
+        var token = await _authService.SignupAsync(dto);
+        return Ok(new { Token = token });
+    }
+
+    [HttpPost("signin")]
+    public async Task<IActionResult> Signin([FromBody] SigninDto dto)
+    {
+        var token = await _authService.SigninAsync(dto);
+        return Ok(new { Token = token });
+    }
+
+    [HttpGet("intuit-sso")]
+    public IActionResult IntuitSSO() => Redirect(new QbService(/* inject */).GetAuthUrl()); // or inject service
+}

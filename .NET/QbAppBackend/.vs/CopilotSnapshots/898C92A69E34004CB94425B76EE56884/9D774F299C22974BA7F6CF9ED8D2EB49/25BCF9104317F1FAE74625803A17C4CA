@@ -1,0 +1,46 @@
+﻿using QbAppBackend.Repositories;
+
+public class InvoiceService : IInvoiceService
+{
+    private readonly IInvoiceRepository _repository;
+    private readonly IQbService _qbService;
+
+    public InvoiceService(IInvoiceRepository repository, IQbService qbService)
+    {
+        _repository = repository;
+        _qbService = qbService;
+    }
+
+    public async Task<Invoice> CreateAsync(CreateInvoiceDto dto)
+    {
+        var qbResult = await _qbService.CreateInvoiceAsync(dto);
+        // Parse qbResult to get Id, TotalAmt, Balance (use JsonElement or DTO)
+
+        var invoice = new Invoice
+        {
+            UserId = "current-user-id-from-jwt", // inject IHttpContextAccessor
+            QuickbooksInvoiceId = "extracted-from-qb",
+            CustomerId = dto.CustomerId,
+            TxnDate = dto.TxnDate,
+            DueDate = dto.DueDate,
+            TotalAmount = 0, // parse from QB response
+            Balance = 0,
+            LineItems = dto.Lines.Select(l => new InvoiceLineItem
+            {
+                ItemId = l.ItemId,
+                Description = l.Description,
+                Quantity = l.Quantity,
+                UnitPrice = l.UnitPrice
+            }).ToList()
+        };
+
+        await _repository.AddAsync(invoice);
+        return invoice;
+    }
+
+    public async Task<List<Invoice>> GetAllAsync() => await _repository.GetAllByUserAsync("current-user-id");
+
+    public async Task<Invoice> UpdateAsync(string id, UpdateInvoiceDto dto) { /* similar: update QB then SQL */ throw new NotImplementedException(); }
+
+    public async Task DeleteAsync(string id) { /* delete from QB then SQL */ throw new NotImplementedException(); }
+}

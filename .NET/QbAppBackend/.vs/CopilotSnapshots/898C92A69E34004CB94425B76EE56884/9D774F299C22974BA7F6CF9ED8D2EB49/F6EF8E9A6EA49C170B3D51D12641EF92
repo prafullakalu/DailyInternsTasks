@@ -1,0 +1,26 @@
+﻿using Microsoft.EntityFrameworkCore;
+
+public class InvoiceRepository : IInvoiceRepository
+{
+    private readonly SqlDbContext _context;
+
+    public InvoiceRepository(SqlDbContext context) => _context = context;
+
+    public async Task AddAsync(Invoice invoice)
+    {
+        _context.Invoices.Add(invoice);
+        await _context.SaveChangesAsync();
+    }
+
+    public async Task<List<Invoice>> GetAllByUserAsync(string userId)
+        => await _context.Invoices.Where(i => i.UserId == userId).ToListAsync();
+
+    // Implement remaining methods similarly
+    public async Task<Invoice?> GetByIdAsync(Guid id) => await _context.Invoices.FindAsync(id) as Invoice;
+    public async Task UpdateAsync(Invoice invoice) { _context.Invoices.Update(invoice); await _context.SaveChangesAsync(); }
+    public async Task DeleteAsync(Guid id)
+    {
+        var invoice = await GetByIdAsync(id);
+        if (invoice != null) { _context.Invoices.Remove(invoice); await _context.SaveChangesAsync(); }
+    }
+}

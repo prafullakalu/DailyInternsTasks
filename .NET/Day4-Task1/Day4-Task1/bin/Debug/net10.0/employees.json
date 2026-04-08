@@ -1,0 +1,29 @@
+[
+  {
+    "Id": "102cb0b4-928b-4a37-a27d-5d7a2f67821e",
+    "FirstName": "prafulla",
+    "LastName": "purohit",
+    "Email": "p@gmail.com",
+    "PhoneNumber": "1234567890",
+    "Salary": 20000,
+    "Password": "SadEI/MjiuoJ7XGQebASD1cNdOUq24kf\u002BwV7yTNQm3M="
+  },
+  {
+    "Id": "5bc927a9-a715-4f77-8cbd-fcc894bbe23f",
+    "FirstName": "\u0022\u0022",
+    "LastName": "ss",
+    "Email": "harsh@gmail.com",
+    "PhoneNumber": "1112223330",
+    "Salary": 20000,
+    "Password": "AUU7AUDUCQpiVuYdY65NVswSABCtcbgdkoZn4osXJrg="
+  },
+  {
+    "Id": "dfe75f4a-9b3a-40f3-b796-bd02322839ff",
+    "FirstName": "harsh",
+    "LastName": "singh",
+    "Email": "p1@gmail.com",
+    "PhoneNumber": "1452369870",
+    "Salary": 40000,
+    "Password": "G1W2NhlxepZvDULgLAIjKXM8qu41edAjtDs6qcmPubQ="
+  }
+]

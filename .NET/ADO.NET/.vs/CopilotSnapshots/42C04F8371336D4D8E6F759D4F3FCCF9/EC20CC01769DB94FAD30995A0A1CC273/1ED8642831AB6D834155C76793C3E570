@@ -1,0 +1,115 @@
+﻿
+using CleanApiProject.Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
+using System.Security.Claims;
+
+namespace CleanApiProject.Filters;
+
+
+public class ValidationFilter : IActionFilter
+{
+    public void OnActionExecuting(ActionExecutingContext context)
+    {
+        // If all [Required], [EmailAddress], [Range] etc. pass → ModelState is valid → do nothing
+        if (context.ModelState.IsValid) return;
+
+        // Collect all validation error messages
+        var errors = context.ModelState
+            .Where(x => x.Value?.Errors.Count > 0)
+            .ToDictionary(
+                kvp => kvp.Key,
+                kvp => kvp.Value!.Errors.Select(e => e.ErrorMessage).ToArray()
+            );
+
+        // Short-circuit: return 400 immediately without reaching the controller
+        context.Result = new BadRequestObjectResult(new
+        {
+            success = false,
+            message = "Validation failed",
+            errors
+        });
+    }
+
+    // Required by interface — nothing to do after action runs
+    public void OnActionExecuted(ActionExecutedContext context) { }
+}
+
+/// <summary>
+/// ROLE INVALIDATION FILTER (Async Action Filter)
+/// ─────────────────────────────────────────────────
+/// Runs before every [Authorize]'d action.
+///
+/// Problem it solves:
+///   1. User logs in → gets JWT with Role="User"
+///   2. Admin upgrades user to Role="Admin"
+///   3. Old JWT still says Role="User" — user misses their new access
+///   4. OR: User had Role="Admin" → demoted → old JWT still grants admin access!
+///
+/// How it works:
+///   - Reads the "lastRoleUpdate" claim from the JWT
+///   - Compares it with LastRoleUpdate in the database
+///   - If DB value is NEWER → role changed after token was issued → 401 Unauthorized
+///   - User must log in again to get a fresh token
+///
+/// HOW TO IMPLEMENT (already done in Program.cs):
+///   builder.Services.AddControllers(options => {
+///       options.Filters.Add<ValidationFilter>();
+///       options.Filters.Add<RoleValidationFilter>();
+///   });
+/// </summary>
+public class RoleValidationFilter : IAsyncActionFilter
+{
+    private readonly ITokenService _tokenService;
+    private readonly ILogger<RoleValidationFilter> _logger;
+
+    public RoleValidationFilter(ITokenService tokenService, ILogger<RoleValidationFilter> logger)
+    {
+        _tokenService = tokenService;
+        _logger = logger;
+    }
+
+    public async Task OnActionExecutionAsync(ActionExecutingContext context, ActionExecutionDelegate next)
+    {
+        var user = context.HttpContext.User;
+
+        // Only check if user is authenticated
+        if (!user.Identity?.IsAuthenticated ?? true)
+        {
+            await next();
+            return;
+        }
+
+        // Extract user ID from token claims
+        var userIdClaim = user.FindFirst(ClaimTypes.NameIdentifier)
+                       ?? user.FindFirst(System.IdentityModel.Tokens.Jwt.JwtRegisteredClaimNames.Sub);
+
+        // Extract the lastRoleUpdate claim we embedded during token generation
+        var roleUpdateClaim = user.FindFirst("lastRoleUpdate");
+
+        if (userIdClaim == null || roleUpdateClaim == null)
+        {
+            await next();
+            return;
+        }
+
+        if (!int.TryParse(userIdClaim.Value, out var userId)) { await next(); return; }
+        if (!DateTime.TryParse(roleUpdateClaim.Value, out var tokenRoleUpdate)) { await next(); return; }
+
+        // Check with DB — is the token's role still current?
+        var isValid = await _tokenService.IsTokenRoleValidAsync(userId, tokenRoleUpdate);
+        if (!isValid)
+        {
+            _logger.LogWarning("Token invalidated for userId={UserId} due to role change.", userId);
+
+            context.Result = new UnauthorizedObjectResult(new
+            {
+                success = false,
+                message = "Your role has been updated. Please log in again to continue."
+            });
+            return;
+        }
+
+        await next();
+    }
+}

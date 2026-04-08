@@ -1,0 +1,23 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using QuickBooksIntegration.Models;
+using QuickBooksIntegration.Services;
+
+namespace QuickBooksIntegration.Controllers;
+
+[ApiController]
+[Route("api/invoice")]
+public class invoiceController : ControllerBase
+{
+    private readonly quickBooksService service;
+
+    public invoiceController(quickBooksService service)
+    {
+        this.service = service;
+    }
+
+    [HttpPost("create")]
+    public async Task<IActionResult> create(string token, string realmId, invoiceModel model)
+    {
+        return Ok(await service.createInvoice(token, realmId, model));
+    }
+}

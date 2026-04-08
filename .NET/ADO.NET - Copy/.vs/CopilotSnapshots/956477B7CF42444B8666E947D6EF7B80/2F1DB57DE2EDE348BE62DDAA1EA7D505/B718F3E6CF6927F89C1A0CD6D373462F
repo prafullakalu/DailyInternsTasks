@@ -1,0 +1,121 @@
+﻿using Microsoft.EntityFrameworkCore;
+using CleanApiProject.Data;
+using CleanApiProject.Interfaces;
+using CleanApiProject.Models;
+
+namespace CleanApiProject.Repositories;
+
+/// <summary>
+/// EF Core User Repository — zero raw SQL.
+///
+/// What changed from ADO.NET version:
+///   OLD: SqlConnection → SqlCommand → SqlDataReader → manual mapper
+///   NEW: AppDbContext  → LINQ methods → EF Core translates to SQL automatically
+///
+/// EF Core LINQ methods used:
+///   FindAsync(id)            → SELECT WHERE Id = @id   (uses PK index — fastest)
+///   FirstOrDefaultAsync()    → SELECT TOP 1 WHERE ...
+///   AnyAsync()               → SELECT CASE WHEN EXISTS(...)
+///   ToListAsync()            → SELECT all rows
+///   AddAsync()               → stages INSERT (runs on SaveChangesAsync)
+///   Update()                 → stages UPDATE (runs on SaveChangesAsync)
+///   ExecuteDeleteAsync()     → DELETE in one DB round-trip, no load needed
+///   SaveChangesAsync()       → commits all staged changes to DB
+///
+/// The IUserRepository interface is UNCHANGED —
+/// services call the same methods regardless of ADO.NET or EF Core underneath.
+/// </summary>
+public class UserRepository : IUserRepository
+{
+    private readonly AppDbContext _context;
+
+    // AppDbContext is injected by DI — scoped lifetime (one per request)
+    public UserRepository(AppDbContext context)
+    {
+        _context = context;
+    }
+
+    // ── GET BY ID ──────────────────────────────────────────────────────
+    // EF Core SQL: SELECT TOP 1 * FROM Users WHERE Id = @id
+    public async Task<User?> GetByIdAsync(int id)
+    {
+        // FindAsync uses the primary key — hits the PK clustered index directly
+        return await _context.Users.FindAsync(id);
+    }
+
+    // ── GET BY EMAIL ───────────────────────────────────────────────────
+    // EF Core SQL: SELECT TOP 1 * FROM Users WHERE Email = @email
+    public async Task<User?> GetByEmailAsync(string email)
+    {
+        return await _context.Users
+            .FirstOrDefaultAsync(u => u.Email == email);
+    }
+
+    // ── GET ALL ────────────────────────────────────────────────────────
+    // EF Core SQL: SELECT * FROM Users ORDER BY Id
+    public async Task<IEnumerable<User>> GetAllAsync()
+    {
+        return await _context.Users
+            .OrderBy(u => u.Id)
+            .ToListAsync();
+    }
+
+    // ── EMAIL EXISTS ───────────────────────────────────────────────────
+    // EF Core SQL: SELECT CASE WHEN EXISTS(SELECT 1 FROM Users WHERE Email = @email) THEN 1 ELSE 0 END
+    // AnyAsync is more efficient than loading the whole row just to check existence
+    public async Task<bool> EmailExistsAsync(string email)
+    {
+        return await _context.Users
+            .AnyAsync(u => u.Email == email);
+    }
+
+    // ── CREATE ─────────────────────────────────────────────────────────
+    // EF Core SQL: INSERT INTO Users (...) VALUES (...); SELECT SCOPE_IDENTITY()
+    // EF Core automatically reads back the generated Id after insert
+    public async Task<int> CreateAsync(User user)
+    {
+        await _context.Users.AddAsync(user);
+        await _context.SaveChangesAsync();
+        return user.Id; // EF Core populates this after SaveChangesAsync
+    }
+
+    // ── UPDATE ALL FIELDS ──────────────────────────────────────────────
+    // EF Core SQL: UPDATE Users SET Name=@n, Email=@e, ... WHERE Id=@id
+    public async Task<bool> UpdateAsync(User user)
+    {
+        // Update() marks ALL properties as Modified in the change tracker
+        _context.Users.Update(user);
+        var rows = await _context.SaveChangesAsync();
+        return rows > 0;
+    }
+
+    // ── UPDATE ROLE ONLY ───────────────────────────────────────────────
+    // EF Core SQL: UPDATE Users SET Role=@role, LastRoleUpdate=@now WHERE Id=@id
+    // Only two columns are updated — EF Core is smart enough to generate a
+    // minimal UPDATE statement when only specific properties change
+    public async Task<bool> UpdateRoleAsync(int id, string role)
+    {
+        var user = await _context.Users.FindAsync(id);
+        if (user == null) return false;
+
+        user.Role = role;
+        user.LastRoleUpdate = DateTime.UtcNow; // Invalidates old JWTs — critical!
+
+        // EF Core change tracker detects only Role and LastRoleUpdate changed
+        // Generated SQL: UPDATE Users SET Role=@r, LastRoleUpdate=@t WHERE Id=@id
+        var rows = await _context.SaveChangesAsync();
+        return rows > 0;
+    }
+
+    // ── DELETE ─────────────────────────────────────────────────────────
+    // EF Core SQL: DELETE FROM Users WHERE Id = @id
+    // ExecuteDeleteAsync does NOT load the entity first — single round-trip
+    public async Task<bool> DeleteAsync(int id)
+    {
+        var rows = await _context.Users
+            .Where(u => u.Id == id)
+            .ExecuteDeleteAsync();
+
+        return rows > 0;
+    }
+}

@@ -1,0 +1,173 @@
+﻿using Microsoft.Data.SqlClient;
+using CleanApiProject.Data;
+using CleanApiProject.Interfaces;
+using CleanApiProject.Models;
+
+namespace CleanApiProject.Repositories;
+
+/// <summary>
+/// Handles all database operations for Users using raw ADO.NET.
+/// - Uses SqlConnection, SqlCommand, SqlDataReader
+/// - All queries use parameterized inputs (prevents SQL injection)
+/// - All methods are async
+/// </summary>
+public class UserRepository : IUserRepository
+{
+    private readonly DatabaseHelper _db;
+
+    public UserRepository(DatabaseHelper db)
+    {
+        _db = db;
+    }
+
+    // ── READ ───────────────────────────────────────────────────────────
+
+    public async Task<User?> GetByIdAsync(int id)
+    {
+        const string sql = "SELECT Id, Name, Email, Password, Role, LastRoleUpdate FROM Users WHERE Id = @Id";
+
+        using var conn = await _db.CreateConnectionAsync();
+        using var cmd = new SqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("@Id", id);  // Parameterized — never concatenate!
+
+        using var reader = await cmd.ExecuteReaderAsync();
+        if (await reader.ReadAsync())
+            return MapUser(reader);
+
+        return null;
+    }
+
+    public async Task<User?> GetByEmailAsync(string email)
+    {
+        const string sql = "SELECT Id, Name, Email, Password, Role, LastRoleUpdate FROM Users WHERE Email = @Email";
+
+        using var conn = await _db.CreateConnectionAsync();
+        using var cmd = new SqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("@Email", email);
+
+        using var reader = await cmd.ExecuteReaderAsync();
+        if (await reader.ReadAsync())
+            return MapUser(reader);
+
+        return null;
+    }
+
+    public async Task<IEnumerable<User>> GetAllAsync()
+    {
+        const string sql = "SELECT Id, Name, Email, Password, Role, LastRoleUpdate FROM Users ORDER BY Id";
+
+        var users = new List<User>();
+        using var conn = await _db.CreateConnectionAsync();
+        using var cmd = new SqlCommand(sql, conn);
+        using var reader = await cmd.ExecuteReaderAsync();
+
+        while (await reader.ReadAsync())
+            users.Add(MapUser(reader));
+
+        return users;
+    }
+
+    public async Task<bool> EmailExistsAsync(string email)
+    {
+        const string sql = "SELECT COUNT(1) FROM Users WHERE Email = @Email";
+
+        using var conn = await _db.CreateConnectionAsync();
+        using var cmd = new SqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("@Email", email);
+
+        var count = (int)(await cmd.ExecuteScalarAsync() ?? 0);
+        return count > 0;
+    }
+
+    // ── CREATE ─────────────────────────────────────────────────────────
+
+    public async Task<int> CreateAsync(User user)
+    {
+        // SCOPE_IDENTITY() returns the auto-generated Id
+        const string sql = @"
+            INSERT INTO Users (Name, Email, Password, Role, LastRoleUpdate)
+            VALUES (@Name, @Email, @Password, @Role, @LastRoleUpdate);
+            SELECT CAST(SCOPE_IDENTITY() AS INT);";
+
+        using var conn = await _db.CreateConnectionAsync();
+        using var cmd = new SqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("@Name", user.Name);
+        cmd.Parameters.AddWithValue("@Email", user.Email);
+        cmd.Parameters.AddWithValue("@Password", user.Password);
+        cmd.Parameters.AddWithValue("@Role", user.Role);
+        cmd.Parameters.AddWithValue("@LastRoleUpdate", user.LastRoleUpdate);
+
+        var newId = await cmd.ExecuteScalarAsync();
+        return Convert.ToInt32(newId);
+    }
+
+    // ── UPDATE ─────────────────────────────────────────────────────────
+
+    public async Task<bool> UpdateAsync(User user)
+    {
+        const string sql = @"
+            UPDATE Users
+            SET Name = @Name, Email = @Email, Password = @Password,
+                Role = @Role, LastRoleUpdate = @LastRoleUpdate
+            WHERE Id = @Id";
+
+        using var conn = await _db.CreateConnectionAsync();
+        using var cmd = new SqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("@Id", user.Id);
+        cmd.Parameters.AddWithValue("@Name", user.Name);
+        cmd.Parameters.AddWithValue("@Email", user.Email);
+        cmd.Parameters.AddWithValue("@Password", user.Password);
+        cmd.Parameters.AddWithValue("@Role", user.Role);
+        cmd.Parameters.AddWithValue("@LastRoleUpdate", user.LastRoleUpdate);
+
+        var rows = await cmd.ExecuteNonQueryAsync();
+        return rows > 0;
+    }
+
+    public async Task<bool> UpdateRoleAsync(int id, string role)
+    {
+        // LastRoleUpdate is set to NOW so old tokens become invalid
+        const string sql = @"
+            UPDATE Users
+            SET Role = @Role, LastRoleUpdate = GETUTCDATE()
+            WHERE Id = @Id";
+
+        using var conn = await _db.CreateConnectionAsync();
+        using var cmd = new SqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("@Id", id);
+        cmd.Parameters.AddWithValue("@Role", role);
+
+        var rows = await cmd.ExecuteNonQueryAsync();
+        return rows > 0;
+    }
+
+    // ── DELETE ─────────────────────────────────────────────────────────
+
+    public async Task<bool> DeleteAsync(int id)
+    {
+        const string sql = "DELETE FROM Users WHERE Id = @Id";
+
+        using var conn = await _db.CreateConnectionAsync();
+        using var cmd = new SqlCommand(sql, conn);
+        cmd.Parameters.AddWithValue("@Id", id);
+
+        var rows = await cmd.ExecuteNonQueryAsync();
+        return rows > 0;
+    }
+
+    // ── MAPPER ─────────────────────────────────────────────────────────
+
+    /// <summary>
+    /// Maps a SqlDataReader row to a User object.
+    /// Centralized so column names are only referenced once.
+    /// </summary>
+    private static User MapUser(SqlDataReader reader) => new()
+    {
+        Id = reader.GetInt32(reader.GetOrdinal("Id")),
+        Name = reader.GetString(reader.GetOrdinal("Name")),
+        Email = reader.GetString(reader.GetOrdinal("Email")),
+        Password = reader.GetString(reader.GetOrdinal("Password")),
+        Role = reader.GetString(reader.GetOrdinal("Role")),
+        LastRoleUpdate = reader.GetDateTime(reader.GetOrdinal("LastRoleUpdate"))
+    };
+}

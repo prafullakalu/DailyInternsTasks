@@ -1,0 +1,6 @@
+@QbAppBackend_HostAddress = http://localhost:5179
+
+GET {{QbAppBackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

@@ -1,0 +1,75 @@
+﻿using Microsoft.EntityFrameworkCore;
+using CleanApiProject.Data;
+using CleanApiProject.Interfaces;
+using CleanApiProject.Models;
+
+namespace CleanApiProject.Repositories;
+
+/// <summary>
+/// EF Core Item Repository — zero raw SQL.
+///
+/// EF Core methods used:
+///   FindAsync()          → SELECT by primary key
+///   ToListAsync()        → SELECT all
+///   AddAsync()           → stage INSERT
+///   Update()             → stage UPDATE
+///   ExecuteDeleteAsync() → DELETE without loading entity
+///   SaveChangesAsync()   → commit staged changes
+/// </summary>
+public class ItemRepository : IItemRepository
+{
+    private readonly AppDbContext _context;
+
+    public ItemRepository(AppDbContext context)
+    {
+        _context = context;
+    }
+
+    // ── GET BY ID ──────────────────────────────────────────────────────
+    // EF Core SQL: SELECT TOP 1 * FROM Items WHERE Id = @id
+    public async Task<Item?> GetByIdAsync(int id)
+    {
+        // FindAsync checks the in-memory change tracker first before hitting DB
+        return await _context.Items.FindAsync(id);
+    }
+
+    // ── GET ALL ────────────────────────────────────────────────────────
+    // EF Core SQL: SELECT * FROM Items ORDER BY Id
+    public async Task<IEnumerable<Item>> GetAllAsync()
+    {
+        return await _context.Items
+            .OrderBy(i => i.Id)
+            .ToListAsync();
+    }
+
+    // ── CREATE ─────────────────────────────────────────────────────────
+    // EF Core SQL: INSERT INTO Items (Name, Price) VALUES (@name, @price)
+    //              then reads back the generated Id
+    public async Task<int> CreateAsync(Item item)
+    {
+        await _context.Items.AddAsync(item);
+        await _context.SaveChangesAsync();
+        return item.Id; // auto-populated by EF Core after insert
+    }
+
+    // ── UPDATE ─────────────────────────────────────────────────────────
+    // EF Core SQL: UPDATE Items SET Name=@name, Price=@price WHERE Id=@id
+    public async Task<bool> UpdateAsync(Item item)
+    {
+        _context.Items.Update(item);
+        var rows = await _context.SaveChangesAsync();
+        return rows > 0;
+    }
+
+    // ── DELETE ─────────────────────────────────────────────────────────
+    // EF Core SQL: DELETE FROM Items WHERE Id = @id
+    // ExecuteDeleteAsync = bulk delete without loading entity into memory
+    public async Task<bool> DeleteAsync(int id)
+    {
+        var rows = await _context.Items
+            .Where(i => i.Id == id)
+            .ExecuteDeleteAsync();
+
+        return rows > 0;
+    }
+}

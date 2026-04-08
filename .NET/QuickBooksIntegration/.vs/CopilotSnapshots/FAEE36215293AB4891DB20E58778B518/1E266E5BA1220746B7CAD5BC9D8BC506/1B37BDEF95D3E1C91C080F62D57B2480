@@ -1,0 +1,38 @@
+﻿using QuickBooksIntegration.Models;
+
+namespace QuickBooksIntegration.Services;
+
+public class QuickBooksRepository : IQuickBooksRepository
+{
+    private readonly quickBooksService _service;
+
+    public QuickBooksRepository(quickBooksService service)
+    {
+        _service = service;
+    }
+
+    public Task<string> CreateInvoiceAsync(string token, string realmId, invoiceModel model)
+    {
+        return _service.createInvoice(token, realmId, model);
+    }
+
+    public Task<string> GetInvoiceAsync(string token, string realmId, string id)
+    {
+        return _service.getInvoice(token, realmId, id);
+    }
+
+    public Task<string> UpdateInvoiceAsync(string token, string realmId, invoiceModel model)
+    {
+        return _service.updateInvoice(token, realmId, model);
+    }
+
+    public Task<string> DeleteInvoiceAsync(string token, string realmId, invoiceModel model)
+    {
+        return _service.deleteInvoice(token, realmId, model);
+    }
+
+    public Task<string> QueryInvoicesAsync(string token, string realmId, string query)
+    {
+        return _service.queryInvoices(token, realmId, query);
+    }
+}

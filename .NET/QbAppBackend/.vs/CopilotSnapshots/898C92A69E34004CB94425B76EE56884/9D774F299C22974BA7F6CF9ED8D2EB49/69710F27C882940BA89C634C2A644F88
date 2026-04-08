@@ -1,0 +1,13 @@
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+
+public class QbConnection
+{
+    [BsonId] public ObjectId Id { get; set; }
+    public ObjectId UserId { get; set; }
+    public string RealmId { get; set; } = string.Empty;
+    public string AccessToken { get; set; } = string.Empty;
+    public string RefreshToken { get; set; } = string.Empty;
+    public DateTime ExpiresAt { get; set; }
+    public List<string> Companies { get; set; } = new();
+}

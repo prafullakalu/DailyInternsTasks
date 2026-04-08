@@ -1,0 +1,237 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|c:\\users\\admin\\source\\repos\\employeeconsoleapp\\employeeconsoleapp\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|solutionrelative:employeeconsoleapp\\services\\employeeservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|c:\\users\\admin\\source\\repos\\employeeconsoleapp\\employeeconsoleapp\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|solutionrelative:employeeconsoleapp\\models\\employee.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|c:\\users\\admin\\source\\repos\\employeeconsoleapp\\employeeconsoleapp\\services\\employeeinputservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|solutionrelative:employeeconsoleapp\\services\\employeeinputservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|c:\\users\\admin\\source\\repos\\employeeconsoleapp\\employeeconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|solutionrelative:employeeconsoleapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|c:\\users\\admin\\source\\repos\\employeeconsoleapp\\employeeconsoleapp\\printing\\validationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|solutionrelative:employeeconsoleapp\\printing\\validationhelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|c:\\users\\admin\\source\\repos\\employeeconsoleapp\\employeeconsoleapp\\enums\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|solutionrelative:employeeconsoleapp\\enums\\department.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|c:\\users\\admin\\source\\repos\\employeeconsoleapp\\employeeconsoleapp\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|solutionrelative:employeeconsoleapp\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\bin\\Debug\\net10.0\\EmployeeData\\EmployeeData_16-03-2026.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeConsoleApp\\bin\\Debug\\net10.0\\EmployeeData\\EmployeeData_16-03-2026.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\bin\\Debug\\net10.0\\EmployeeData\\EmployeeData_13-03-2026.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EmployeeConsoleApp\\bin\\Debug\\net10.0\\EmployeeData\\EmployeeData_13-03-2026.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|c:\\users\\admin\\source\\repos\\employeeconsoleapp\\employeeconsoleapp\\helpers\\consolehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|solutionrelative:employeeconsoleapp\\helpers\\consolehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|c:\\users\\admin\\source\\repos\\employeeconsoleapp\\employeeconsoleapp\\config\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|solutionrelative:employeeconsoleapp\\config\\appconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|c:\\users\\admin\\source\\repos\\employeeconsoleapp\\employeeconsoleapp\\config\\employeeconsoleapp.csproj||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|solutionrelative:employeeconsoleapp\\config\\employeeconsoleapp.csproj||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|c:\\users\\admin\\source\\repos\\employeeconsoleapp\\employeeconsoleapp\\app.config||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{045D92E8-E428-2242-FD15-32A27EFBCD67}|EmployeeConsoleApp\\EmployeeConsoleApp.csproj|solutionrelative:employeeconsoleapp\\app.config||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ValidationHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\printing\\ValidationHelper.cs",
+              "RelativeDocumentMoniker": "EmployeeConsoleApp\\printing\\ValidationHelper.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\printing\\ValidationHelper.cs",
+              "RelativeToolTip": "EmployeeConsoleApp\\printing\\ValidationHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T07:10:22.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Employee.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Models\\Employee.cs",
+              "RelativeDocumentMoniker": "EmployeeConsoleApp\\Models\\Employee.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Models\\Employee.cs",
+              "RelativeToolTip": "EmployeeConsoleApp\\Models\\Employee.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAqwDQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T07:10:45.579Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EmployeeService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Services\\EmployeeService.cs",
+              "RelativeDocumentMoniker": "EmployeeConsoleApp\\Services\\EmployeeService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Services\\EmployeeService.cs",
+              "RelativeToolTip": "EmployeeConsoleApp\\Services\\EmployeeService.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAcwCQAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T07:11:07.454Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Department.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Enums\\Department.cs",
+              "RelativeDocumentMoniker": "EmployeeConsoleApp\\Enums\\Department.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Enums\\Department.cs",
+              "RelativeToolTip": "EmployeeConsoleApp\\Enums\\Department.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAswBwAAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T07:09:29.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EmployeeInputService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Services\\EmployeeInputService.cs",
+              "RelativeDocumentMoniker": "EmployeeConsoleApp\\Services\\EmployeeInputService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Services\\EmployeeInputService.cs",
+              "RelativeToolTip": "EmployeeConsoleApp\\Services\\EmployeeInputService.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwJMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T07:11:15.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Program.cs",
+              "RelativeDocumentMoniker": "EmployeeConsoleApp\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Program.cs",
+              "RelativeToolTip": "EmployeeConsoleApp\\Program.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAgwCkAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T07:07:17.369Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ConsoleHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Helpers\\ConsoleHelper.cs",
+              "RelativeDocumentMoniker": "EmployeeConsoleApp\\Helpers\\ConsoleHelper.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Helpers\\ConsoleHelper.cs",
+              "RelativeToolTip": "EmployeeConsoleApp\\Helpers\\ConsoleHelper.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAA5wAIAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T07:10:00.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EmployeeData_16-03-2026.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\bin\\Debug\\net10.0\\EmployeeData\\EmployeeData_16-03-2026.json",
+              "RelativeDocumentMoniker": "EmployeeConsoleApp\\bin\\Debug\\net10.0\\EmployeeData\\EmployeeData_16-03-2026.json",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\bin\\Debug\\net10.0\\EmployeeData\\EmployeeData_16-03-2026.json",
+              "RelativeToolTip": "EmployeeConsoleApp\\bin\\Debug\\net10.0\\EmployeeData\\EmployeeData_16-03-2026.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-16T11:37:24.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\App.config",
+              "RelativeDocumentMoniker": "EmployeeConsoleApp\\App.config",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\App.config",
+              "RelativeToolTip": "EmployeeConsoleApp\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-03-13T12:08:42.312Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AppConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Config\\AppConfig.cs",
+              "RelativeDocumentMoniker": "EmployeeConsoleApp\\Config\\AppConfig.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Config\\AppConfig.cs",
+              "RelativeToolTip": "EmployeeConsoleApp\\Config\\AppConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T07:12:03.265Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "EmployeeData_13-03-2026.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\bin\\Debug\\net10.0\\EmployeeData\\EmployeeData_13-03-2026.json",
+              "RelativeDocumentMoniker": "EmployeeConsoleApp\\bin\\Debug\\net10.0\\EmployeeData\\EmployeeData_13-03-2026.json",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\bin\\Debug\\net10.0\\EmployeeData\\EmployeeData_13-03-2026.json",
+              "RelativeToolTip": "EmployeeConsoleApp\\bin\\Debug\\net10.0\\EmployeeData\\EmployeeData_13-03-2026.json",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-13T09:07:09.419Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "EmployeeConsoleApp.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Config\\EmployeeConsoleApp.csproj",
+              "RelativeDocumentMoniker": "EmployeeConsoleApp\\Config\\EmployeeConsoleApp.csproj",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\Config\\EmployeeConsoleApp.csproj",
+              "RelativeToolTip": "EmployeeConsoleApp\\Config\\EmployeeConsoleApp.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-13T07:17:48.33Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "App.config",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\App.config",
+              "RelativeDocumentMoniker": "EmployeeConsoleApp\\App.config",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\EmployeeConsoleApp\\EmployeeConsoleApp\\App.config",
+              "RelativeToolTip": "EmployeeConsoleApp\\App.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2026-03-13T07:12:16.11Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

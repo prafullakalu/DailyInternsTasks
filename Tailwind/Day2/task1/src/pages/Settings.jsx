@@ -15,10 +15,11 @@ function Settings() {
   }, [mode])
 
   return (
-    <div className="space-y-6">
-      <h2 className="text-xl font-bold">Settings</h2>
+    <div className=" space-y-6 ">
+      <h2 className="  text-xl font-bold">Settings</h2>
 
-      <div className=" dark:bg-indigo-900 p-6 rounded-xl shadow-soft flex justify-between items-center">
+      <div className="   bg-gradient-to-r from-[#0F172A] via-[#1E3A8A] to-[#2563EB]
+        shadow-2xl text-white dark:bg-indigo-900 p-6 rounded-xl shadow-soft flex justify-between items-center">
         <span>Dark Mode ({mode})</span>
         <button
           onClick={() => dispatch(toggleTheme())}

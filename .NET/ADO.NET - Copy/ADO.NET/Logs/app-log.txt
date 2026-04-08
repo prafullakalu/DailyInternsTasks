@@ -1,0 +1,128 @@
+[2026-03-18 09:43:13 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+[2026-03-18 09:43:13 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (39ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2026-03-18 09:43:13 UTC] [INF] [CleanApiProject.Data.AppDbContext] Database schema verified / created successfully.
+[2026-03-18 09:43:14 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2026-03-18 09:43:14 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Items] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2026-03-18 09:43:14 UTC] [INF] [Microsoft.Hosting.Lifetime] Now listening on: https://localhost:7253
+[2026-03-18 09:43:14 UTC] [INF] [Microsoft.Hosting.Lifetime] Now listening on: http://localhost:5164
+[2026-03-18 09:43:14 UTC] [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+[2026-03-18 09:43:14 UTC] [INF] [Microsoft.Hosting.Lifetime] Hosting environment: Development
+[2026-03-18 09:43:14 UTC] [INF] [Microsoft.Hosting.Lifetime] Content root path: C:\Users\Admin\source\repos\ADO.NET - Copy\ADO.NET
+[2026-03-18 09:43:28 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [REQUEST]  GET /index.html | Body: (none) | TraceId: 0HNK4QB7KAGEJ:00000001
+[2026-03-18 09:43:29 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [RESPONSE] GET /index.html → 200 | 62ms | TraceId: 0HNK4QB7KAGEJ:00000001
+[2026-03-18 09:43:29 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [REQUEST]  GET /index.js | Body: (none) | TraceId: 0HNK4QB7KAGEJ:00000005
+[2026-03-18 09:43:29 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [RESPONSE] GET /index.js → 200 | 3ms | TraceId: 0HNK4QB7KAGEJ:00000005
+[2026-03-18 09:43:29 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [REQUEST]  GET /swagger/v1/swagger.json | Body: (none) | TraceId: 0HNK4QB7KAGEJ:00000007
+[2026-03-18 09:43:29 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [RESPONSE] GET /swagger/v1/swagger.json → 200 | 27ms | TraceId: 0HNK4QB7KAGEJ:00000007
+[2026-03-18 10:13:52 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+[2026-03-18 10:13:52 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+[2026-03-18 10:13:52 UTC] [INF] [CleanApiProject.Data.AppDbContext] Database schema verified / created successfully.
+[2026-03-18 10:13:52 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2026-03-18 10:13:52 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Items] AS [i]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+[2026-03-18 10:13:53 UTC] [INF] [Microsoft.Hosting.Lifetime] Now listening on: https://localhost:7253
+[2026-03-18 10:13:53 UTC] [INF] [Microsoft.Hosting.Lifetime] Now listening on: http://localhost:5164
+[2026-03-18 10:13:53 UTC] [INF] [Microsoft.Hosting.Lifetime] Application started. Press Ctrl+C to shut down.
+[2026-03-18 10:13:53 UTC] [INF] [Microsoft.Hosting.Lifetime] Hosting environment: Development
+[2026-03-18 10:13:53 UTC] [INF] [Microsoft.Hosting.Lifetime] Content root path: C:\Users\Admin\source\repos\ADO.NET - Copy\ADO.NET
+[2026-03-18 10:14:02 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [REQUEST]  GET /index.html | Body: (none) | TraceId: 0HNK4QSA2DUGQ:00000001
+[2026-03-18 10:14:02 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [RESPONSE] GET /index.html → 200 | 61ms | TraceId: 0HNK4QSA2DUGQ:00000001
+[2026-03-18 10:14:02 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [REQUEST]  GET /index.js | Body: (none) | TraceId: 0HNK4QSA2DUGQ:00000005
+[2026-03-18 10:14:02 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [RESPONSE] GET /index.js → 200 | 4ms | TraceId: 0HNK4QSA2DUGQ:00000005
+[2026-03-18 10:14:02 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [REQUEST]  GET /swagger/v1/swagger.json | Body: (none) | TraceId: 0HNK4QSA2DUGQ:00000007
+[2026-03-18 10:14:02 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [RESPONSE] GET /swagger/v1/swagger.json → 200 | 21ms | TraceId: 0HNK4QSA2DUGQ:00000007
+[2026-03-18 10:20:44 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [REQUEST]  POST /api/Auth/login | Body: [body contains password — redacted] | TraceId: 0HNK4QSA2DUGQ:00000009
+[2026-03-18 10:20:44 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (41ms) [Parameters=[@__email_0='?' (Size = 200)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[LastRoleUpdate], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Email] = @__email_0
+[2026-03-18 10:20:44 UTC] [INF] [CleanApiProject.Services.AuthService] User logged in: admin@example.com | Role: Admin
+[2026-03-18 10:20:45 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [RESPONSE] POST /api/Auth/login → 200 | 740ms | TraceId: 0HNK4QSA2DUGQ:00000009
+[2026-03-18 10:22:01 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [REQUEST]  PUT /api/User/getUser/3/role | Body: {
+  "role": "Admin"
+} | TraceId: 0HNK4QSA2DUGQ:0000000B
+[2026-03-18 10:22:01 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[LastRoleUpdate], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+[2026-03-18 10:22:01 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[LastRoleUpdate], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+[2026-03-18 10:22:01 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (24ms) [Parameters=[@p2='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (Size = 50)], CommandType='Text', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Users] SET [LastRoleUpdate] = @p0, [Role] = @p1
+OUTPUT 1
+WHERE [Id] = @p2;
+[2026-03-18 10:22:01 UTC] [INF] [CleanApiProject.Services.UserService] Role updated for userId=3 to Admin
+[2026-03-18 10:22:01 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [RESPONSE] PUT /api/User/getUser/3/role → 200 | 342ms | TraceId: 0HNK4QSA2DUGQ:0000000B
+[2026-03-18 10:22:32 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [REQUEST]  PUT /api/User/getUser/1/role | Body: {
+  "role": "User"
+} | TraceId: 0HNK4QSA2DUGQ:0000000D
+[2026-03-18 10:22:32 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[LastRoleUpdate], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+[2026-03-18 10:22:32 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [RESPONSE] PUT /api/User/getUser/1/role → 400 | 21ms | TraceId: 0HNK4QSA2DUGQ:0000000D
+[2026-03-18 10:22:52 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [REQUEST]  DELETE /api/User/deleteUser/1 | Body: (none) | TraceId: 0HNK4QSA2DUGQ:0000000F
+[2026-03-18 10:22:52 UTC] [INF] [Microsoft.EntityFrameworkCore.Database.Command] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[Email], [u].[LastRoleUpdate], [u].[Name], [u].[Password], [u].[Role]
+FROM [Users] AS [u]
+WHERE [u].[Id] = @__p_0
+[2026-03-18 10:22:52 UTC] [INF] [CleanApiProject.Middleware.LoggingMiddleware] [RESPONSE] DELETE /api/User/deleteUser/1 → 400 | 20ms | TraceId: 0HNK4QSA2DUGQ:0000000F

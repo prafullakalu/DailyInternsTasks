@@ -1,0 +1,79 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using QuickBooksIntegration.Models;
+using QuickBooksIntegration.Services;
+
+namespace QuickBooksIntegration.Controllers;
+
+[ApiController]
+[Route("api/qbo")]
+public class invoiceController : ControllerBase
+{
+    private readonly quickBooksService service;
+
+    public invoiceController(quickBooksService service)
+    {
+        this.service = service;
+    }
+
+    // INVOICE
+    [HttpPost("invoice/create")]
+    public async Task<IActionResult> createInvoice(string token, string realmId, invoiceModel model)
+    {
+        return Ok(await service.createInvoice(token, realmId, model));
+    }
+
+    [HttpGet("invoice/{id}")]
+    public async Task<IActionResult> getInvoice(string token, string realmId, string id)
+    {
+        return Ok(await service.getInvoice(token, realmId, id));
+    }
+
+    [HttpPut("invoice/update")]
+    public async Task<IActionResult> updateInvoice(string token, string realmId, invoiceModel model)
+    {
+        return Ok(await service.updateInvoice(token, realmId, model));
+    }
+
+    [HttpDelete("invoice/delete")]
+    public async Task<IActionResult> deleteInvoice(string token, string realmId, invoiceModel model)
+    {
+        return Ok(await service.deleteInvoice(token, realmId, model));
+    }
+
+    [HttpGet("invoice/query")]
+    public async Task<IActionResult> queryInvoices(string token, string realmId, string query)
+    {
+        return Ok(await service.queryInvoices(token, realmId, query));
+    }
+
+    // BILL
+    [HttpPost("bill/create")]
+    public async Task<IActionResult> createBill(string token, string realmId, billModel model)
+    {
+        return Ok(await service.createBill(token, realmId, model));
+    }
+
+    [HttpGet("bill/{id}")]
+    public async Task<IActionResult> getBill(string token, string realmId, string id)
+    {
+        return Ok(await service.getBill(token, realmId, id));
+    }
+
+    [HttpPut("bill/update")]
+    public async Task<IActionResult> updateBill(string token, string realmId, billModel model)
+    {
+        return Ok(await service.updateBill(token, realmId, model));
+    }
+
+    [HttpDelete("bill/delete")]
+    public async Task<IActionResult> deleteBill(string token, string realmId, billModel model)
+    {
+        return Ok(await service.deleteBill(token, realmId, model));
+    }
+
+    [HttpGet("bill/query")]
+    public async Task<IActionResult> queryBills(string token, string realmId, string query)
+    {
+        return Ok(await service.queryBills(token, realmId, query));
+    }
+}

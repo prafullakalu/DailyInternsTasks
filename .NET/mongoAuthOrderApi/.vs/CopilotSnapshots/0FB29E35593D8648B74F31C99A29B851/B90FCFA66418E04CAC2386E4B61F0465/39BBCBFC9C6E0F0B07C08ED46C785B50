@@ -1,0 +1,81 @@
+﻿using Microsoft.Extensions.Options;
+using MongoDB.Driver;
+using mongoAuthOrderApi.Models;
+using mongoAuthOrderApi.settings;
+
+namespace mongoAuthOrderApi.services;
+
+public class mongoDbService
+{
+    private readonly IMongoCollection<user> _users;
+    private readonly IMongoCollection<order> _orders;
+
+    public mongoDbService(IOptions<mongoDbSettings> settings)
+    {
+        var client = new MongoClient(settings.Value.connectionString);
+        var database = client.GetDatabase(settings.Value.databaseName);
+
+        _users = database.GetCollection<user>("users");
+        _orders = database.GetCollection<order>("orders");
+
+        // Create indexes
+        var userEmailIndex = Builders<user>.IndexKeys.Ascending(u => u.email);
+        _users.Indexes.CreateOne(new CreateIndexModel<user>(userEmailIndex,
+            new CreateIndexOptions { Unique = true }));
+    }
+
+    // ==================== USER CRUD ====================
+
+    public async Task<List<user>> getAllUsersAsync() =>
+        await _users.Find(_ => true).ToListAsync();
+
+    public async Task<user?> getUserByIdAsync(string id) =>
+        await _users.Find(u => u.id == id).FirstOrDefaultAsync();
+
+    public async Task<user?> getUserByEmailAsync(string email) =>
+        await _users.Find(u => u.email == email).FirstOrDefaultAsync();
+
+    public async Task<user?> getUserByUsernameAsync(string username) =>
+        await _users.Find(u => u.username == username).FirstOrDefaultAsync();
+
+    public async Task createUserAsync(user newUser) =>
+        await _users.InsertOneAsync(newUser);
+
+    public async Task<bool> updateUserAsync(string id, UpdateDefinition<user> update)
+    {
+        var result = await _users.UpdateOneAsync(u => u.id == id, update);
+        return result.ModifiedCount > 0;
+    }
+
+    public async Task<bool> deleteUserAsync(string id)
+    {
+        var result = await _users.DeleteOneAsync(u => u.id == id);
+        return result.DeletedCount > 0;
+    }
+
+
+
+    public async Task<List<order>> getAllOrdersAsync() =>
+        await _orders.Find(_ => true).SortByDescending(o => o.createdAt).ToListAsync();
+
+    public async Task<List<order>> getOrdersByUserIdAsync(string userId) =>
+        await _orders.Find(o => o.userId == userId).SortByDescending(o => o.createdAt).ToListAsync();
+
+    public async Task<order?> getOrderByIdAsync(string id) =>
+        await _orders.Find(o => o.id == id).FirstOrDefaultAsync();
+
+    public async Task createOrderAsync(order newOrder) =>
+        await _orders.InsertOneAsync(newOrder);
+
+    public async Task<bool> updateOrderAsync(string id, UpdateDefinition<order> update)
+    {
+        var result = await _orders.UpdateOneAsync(o => o.id == id, update);
+        return result.ModifiedCount > 0;
+    }
+
+    public async Task<bool> deleteOrderAsync(string id)
+    {
+        var result = await _orders.DeleteOneAsync(o => o.id == id);
+        return result.DeletedCount > 0;
+    }
+}

@@ -1,0 +1,8 @@
+﻿namespace QbAppBackend.DTOs.Qb
+{
+    public class ItemDto
+    {
+        public string Name { get; set; } = string.Empty;
+        public string Type { get; set; } = "Service"; // Service, Inventory, etc.
+    }
+}

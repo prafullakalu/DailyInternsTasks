@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\bin\Debug\net10.0\Day1_Task.exe
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\bin\Debug\net10.0\Day1_Task.deps.json
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\bin\Debug\net10.0\Day1_Task.runtimeconfig.json
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\bin\Debug\net10.0\Day1_Task.dll
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\bin\Debug\net10.0\Day1_Task.pdb
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\obj\Debug\net10.0\Day1_Task.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\obj\Debug\net10.0\Day1_Task.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\obj\Debug\net10.0\Day1_Task.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\obj\Debug\net10.0\Day1_Task.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\obj\Debug\net10.0\Day1_Task.dll
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\obj\Debug\net10.0\refint\Day1_Task.dll
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\obj\Debug\net10.0\Day1_Task.pdb
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\obj\Debug\net10.0\Day1_Task.genruntimeconfig.cache
+C:\Users\Admin\source\repos\Day1_Task\Day1_Task\obj\Debug\net10.0\ref\Day1_Task.dll

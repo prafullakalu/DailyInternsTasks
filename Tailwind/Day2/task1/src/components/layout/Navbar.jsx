@@ -14,30 +14,48 @@ function Navbar() {
   }
 
   return (
-    <header className="h-16 bg-black-300 dark:bg-indigo-900 shadow-soft flex items-center justify-between px-4 text-gray-900 dark:text-white">
-      
+    <header className="
+      h-16
+      backdrop-blur-lg
+      bg-white/10 dark:bg-white/5
+      border-b border-white/20
+      shadow-lg
+      flex items-center justify-between
+      px-4
+      text-gray-900 dark:text-white
+    ">
+
       <button
-        className="md:hidden bg-indigo-200 dark:bg-indigo-700 p-2 rounded"
+        className="md:hidden bg-white/20 hover:bg-white/30 p-2 rounded-lg transition"
         onClick={() => dispatch(toggleMobileMenu())}
       >
-        <Menu className="text-indigo-900 dark:text-white" />
+        <Menu className="text-gray-900 dark:text-white" />
       </button>
 
-      <h1 className="font-semibold text-lg">
+      <h1 className="font-semibold text-lg tracking-wide">
         Employee Admin
       </h1>
 
       <div className="flex items-center gap-4">
+
         <button
           onClick={() => dispatch(toggleNotification())}
-          className="p-2 rounded-full bg-indigo-200 dark:bg-indigo-500"
+          className="p-2 rounded-full bg-white/20 hover:bg-white/30 transition"
         >
-          <Bell className="text-indigo-900 dark:text-indigo" />
+          <Bell className="text-gray-900 dark:text-white" />
         </button>
 
         <button
           onClick={handleLogout}
-          className="text-sm bg-primary text-white px-3 py-1 rounded-lg"
+          className="
+            text-sm
+            bg-gradient-to-r from-blue-600 to-indigo-700
+            hover:opacity-90
+            text-white
+            px-4 py-1.5
+            rounded-lg
+            transition
+          "
         >
           Logout
         </button>

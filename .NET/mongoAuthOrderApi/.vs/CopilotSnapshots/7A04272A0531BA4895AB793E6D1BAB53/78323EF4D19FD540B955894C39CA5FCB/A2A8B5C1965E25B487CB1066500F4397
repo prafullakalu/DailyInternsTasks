@@ -1,0 +1,193 @@
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using MongoDB.Driver;
+using mongoAuthOrderApi.Models;
+using mongoAuthOrderApi.services;
+using System.Security.Claims;
+
+namespace mongoAuthOrderApi.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+public class authController : ControllerBase
+{
+    private readonly mongoDbService _db;
+    private readonly jwtService _jwt;
+
+    public authController(mongoDbService db, jwtService jwt)
+    {
+        _db = db;
+        _jwt = jwt;
+    }
+
+    // POST /api/auth/signup
+    [HttpPost("signup")]
+    public async Task<IActionResult> signup([FromBody] signUpRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.username) ||
+            string.IsNullOrWhiteSpace(request.email) ||
+            string.IsNullOrWhiteSpace(request.password))
+            return BadRequest(new { message = "Username, email and password are required" });
+
+        // Check if email already exists
+        var existing = await _db.userRepo.getUserByEmailAsync(request.email);
+        if (existing != null)
+            return Conflict(new { message = "Email already registered" });
+
+        // Check if username already exists
+        var existingUsername = await _db.userRepo.getUserByUsernameAsync(request.username);
+        if (existingUsername != null)
+            return Conflict(new { message = "Username already taken" });
+
+        // Validate role
+        var validRoles = new[] { "Admin", "User" };
+        var role = validRoles.Contains(request.role) ? request.role : "User";
+
+        var newUser = new user
+        {
+            username = request.username,
+            email = request.email.ToLower(),
+            passwordHash = BCrypt.Net.BCrypt.HashPassword(request.password),
+            role = role,
+            createdAt = DateTime.UtcNow
+        };
+
+        await _db.userRepo.createUserAsync(newUser);
+
+        var token = _jwt.generateToken(newUser.id!, newUser.username, newUser.email, newUser.role);
+
+        return Ok(new authResponse
+        {
+            token = token,
+            username = newUser.username,
+            email = newUser.email,
+            role = newUser.role,
+            userId = newUser.id!
+        });
+    }
+
+    // POST /api/auth/signin
+    [HttpPost("signin")]
+    public async Task<IActionResult> signin([FromBody] signInRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.email) || string.IsNullOrWhiteSpace(request.password))
+            return BadRequest(new { message = "Email and password are required" });
+
+        var existingUser = await _db.userRepo.getUserByEmailAsync(request.email.ToLower());
+        if (existingUser == null)
+            return Unauthorized(new { message = "Invalid email or password" });
+
+        var isValidPassword = BCrypt.Net.BCrypt.Verify(request.password, existingUser.passwordHash);
+        if (!isValidPassword)
+            return Unauthorized(new { message = "Invalid email or password" });
+
+        var token = _jwt.generateToken(existingUser.id!, existingUser.username, existingUser.email, existingUser.role);
+
+        return Ok(new authResponse
+        {
+            token = token,
+            username = existingUser.username,
+            email = existingUser.email,
+            role = existingUser.role,
+            userId = existingUser.id!
+        });
+    }
+
+    // GET /api/auth/me  — any authenticated user
+    [HttpGet("me")]
+    [Authorize]
+    public async Task<IActionResult> getMe()
+    {
+        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (userId == null) return Unauthorized();
+
+        var currentUser = await _db.userRepo.getUserByIdAsync(userId);
+        if (currentUser == null) return NotFound(new { message = "User not found" });
+
+        return Ok(new
+        {
+            currentUser.id,
+            currentUser.username,
+            currentUser.email,
+            currentUser.role,
+            currentUser.createdAt
+        });
+    }
+
+    // GET /api/auth/users  — Admin only
+    [HttpGet("users")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> getAllUsers()
+    {
+        var users = await _db.userRepo.getAllUsersAsync();
+        var result = users.Select(u => new
+        {
+            u.id,
+            u.username,
+            u.email,
+            u.role,
+            u.createdAt
+        });
+        return Ok(result);
+    }
+
+    // GET /api/auth/users/{id}  — Admin only
+    [HttpGet("users/{id}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> getUserById(string id)
+    {
+        var foundUser = await _db.userRepo.getUserByIdAsync(id);
+        if (foundUser == null) return NotFound(new { message = "User not found" });
+
+        return Ok(new
+        {
+            foundUser.id,
+            foundUser.username,
+            foundUser.email,
+            foundUser.role,
+            foundUser.createdAt
+        });
+    }
+
+    // PUT /api/auth/users/{id}  — Admin only
+    [HttpPut("users/{id}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> updateUser(string id, [FromBody] updateUserRequest request)
+    {
+        var foundUser = await _db.userRepo.getUserByIdAsync(id);
+        if (foundUser == null) return NotFound(new { message = "User not found" });
+
+        var updates = new List<UpdateDefinition<user>>();
+
+        if (!string.IsNullOrWhiteSpace(request.username))
+            updates.Add(Builders<user>.Update.Set(u => u.username, request.username));
+        if (!string.IsNullOrWhiteSpace(request.email))
+            updates.Add(Builders<user>.Update.Set(u => u.email, request.email.ToLower()));
+        if (!string.IsNullOrWhiteSpace(request.role))
+            updates.Add(Builders<user>.Update.Set(u => u.role, request.role));
+
+        if (updates.Count == 0)
+            return BadRequest(new { message = "No fields to update" });
+
+        var combined = Builders<user>.Update.Combine(updates);
+        var updated = await _db.userRepo.updateUserAsync(id, combined);
+
+        return updated
+            ? Ok(new { message = "User updated successfully" })
+            : StatusCode(500, new { message = "Update failed" });
+    }
+
+    // DELETE /api/auth/users/{id}  — Admin only
+    [HttpDelete("users/{id}")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> deleteUser(string id)
+    {
+        var foundUser = await _db.userRepo.getUserByIdAsync(id);
+        if (foundUser == null) return NotFound(new { message = "User not found" });
+
+        var deleted = await _db.userRepo.deleteUserAsync(id);
+        return deleted
+            ? Ok(new { message = "User deleted successfully" })
+            : StatusCode(500, new { message = "Delete failed" });
+    }
+}

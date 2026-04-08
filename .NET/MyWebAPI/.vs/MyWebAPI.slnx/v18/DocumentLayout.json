@@ -1,0 +1,215 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|c:\\users\\admin\\source\\repos\\mywebapi\\mywebapi\\mywebapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|solutionrelative:mywebapi\\mywebapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|c:\\users\\admin\\source\\repos\\mywebapi\\mywebapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|solutionrelative:mywebapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|c:\\users\\admin\\source\\repos\\mywebapi\\mywebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|solutionrelative:mywebapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|c:\\users\\admin\\source\\repos\\mywebapi\\mywebapi\\services\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|solutionrelative:mywebapi\\services\\postservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|c:\\users\\admin\\source\\repos\\mywebapi\\mywebapi\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|solutionrelative:mywebapi\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|c:\\users\\admin\\source\\repos\\mywebapi\\mywebapi\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|solutionrelative:mywebapi\\controllers\\postscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|c:\\users\\admin\\source\\repos\\mywebapi\\mywebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|solutionrelative:mywebapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|c:\\users\\admin\\source\\repos\\mywebapi\\mywebapi\\services\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|solutionrelative:mywebapi\\services\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|c:\\users\\admin\\source\\repos\\mywebapi\\mywebapi\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|solutionrelative:mywebapi\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|c:\\users\\admin\\source\\repos\\mywebapi\\mywebapi\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|solutionrelative:mywebapi\\models\\post.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|c:\\users\\admin\\source\\repos\\mywebapi\\mywebapi\\models\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|solutionrelative:mywebapi\\models\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|c:\\users\\admin\\source\\repos\\mywebapi\\mywebapi\\services\\ipostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F5DD4506-E86D-2466-F17E-FD9C5F8606B0}|MyWebAPI\\MyWebAPI.csproj|solutionrelative:mywebapi\\services\\ipostservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "MyWebAPI\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "MyWebAPI\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T10:11:06.129Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Program.cs",
+              "RelativeDocumentMoniker": "MyWebAPI\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Program.cs",
+              "RelativeToolTip": "MyWebAPI\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEAAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T10:15:24.132Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Post.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Models\\Post.cs",
+              "RelativeDocumentMoniker": "MyWebAPI\\Models\\Post.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Models\\Post.cs",
+              "RelativeToolTip": "MyWebAPI\\Models\\Post.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T10:05:53.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\appsettings.json",
+              "RelativeDocumentMoniker": "MyWebAPI\\appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\appsettings.json",
+              "RelativeToolTip": "MyWebAPI\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-16T10:04:03.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "MyWebAPI\\Services\\TokenService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Services\\TokenService.cs",
+              "RelativeToolTip": "MyWebAPI\\Services\\TokenService.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAowCoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T10:08:42.77Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PostService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Services\\PostService.cs",
+              "RelativeDocumentMoniker": "MyWebAPI\\Services\\PostService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Services\\PostService.cs",
+              "RelativeToolTip": "MyWebAPI\\Services\\PostService.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAQwEEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T11:24:10.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MyWebAPI.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\MyWebAPI.csproj",
+              "RelativeDocumentMoniker": "MyWebAPI\\MyWebAPI.csproj",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\MyWebAPI.csproj",
+              "RelativeToolTip": "MyWebAPI\\MyWebAPI.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-16T10:05:29.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PostsController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Controllers\\PostsController.cs",
+              "RelativeDocumentMoniker": "MyWebAPI\\Controllers\\PostsController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Controllers\\PostsController.cs",
+              "RelativeToolTip": "MyWebAPI\\Controllers\\PostsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAD4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T10:11:40.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "MyWebAPI\\Models\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "MyWebAPI\\Models\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T10:06:06.093Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LoginResponse.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Models\\LoginResponse.cs",
+              "RelativeDocumentMoniker": "MyWebAPI\\Models\\LoginResponse.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Models\\LoginResponse.cs",
+              "RelativeToolTip": "MyWebAPI\\Models\\LoginResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T10:06:22.359Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ITokenService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Services\\ITokenService.cs",
+              "RelativeDocumentMoniker": "MyWebAPI\\Services\\ITokenService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Services\\ITokenService.cs",
+              "RelativeToolTip": "MyWebAPI\\Services\\ITokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T11:21:33.592Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "IPostService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Services\\IPostService.cs",
+              "RelativeDocumentMoniker": "MyWebAPI\\Services\\IPostService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\MyWebAPI\\MyWebAPI\\Services\\IPostService.cs",
+              "RelativeToolTip": "MyWebAPI\\Services\\IPostService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-16T11:24:28.757Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

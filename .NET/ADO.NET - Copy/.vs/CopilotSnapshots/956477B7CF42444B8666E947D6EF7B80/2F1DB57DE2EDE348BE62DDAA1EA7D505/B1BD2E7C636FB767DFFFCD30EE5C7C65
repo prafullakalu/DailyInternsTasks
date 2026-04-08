@@ -1,0 +1,34 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CleanApiProject.Models;
+
+/// <summary>
+/// Represents a user in the system.
+/// Maps to the "Users" table in SQL Server.
+/// </summary>
+public class User
+{
+    public int Id { get; set; }
+
+    [Required(ErrorMessage = "Name is required")]
+    [MaxLength(100, ErrorMessage = "Name cannot exceed 100 characters")]
+    public string Name { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Email is required")]
+    [EmailAddress(ErrorMessage = "Invalid email format")]
+    [MaxLength(200)]
+    public string Email { get; set; } = string.Empty;
+
+    // Password is stored as a BCrypt hash - never plain text
+    [Required]
+    public string Password { get; set; } = string.Empty;
+
+    // Role can be "Admin" or "User"
+    [Required]
+    [MaxLength(50)]
+    public string Role { get; set; } = "User";
+
+    // Tracks when the role was last changed.
+    // Used to invalidate old JWTs after a role update.
+    public DateTime LastRoleUpdate { get; set; } = DateTime.UtcNow;
+}

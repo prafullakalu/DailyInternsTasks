@@ -1,0 +1,7 @@
+﻿public class UpdateInvoiceDto
+{
+    public string CustomerId { get; set; } = string.Empty;
+    public DateTime TxnDate { get; set; }
+    public DateTime DueDate { get; set; }
+    public List<InvoiceLineDto> Lines { get; set; } = new();
+}

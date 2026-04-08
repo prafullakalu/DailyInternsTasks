@@ -1,0 +1,23 @@
+﻿using QuickBooksIntegration.Data;
+using QuickBooksIntegration.Models;
+
+namespace QuickBooksIntegration.Repositories.Implementations
+{
+    public class TokenRepository : ITokenRepository
+    {
+        public Task<tokenModel?> GetLatestTokenAsync()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<tokenModel?> GetTokenByRealmIdAsync(string realmId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task SaveTokenAsync(tokenModel token)
+        {
+            throw new NotImplementedException();
+        }
+    }
+}

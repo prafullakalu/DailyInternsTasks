@@ -1,0 +1,65 @@
+﻿using QuickBooksIntegration.Models;
+using QuickBooksIntegration.Data;
+
+namespace QuickBooksIntegration.Services;
+
+public class QuickBooksRepository : IQuickBooksRepository
+{
+    private readonly quickBooksService _service;
+    private readonly ITokenRepository _tokenRepo;
+
+    public QuickBooksRepository(quickBooksService service, ITokenRepository tokenRepo)
+    {
+        _service = service;
+        _tokenRepo = tokenRepo;
+    }
+
+    private async Task<(string token, string realmId)> ResolveCredentialsAsync(string token, string realmId)
+    {
+        if (!string.IsNullOrEmpty(token) && !string.IsNullOrEmpty(realmId))
+            return (token, realmId);
+
+        // if realmId provided but no token, try fetching by realmId
+        if (!string.IsNullOrEmpty(realmId))
+        {
+            var t = await _tokenRepo.GetTokenByRealmIdAsync(realmId);
+            if (t != null) return (t.accessToken, t.realmId);
+        }
+
+        // fallback: get latest token
+        var latest = await _tokenRepo.GetLatestTokenAsync();
+        if (latest != null) return (latest.accessToken, latest.realmId);
+
+        throw new InvalidOperationException("No stored QuickBooks token found. Authenticate first.");
+    }
+
+    public async Task<string> CreateInvoiceAsync(string token, string realmId, invoiceModel model)
+    {
+        var creds = await ResolveCredentialsAsync(token, realmId);
+        return await _service.createInvoice(creds.token, creds.realmId, model);
+    }
+
+    public async Task<string> GetInvoiceAsync(string token, string realmId, string id)
+    {
+        var creds = await ResolveCredentialsAsync(token, realmId);
+        return await _service.getInvoice(creds.token, creds.realmId, id);
+    }
+
+    public async Task<string> UpdateInvoiceAsync(string token, string realmId, invoiceModel model)
+    {
+        var creds = await ResolveCredentialsAsync(token, realmId);
+        return await _service.updateInvoice(creds.token, creds.realmId, model);
+    }
+
+    public async Task<string> DeleteInvoiceAsync(string token, string realmId, invoiceModel model)
+    {
+        var creds = await ResolveCredentialsAsync(token, realmId);
+        return await _service.deleteInvoice(creds.token, creds.realmId, model);
+    }
+
+    public async Task<string> QueryInvoicesAsync(string token, string realmId, string query)
+    {
+        var creds = await ResolveCredentialsAsync(token, realmId);
+        return await _service.queryInvoices(creds.token, creds.realmId, query);
+    }
+}

@@ -1,0 +1,15 @@
+﻿public class CreateInvoiceDto
+{
+    public string CustomerId { get; set; } = string.Empty;
+    public DateTime TxnDate { get; set; }
+    public DateTime DueDate { get; set; }
+    public List<InvoiceLineDto> Lines { get; set; } = new();
+}
+
+public class InvoiceLineDto
+{
+    public string ItemId { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+    public decimal Quantity { get; set; }
+    public decimal UnitPrice { get; set; }
+}

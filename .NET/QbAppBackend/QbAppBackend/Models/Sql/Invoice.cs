@@ -1,0 +1,19 @@
+namespace QbAppBackend.Models.Sql
+{
+    public class Invoice
+    {
+        public Guid Id { get; set; } = Guid.NewGuid();
+        public string UserId { get; set; } = string.Empty;
+        public string QuickbooksInvoiceId { get; set; } = string.Empty;
+        public string QuickbooksSyncToken { get; set; } = string.Empty;
+        public string CustomerId { get; set; } = string.Empty;
+        public string CustomerName { get; set; } = string.Empty;
+        public DateTime TxnDate { get; set; }
+        public DateTime DueDate { get; set; }
+        public decimal TotalAmount { get; set; }
+        public decimal Balance { get; set; }
+        public string Status { get; set; } = "Open";
+        public decimal TaxAmount { get; set; }
+        public List<InvoiceLineItem> LineItems { get; set; } = new();
+    }
+}

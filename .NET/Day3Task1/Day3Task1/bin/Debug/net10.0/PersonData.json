@@ -1,0 +1,8 @@
+{
+  "Name": "prafulla",
+  "Age": 25,
+  "City": {
+    "Name": "morbi",
+    "Population": 50000
+  }
+}

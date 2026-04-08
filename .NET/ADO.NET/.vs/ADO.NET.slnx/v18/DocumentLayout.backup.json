@@ -1,0 +1,404 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\services\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\services\\itemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\helpers\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\helpers\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\interfaces\\iinterfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\interfaces\\iinterfaces.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\filters\\filters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\filters\\filters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\ado.net.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\ado.net.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\data\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\data\\databaseinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\data\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\data\\databasehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\repositories\\itemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\repositories\\itemrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\middleware\\loggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\middleware\\loggingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\models\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\middleware\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\middleware\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\helpers\\filelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\helpers\\filelogger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\controllers\\itemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\dtos\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\dtos\\dtos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|c:\\users\\admin\\source\\repos\\ado.net\\ado.net\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F37404F-B5DA-7E02-1ED1-5406FBF804AE}|ADO.NET\\ADO.NET.csproj|solutionrelative:ado.net\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 9,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Program.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Program.cs",
+              "RelativeToolTip": "ADO.NET\\Program.cs",
+              "ViewState": "AgIAAI4AAAAAAAAAAEBVwH4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:50:11.632Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "ADO.NET\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAEBVwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T11:41:54.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Dtos.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\DTOs\\Dtos.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\DTOs\\Dtos.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\DTOs\\Dtos.cs",
+              "RelativeToolTip": "ADO.NET\\DTOs\\Dtos.cs",
+              "ViewState": "AgIAADgAAAAAAAAAACBiwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T11:39:48.882Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\appsettings.json",
+              "RelativeDocumentMoniker": "ADO.NET\\appsettings.json",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\appsettings.json",
+              "RelativeToolTip": "ADO.NET\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-18T07:10:20.286Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ItemService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Services\\ItemService.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Services\\ItemService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Services\\ItemService.cs",
+              "RelativeToolTip": "ADO.NET\\Services\\ItemService.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAswDsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:54:28.539Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Services\\UserService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Services\\UserService.cs",
+              "RelativeToolTip": "ADO.NET\\Services\\UserService.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAIBZwD4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:54:14.061Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Helpers\\TokenService.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Helpers\\TokenService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Helpers\\TokenService.cs",
+              "RelativeToolTip": "ADO.NET\\Helpers\\TokenService.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAIBZwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T07:04:04.62Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "IInterfaces.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Interfaces\\IInterfaces.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Interfaces\\IInterfaces.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Interfaces\\IInterfaces.cs",
+              "RelativeToolTip": "ADO.NET\\Interfaces\\IInterfaces.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:55:51.779Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Controllers\\UserController.cs",
+              "RelativeToolTip": "ADO.NET\\Controllers\\UserController.cs",
+              "ViewState": "AgIAADcAAAAAAAAAAAAqwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:51:42.999Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Filters.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Filters\\Filters.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Filters\\Filters.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Filters\\Filters.cs",
+              "RelativeToolTip": "ADO.NET\\Filters\\Filters.cs",
+              "ViewState": "AgIAAE4AAAAAAAAAAEBVwEYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T08:29:16.018Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "ADO.NET\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\appsettings.Development.json",
+              "RelativeToolTip": "ADO.NET\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-18T07:11:00.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ADO.NET.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\ADO.NET.csproj",
+              "RelativeDocumentMoniker": "ADO.NET\\ADO.NET.csproj",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\ADO.NET.csproj",
+              "RelativeToolTip": "ADO.NET\\ADO.NET.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2026-03-18T07:11:52.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DatabaseInitializer.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Data\\DatabaseInitializer.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Data\\DatabaseInitializer.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Data\\DatabaseInitializer.cs",
+              "RelativeToolTip": "ADO.NET\\Data\\DatabaseInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T07:19:20.818Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DatabaseHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Data\\DatabaseHelper.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Data\\DatabaseHelper.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Data\\DatabaseHelper.cs",
+              "RelativeToolTip": "ADO.NET\\Data\\DatabaseHelper.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAABMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:59:36.008Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Services\\AuthService.cs",
+              "RelativeToolTip": "ADO.NET\\Services\\AuthService.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAswFwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:54:00.785Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Repositories\\UserRepository.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Repositories\\UserRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Repositories\\UserRepository.cs",
+              "RelativeToolTip": "ADO.NET\\Repositories\\UserRepository.cs",
+              "ViewState": "AgIAAJAAAAAAAAAAAABhwJcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:54:54.082Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ItemRepository.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Repositories\\ItemRepository.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Repositories\\ItemRepository.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Repositories\\ItemRepository.cs",
+              "RelativeToolTip": "ADO.NET\\Repositories\\ItemRepository.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAIBZwF8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:55:13.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Models\\User.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Models\\User.cs",
+              "RelativeToolTip": "ADO.NET\\Models\\User.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAABgwBoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:57:07.482Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "LoggingMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Middleware\\LoggingMiddleware.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Middleware\\LoggingMiddleware.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Middleware\\LoggingMiddleware.cs",
+              "RelativeToolTip": "ADO.NET\\Middleware\\LoggingMiddleware.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAswG4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T07:02:13.693Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Item.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Models\\Item.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Models\\Item.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Models\\Item.cs",
+              "RelativeToolTip": "ADO.NET\\Models\\Item.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:57:19.396Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ExceptionHandlingMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "RelativeToolTip": "ADO.NET\\Middleware\\ExceptionHandlingMiddleware.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAswFsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T07:01:57.015Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FileLogger.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Helpers\\FileLogger.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Helpers\\FileLogger.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Helpers\\FileLogger.cs",
+              "RelativeToolTip": "ADO.NET\\Helpers\\FileLogger.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAuwF8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T07:07:33.029Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "ItemController.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Controllers\\ItemController.cs",
+              "RelativeDocumentMoniker": "ADO.NET\\Controllers\\ItemController.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\ADO.NET\\ADO.NET\\Controllers\\ItemController.cs",
+              "RelativeToolTip": "ADO.NET\\Controllers\\ItemController.cs",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAQwBIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-18T06:52:28.746Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

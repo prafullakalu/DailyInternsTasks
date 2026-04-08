@@ -1,0 +1,8 @@
+C:\Users\Admin\source\repos\QbAppBackend\QbAppBackend\obj\Debug\net10.0\QbAppBackend1.csproj.AssemblyReference.cache
+C:\Users\Admin\source\repos\QbAppBackend\QbAppBackend\obj\Debug\net10.0\rpswa.dswa.cache.json
+C:\Users\Admin\source\repos\QbAppBackend\QbAppBackend\obj\Debug\net10.0\QbAppBackend1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\QbAppBackend\QbAppBackend\obj\Debug\net10.0\QbAppBackend1.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\QbAppBackend\QbAppBackend\obj\Debug\net10.0\QbAppBackend1.AssemblyInfo.cs
+C:\Users\Admin\source\repos\QbAppBackend\QbAppBackend\obj\Debug\net10.0\QbAppBackend1.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\QbAppBackend\QbAppBackend\obj\Debug\net10.0\QbAppBackend1.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Admin\source\repos\QbAppBackend\QbAppBackend\obj\Debug\net10.0\QbAppBackend1.MvcApplicationPartsAssemblyInfo.cs

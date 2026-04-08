@@ -1,0 +1,151 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|c:\\users\\admin\\source\\repos\\azuretask1\\azuretask1\\csvblobprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|solutionrelative:azuretask1\\csvblobprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|c:\\users\\admin\\source\\repos\\azuretask1\\azuretask1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|solutionrelative:azuretask1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|c:\\users\\admin\\source\\repos\\azuretask1\\azuretask1\\orderqueueprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|solutionrelative:azuretask1\\orderqueueprocessor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|c:\\users\\admin\\source\\repos\\azuretask1\\azuretask1\\orderhttpreceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|solutionrelative:azuretask1\\orderhttpreceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|c:\\users\\admin\\source\\repos\\azuretask1\\azuretask1\\dailysummarytimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|solutionrelative:azuretask1\\dailysummarytimer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|c:\\users\\admin\\source\\repos\\azuretask1\\azuretask1\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|solutionrelative:azuretask1\\local.settings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|c:\\users\\admin\\source\\repos\\azuretask1\\azuretask1\\host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{7F810A05-7355-4354-B814-66621C9EF963}|AzureTask1\\AzureTask1.csproj|solutionrelative:azuretask1\\host.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CsvBlobProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\CsvBlobProcessor.cs",
+              "RelativeDocumentMoniker": "AzureTask1\\CsvBlobProcessor.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\CsvBlobProcessor.cs",
+              "RelativeToolTip": "AzureTask1\\CsvBlobProcessor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T09:12:48.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderHttpReceiver.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\OrderHttpReceiver.cs",
+              "RelativeDocumentMoniker": "AzureTask1\\OrderHttpReceiver.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\OrderHttpReceiver.cs",
+              "RelativeToolTip": "AzureTask1\\OrderHttpReceiver.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T09:12:33.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "OrderQueueProcessor.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\OrderQueueProcessor.cs",
+              "RelativeDocumentMoniker": "AzureTask1\\OrderQueueProcessor.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\OrderQueueProcessor.cs",
+              "RelativeToolTip": "AzureTask1\\OrderQueueProcessor.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBkAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T09:13:08.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DailySummaryTimer.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\DailySummaryTimer.cs",
+              "RelativeDocumentMoniker": "AzureTask1\\DailySummaryTimer.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\DailySummaryTimer.cs",
+              "RelativeToolTip": "AzureTask1\\DailySummaryTimer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T09:13:21.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\Program.cs",
+              "RelativeDocumentMoniker": "AzureTask1\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\Program.cs",
+              "RelativeToolTip": "AzureTask1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T09:31:00.901Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "local.settings.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\local.settings.json",
+              "RelativeDocumentMoniker": "AzureTask1\\local.settings.json",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\local.settings.json",
+              "RelativeToolTip": "AzureTask1\\local.settings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-27T09:09:36.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "host.json",
+              "DocumentMoniker": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\host.json",
+              "RelativeDocumentMoniker": "AzureTask1\\host.json",
+              "ToolTip": "C:\\Users\\Admin\\source\\repos\\AzureTask1\\AzureTask1\\host.json",
+              "RelativeToolTip": "AzureTask1\\host.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-03-27T09:16:05.254Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

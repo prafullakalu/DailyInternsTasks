@@ -1,0 +1,92 @@
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace CleanApiProject.DTOs;
+
+// ─────────────────────────────────────────────
+//  AUTH DTOs
+// ─────────────────────────────────────────────
+
+/// <summary>
+/// Payload for user registration.
+/// </summary>
+public class RegisterDto
+{
+    [Required(ErrorMessage = "Name is required")]
+    [MaxLength(100)]
+    public string Name { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Email is required")]
+    [EmailAddress(ErrorMessage = "Invalid email format")]
+    public string Email { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Password is required")]
+    [MinLength(6, ErrorMessage = "Password must be at least 6 characters")]
+    public string Password { get; set; } = string.Empty;
+}
+
+/// <summary>
+/// Payload for user login.
+/// </summary>
+public class LoginDto
+{
+    [Required(ErrorMessage = "Email is required")]
+    [EmailAddress(ErrorMessage = "Invalid email format")]
+    public string Email { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Password is required")]
+    public string Password { get; set; } = string.Empty;
+}
+
+/// <summary>
+/// Returned after successful login — contains the JWT token.
+/// </summary>
+public class AuthResponseDto
+{
+    public string Token { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string Role { get; set; } = string.Empty;
+    public DateTime ExpiresAt { get; set; }
+}
+
+// ─────────────────────────────────────────────
+//  USER DTOs
+// ─────────────────────────────────────────────
+
+/// <summary>
+/// Safe user data returned to clients (no password).
+/// </summary>
+public class UserDto
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Email { get; set; } = string.Empty;
+    public string Role { get; set; } = string.Empty;
+    public DateTime LastRoleUpdate { get; set; }
+}
+
+/// <summary>
+/// Used by Admin to update a user's role.
+/// </summary>
+public class UpdateRoleDto
+{
+    [Required(ErrorMessage = "Role is required")]
+    public string Role { get; set; } = string.Empty;
+}
+
+// ─────────────────────────────────────────────
+//  ITEM DTOs
+// ─────────────────────────────────────────────
+
+/// <summary>
+/// Used to create or update an item.
+/// </summary>
+public class ItemDto
+{
+    [Required(ErrorMessage = "Name is required")]
+    [MaxLength(200)]
+    public string Name { get; set; } = string.Empty;
+
+    [Required(ErrorMessage = "Price is required")]
+    [Range(0.01, double.MaxValue, ErrorMessage = "Price must be greater than 0")]
+    public decimal Price { get; set; }
+}

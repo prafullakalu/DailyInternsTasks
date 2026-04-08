@@ -1,0 +1,44 @@
+﻿using MongoDB.Driver;
+
+public class AuthService : IAuthService
+{
+    private readonly IMongoCollection<User> _users;
+    private readonly IConfiguration _config;
+
+    public AuthService(IMongoDatabase db, IConfiguration config)
+    {
+        _users = db.GetCollection<User>("Users");
+        _config = config;
+    }
+
+    public async Task<string> SignupAsync(SignupDto dto)
+    {
+        if (await _users.Find(u => u.Email == dto.Email).AnyAsync())
+            throw new Exception("User already exists");
+
+        var user = new User
+        {
+            Email = dto.Email,
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword(dto.Password)
+        };
+
+        await _users.InsertOneAsync(user);
+        return GenerateJwt(user);
+    }
+
+    public async Task<string> SigninAsync(SigninDto dto)
+    {
+        var user = await _users.Find(u => u.Email == dto.Email).FirstOrDefaultAsync();
+        if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
+            throw new Exception("Invalid credentials");
+
+        return GenerateJwt(user);
+    }
+
+    private string GenerateJwt(User user)
+    {
+        // Implement JWT generation using System.IdentityModel.Tokens.Jwt
+        // Return token string (standard implementation)
+        return "jwt-token-placeholder"; // replace with real JWT code
+    }
+}

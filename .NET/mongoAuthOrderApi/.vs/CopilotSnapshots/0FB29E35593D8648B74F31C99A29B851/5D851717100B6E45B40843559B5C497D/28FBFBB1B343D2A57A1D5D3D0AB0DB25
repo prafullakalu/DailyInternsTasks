@@ -1,0 +1,82 @@
+﻿using Microsoft.Extensions.Options;
+using MongoDB.Driver;
+using mongoAuthOrderApi.Models;
+using mongoAuthOrderApi.settings;
+using mongoAuthOrderApi.repositories;
+
+namespace mongoAuthOrderApi.services;
+
+public class mongoDbService
+{
+    private readonly userRepository _userRepo;
+    private readonly orderRepository _orderRepo;
+
+    public mongoDbService(IOptions<mongoDbSettings> settings)
+    {
+        var client = new MongoClient(settings.Value.connectionString);
+        var database = client.GetDatabase(settings.Value.databaseName);
+
+        var usersCollection = database.GetCollection<user>("users");
+        var ordersCollection = database.GetCollection<order>("orders");
+
+        // Initialize repositories
+        _userRepo = new userRepository(usersCollection);
+        _orderRepo = new orderRepository(ordersCollection);
+
+        // Create indexes
+        var userEmailIndex = Builders<user>.IndexKeys.Ascending(u => u.email);
+        usersCollection.Indexes.CreateOne(new CreateIndexModel<user>(userEmailIndex,
+            new CreateIndexOptions { Unique = true }));
+    }
+
+    // ==================== USER CRUD ====================
+
+    public async Task<List<user>> getAllUsersAsync() =>
+        await _userRepo.getAllUsersAsync();
+
+    public async Task<user?> getUserByIdAsync(string id) =>
+        await _userRepo.getUserByIdAsync(id);
+
+    public async Task<user?> getUserByEmailAsync(string email) =>
+        await _userRepo.getUserByEmailAsync(email);
+
+    public async Task<user?> getUserByUsernameAsync(string username) =>
+        await _userRepo.getUserByUsernameAsync(username);
+
+    public async Task createUserAsync(user newUser) =>
+        await _userRepo.createUserAsync(newUser);
+
+    public async Task<bool> updateUserAsync(string id, UpdateDefinition<user> update)
+    {
+        return await _userRepo.updateUserAsync(id, update);
+    }
+
+    public async Task<bool> deleteUserAsync(string id)
+    {
+        return await _userRepo.deleteUserAsync(id);
+    }
+
+
+
+    public async Task<List<order>> getAllOrdersAsync() =>
+        await _orderRepo.getAllOrdersAsync();
+
+    public async Task<List<order>> getOrdersByUserIdAsync(string userId) =>
+        await _orderRepo.getOrdersByUserIdAsync(userId);
+
+    public async Task<order?> getOrderByIdAsync(string id) =>
+        await _orderRepo.getOrderByIdAsync(id);
+
+    public async Task createOrderAsync(order newOrder) =>
+        await _orderRepo.createOrderAsync(newOrder);
+
+    public async Task<bool> updateOrderAsync(string id, UpdateDefinition<order> update)
+    {
+        return await _orderRepo.updateOrderAsync(id, update);
+    }
+
+    public async Task<bool> deleteOrderAsync(string id)
+    {
+        return await _orderRepo.deleteOrderAsync(id);
+    }
+}
